@@ -8,5 +8,5 @@ abstract class SportsFederation {
         return dispatchRepresentativeAthlete()
     }
 
-    abstract fun dispatchRepresentativeAthlete(): ProfessionalAthlete
+    protected abstract fun dispatchRepresentativeAthlete(): ProfessionalAthlete
 }

@@ -8,9 +8,9 @@ class Organizer {
         var athleteList: MutableList<ProfessionalAthlete> = mutableListOf()
         // それぞれのスポーツ連盟から代表選手を派遣してもらう
         // サッカー連盟から代表選手取得
-        athleteList.add(SoccerFederation().dispatchRepresentativeAthlete())
+        athleteList.add(SoccerFederation().getAthlete())
         // 野球連盟から代表選手取得
-        athleteList.add(BaseBallFederation().dispatchRepresentativeAthlete())
+        athleteList.add(BaseBallFederation().getAthlete())
 
         // 宣誓してもらう
         for (athlete in athleteList) {
