@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17781139-3b80-449e-98c2-a162a0bf82e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/prototype/Car.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/prototype/Engine.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/prototype/Factory.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/prototype/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/prototype/ProtoTypeFactory.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/prototype/Tire.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/singleton/DisplayOne.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/singleton/DisplayTwo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/singleton/JavaSingletonObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/singleton/KotlinSingletonObject.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/singleton/Main.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/singleton/Manager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GoF/META-INF/GoF.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/META-INF/GoF.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/BaseBallFederation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/factorymethod/BaseBallFederation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/Organizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/factorymethod/Organizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/SoccerFederation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/factorymethod/SoccerFederation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/SportsFederation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/factorymethod/SportsFederation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factorymethod/Organizer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/factorymethod/Organizer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factorymethod/SportsFederation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/factorymethod/SportsFederation.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,23 +65,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="kt" value="81" />
-          <entry key="kts" value="2" />
+          <entry key="java" value="1" />
+          <entry key="kt" value="89" />
+          <entry key="kts" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Kotlin" value="83" />
+          <entry key="JAVA" value="1" />
+          <entry key="Kotlin" value="92" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="kt" value="6433" />
+          <entry key="java" value="699" />
+          <entry key="kt" value="7002" />
+          <entry key="kts" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Kotlin" value="6433" />
+          <entry key="JAVA" value="699" />
+          <entry key="Kotlin" value="7003" />
         </counts>
       </usages-collector>
     </session>
@@ -97,74 +96,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/prototype/ProtoTypeFactory.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prototype/Factory.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" selection-end-line="37" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prototype/Main.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prototype/Car.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="21" lean-forward="true" selection-end-line="15" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prototype/Tire.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="5" lean-forward="true" selection-end-line="15" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prototype/Engine.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/factorymethod/SportsFederation.kt">
+        <entry file="file://$PROJECT_DIR$/src/singleton/KotlinSingletonObject.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="10" selection-end-column="79" />
+              <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/singleton/JavaSingletonObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="32" />
+              <folding>
+                <element signature="e#464#465#0" expanded="true" />
+                <element signature="e#505#506#0" expanded="true" />
+                <element signature="e#645#646#0" expanded="true" />
+                <element signature="e#697#698#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/factorymethod/Organizer.kt">
+        <entry file="file://$PROJECT_DIR$/src/singleton/DisplayTwo.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="18" selection-end-column="9" />
+            <state relative-caret-position="153">
+              <caret line="9" column="1" lean-forward="true" selection-end-line="9" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/singleton/Main.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/singleton/Manager.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/singleton/DisplayOne.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="17" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -174,8 +161,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Kotlin Interface" />
+        <option value="Class" />
         <option value="Kotlin Script" />
         <option value="Kotlin File" />
       </list>
@@ -187,11 +174,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/abstractfactory/after/CarFactory.kt" />
-        <option value="$PROJECT_DIR$/src/abstractfactory/VehicleFactory.kt" />
-        <option value="$PROJECT_DIR$/src/abstractfactory/Vehicle.kt" />
-        <option value="$PROJECT_DIR$/src/abstractfactory/Recipe.kt" />
-        <option value="$PROJECT_DIR$/src/abstractfactory/MakeRecipe.kt" />
         <option value="$PROJECT_DIR$/src/abstractfactory/Car.java" />
         <option value="$PROJECT_DIR$/src/abstractfactory/Engine.kt" />
         <option value="$PROJECT_DIR$/src/abstractfactory/Steering.kt" />
@@ -232,6 +214,17 @@
         <option value="$PROJECT_DIR$/src/prototype/ProtoTypeFactory.kt" />
         <option value="$PROJECT_DIR$/src/prototype/Factory.kt" />
         <option value="$PROJECT_DIR$/src/prototype/Main.kt" />
+        <option value="$PROJECT_DIR$/src/singleton/singleton.kt" />
+        <option value="$PROJECT_DIR$/src/singleton/SingletonObject.kt" />
+        <option value="$PROJECT_DIR$/src/singleton/KotlinSingletonObject.kt" />
+        <option value="$PROJECT_DIR$/src/singleton/User1.kt" />
+        <option value="$PROJECT_DIR$/src/singleton/User2.kt" />
+        <option value="$PROJECT_DIR$/src/singleton/Manager.kts" />
+        <option value="$PROJECT_DIR$/src/singleton/Main.kt" />
+        <option value="$PROJECT_DIR$/src/singleton/DisplayOne.kt" />
+        <option value="$PROJECT_DIR$/src/singleton/DisplayTwo.kt" />
+        <option value="$PROJECT_DIR$/src/singleton/JavaSingletonObject.java" />
+        <option value="$PROJECT_DIR$/src/singleton/Manager.kt" />
       </list>
     </option>
   </component>
@@ -265,13 +258,7 @@
               <item name="gof" type="b2602c69:ProjectViewProjectNode" />
               <item name="gof" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="factorymethod" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="prototype" type="462c0819:PsiDirectoryNode" />
+              <item name="singleton" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -281,7 +268,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="soccer&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/factorymethod/SoccerFederation.kt&#10;Hiper&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/HiPerformanceEngine.kt&#10; {&#9;null&#9;null&#10;Car&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/CarFactory.kt&#10;Engine&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/Engine.kt&#10;engine&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537762448352" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538187788214" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -304,7 +291,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.prototype.MainKt">
+  <component name="RunManager" selected="Kotlin.singleton.MainKt">
     <configuration name="abstractfactory.VehicleFactoryKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="GoF" />
       <option name="VM_PARAMETERS" />
@@ -318,14 +305,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="prototype.MainKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="singleton.MainKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="GoF" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="prototype.MainKt" />
+      <option name="MAIN_CLASS_NAME" value="singleton.MainKt" />
       <option name="WORKING_DIRECTORY" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -333,11 +320,11 @@
     </configuration>
     <list>
       <item itemvalue="Kotlin.abstractfactory.VehicleFactoryKt" />
-      <item itemvalue="Kotlin.prototype.MainKt" />
+      <item itemvalue="Kotlin.singleton.MainKt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.prototype.MainKt" />
+        <item itemvalue="Kotlin.singleton.MainKt" />
         <item itemvalue="Kotlin.abstractfactory.VehicleFactoryKt" />
       </list>
     </recent_temporary>
@@ -366,7 +353,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="24" y="20" width="1400" height="824" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="1" />
@@ -377,7 +363,7 @@
       <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49910232" visible="true" weight="0.27238807" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36468884" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36324167" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -400,7 +386,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/abstractfactory/VehicleFactory.kt" />
     <entry file="file://$PROJECT_DIR$/src/abstractfactory/Vehicle.kt" />
     <entry file="file://$PROJECT_DIR$/src/abstractfactory/MakeRecipe.kt" />
     <entry file="file://$PROJECT_DIR$/src/abstractfactory/Recipe.kt" />
@@ -453,13 +438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
           <caret line="628" column="34" selection-start-line="628" selection-start-column="34" selection-end-line="628" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/abstractfactory/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -609,13 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prototype/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/prototype/Engine.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -651,17 +622,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prototype/Factory.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" selection-end-line="37" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/prototype/ProtoTypeFactory.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prototype/Factory.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/singleton/KotlinSingletonObject.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prototype/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/abstractfactory/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/singleton/Manager.kts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/singleton/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/singleton/DisplayOne.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/singleton/DisplayTwo.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" lean-forward="true" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/singleton/Manager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/singleton/JavaSingletonObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="32" />
+          <folding>
+            <element signature="e#464#465#0" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
