@@ -7,17 +7,82 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17781139-3b80-449e-98c2-a162a0bf82e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/facade/Client.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/facade/FacadePrinter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/facade/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/facade/Printer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/flyweight/CharacterFactory.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/flyweight/Charcter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/flyweight/Client.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/flyweight/Main.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/proxy/Client.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/proxy/Image.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/proxy/ImageProxy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/proxy/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GoF/META-INF/GoF.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/bridge/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/META-INF/GoF.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/META-INF/GoF.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/AutomobileDealer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/abstractfactory/AutomobileDealer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/CarFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/abstractfactory/CarFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Engine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/HiGripTire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/abstractfactory/HiGripTire.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/HiPerformanceEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/abstractfactory/HiPerformanceEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/abstractfactory/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Maker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Maker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Steering.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Steering.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/SuperCarFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/abstractfactory/SuperCarFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Tire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Tire.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/AbstBlackAndWhiteIcon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/bridge/AbstBlackAndWhiteIcon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/AbstClearIcon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/bridge/AbstClearIcon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/AbstColorIcon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/bridge/AbstColorIcon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/AbstIcon$IconType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/bridge/AbstIcon$IconType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/AbstIcon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/bridge/AbstIcon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/BigIcon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/bridge/BigIcon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/bridge/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/ImpIcon$IconSize.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/bridge/ImpIcon$IconSize.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/ImpIcon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/bridge/ImpIcon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/MiddleIcon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/bridge/MiddleIcon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/SmallIcon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/bridge/SmallIcon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/ArtMuseumBuilder$addFloor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/builder/ArtMuseumBuilder$addFloor$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/ArtMuseumBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/builder/ArtMuseumBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/Builder$ProductType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/builder/Builder$ProductType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/builder/Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/Creator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/builder/Creator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/Floor$addRoom$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/builder/Floor$addRoom$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/Floor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/builder/Floor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/builder/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/MovieTheaterBuilder$addFloor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/builder/MovieTheaterBuilder$addFloor$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/MovieTheaterBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/builder/MovieTheaterBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/MuseumBuilder$addFloor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/builder/MuseumBuilder$addFloor$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/MuseumBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/builder/MuseumBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/builder/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/builder/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/composite/AbstractDirectory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/composite/AbstractDirectory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/composite/Directory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/composite/Directory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/composite/DirectoryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/composite/DirectoryManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/composite/Element$ElementType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/composite/Element$ElementType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/composite/Element.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/composite/Element.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/composite/File.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/composite/File.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/composite/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/composite/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/decorator/ComponentManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/decorator/ComponentManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/decorator/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/decorator/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/decorator/ScrollDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/decorator/ScrollDecorator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/decorator/ShadowDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/decorator/ShadowDecorator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/decorator/TextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/decorator/TextView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/decorator/ViewComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/decorator/ViewComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/BaseBallFederation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/factorymethod/BaseBallFederation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/factorymethod/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/Organizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/factorymethod/Organizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/ProfessionalAthlete$Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/factorymethod/ProfessionalAthlete$Type.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/ProfessionalAthlete.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/factorymethod/ProfessionalAthlete.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/ProfessionalBaseBallAthlete.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/factorymethod/ProfessionalBaseBallAthlete.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/ProfessionalSoccerAthlete.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/factorymethod/ProfessionalSoccerAthlete.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/SoccerFederation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/factorymethod/SoccerFederation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/SportsFederation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/factorymethod/SportsFederation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/prototype/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/prototype/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/prototype/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/prototype/Engine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/prototype/Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/prototype/Factory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/prototype/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/prototype/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/prototype/ProtoTypeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/prototype/ProtoTypeFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/prototype/Tire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/prototype/Tire.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/singleton/DisplayOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/singleton/DisplayOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/singleton/DisplayTwo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/singleton/DisplayTwo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/singleton/KotlinSingletonObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/singleton/KotlinSingletonObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/singleton/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/singleton/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/singleton/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/singleton/Manager.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,112 +91,43 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1870215141">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="1" />
-          <entry key="kt" value="29" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="1" />
-          <entry key="Kotlin" value="29" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="38" />
-          <entry key="kt" value="3142" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="38" />
-          <entry key="Kotlin" value="3142" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1870468969">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="14" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.30" value="1" />
-          <entry key="project.open.time.31" value="1" />
-          <entry key="project.open.time.32" value="1" />
-          <entry key="project.open.time.35" value="2" />
-          <entry key="project.open.time.40" value="1" />
-          <entry key="project.open.time.41" value="2" />
-          <entry key="project.open.time.44" value="3" />
-          <entry key="project.open.time.45" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.64" value="1" />
-          <entry key="project.opened" value="18" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="2" />
-          <entry key="kt" value="150" />
-          <entry key="kts" value="3" />
-          <entry key="memo" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="2" />
-          <entry key="Kotlin" value="161" />
-          <entry key="PLAIN_TEXT" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="699" />
-          <entry key="kt" value="11831" />
-          <entry key="kts" value="1" />
-          <entry key="memo" value="63" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="699" />
-          <entry key="Kotlin" value="12626" />
-          <entry key="PLAIN_TEXT" value="63" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="gof" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/flyweight/Client.kt">
+        <entry file="file://$PROJECT_DIR$/src/proxy/Image.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="119">
+              <caret line="7" selection-end-line="15" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/flyweight/Main.kt">
+        <entry file="file://$PROJECT_DIR$/src/proxy/Client.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="35" selection-end-line="35" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/proxy/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/proxy/ImageProxy.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -169,11 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/prototype/ProtoTypeFactory.kt" />
-        <option value="$PROJECT_DIR$/src/prototype/Factory.kt" />
-        <option value="$PROJECT_DIR$/src/prototype/Main.kt" />
-        <option value="$PROJECT_DIR$/src/singleton/singleton.kt" />
-        <option value="$PROJECT_DIR$/src/singleton/SingletonObject.kt" />
         <option value="$PROJECT_DIR$/src/singleton/KotlinSingletonObject.kt" />
         <option value="$PROJECT_DIR$/src/singleton/User1.kt" />
         <option value="$PROJECT_DIR$/src/singleton/User2.kt" />
@@ -220,10 +211,15 @@
         <option value="$PROJECT_DIR$/src/flyweight/Main.kt" />
         <option value="$PROJECT_DIR$/src/flyweight/Charcter.kt" />
         <option value="$PROJECT_DIR$/src/flyweight/CharacterFactory.kt" />
+        <option value="$PROJECT_DIR$/src/sample.kt" />
+        <option value="$PROJECT_DIR$/src/proxy/ImageProxy.kt" />
+        <option value="$PROJECT_DIR$/src/proxy/Main.kt" />
+        <option value="$PROJECT_DIR$/src/proxy/Image.kt" />
+        <option value="$PROJECT_DIR$/src/proxy/Client.kt" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="35" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
@@ -234,6 +230,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,25 +247,18 @@
               <item name="gof" type="b2602c69:ProjectViewProjectNode" />
               <item name="gof" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="factorymethod" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="flyweight" type="462c0819:PsiDirectoryNode" />
+              <item name="proxy" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="main&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/Main.kt&#10;Main&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/Main.kt&#10;compo&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ComponentManager.kt&#10;sc&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ScrollDecorator.kt&#10;shadow&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ShadowDecorator.kt&#10;soccer&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/factorymethod/SoccerFederation.kt&#10;Hiper&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/HiPerformanceEngine.kt&#10; {&#9;null&#9;null&#10;Car&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/CarFactory.kt&#10;Engine&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/Engine.kt&#10;engine&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544327291941" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546340483305" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -292,7 +282,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.flyweight.MainKt">
+  <component name="RunManager" selected="Kotlin.proxy.MainKt">
     <configuration name="abstractfactory.VehicleFactoryKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="GoF" />
       <option name="VM_PARAMETERS" />
@@ -306,14 +296,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="flyweight.MainKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="proxy.MainKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="GoF" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="flyweight.MainKt" />
+      <option name="MAIN_CLASS_NAME" value="proxy.MainKt" />
       <option name="WORKING_DIRECTORY" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -321,11 +311,11 @@
     </configuration>
     <list>
       <item itemvalue="Kotlin.abstractfactory.VehicleFactoryKt" />
-      <item itemvalue="Kotlin.flyweight.MainKt" />
+      <item itemvalue="Kotlin.proxy.MainKt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.flyweight.MainKt" />
+        <item itemvalue="Kotlin.proxy.MainKt" />
         <item itemvalue="Kotlin.abstractfactory.VehicleFactoryKt" />
       </list>
     </recent_temporary>
@@ -353,8 +343,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="28" y="20" width="1400" height="824" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1488" height="878" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="1" />
@@ -362,10 +351,10 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" sideWeight="0.50089765" side_tool="true" weight="0.27238807" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49910232" visible="true" weight="0.2261194" />
+      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49910232" visible="true" weight="0.22268908" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36324167" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36193028" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -374,6 +363,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3299566" />
+      <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -384,45 +374,7 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/abstractfactory/Engine.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/abstractfactory/Tire.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/abstractfactory/SuperCarFactory.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/abstractfactory/Steering.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/abstractfactory/Maker.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/abstractfactory/HiPerformanceEngine.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -713,6 +665,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/flyweight/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/flyweight/Client.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -720,10 +686,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/flyweight/Main.kt">
+    <entry file="file://$PROJECT_DIR$/src/proxy/Image.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proxy/ImageProxy.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proxy/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proxy/Client.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="35" selection-end-line="35" selection-end-column="1" />
         </state>
       </provider>
     </entry>
