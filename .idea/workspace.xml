@@ -288,7 +288,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.interpreter.MainKt">
+  <component name="RunManager" selected="Kotlin.chainofresponsibility.MainKt">
     <configuration name="abstractfactory.VehicleFactoryKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="GoF" />
       <option name="VM_PARAMETERS" />
@@ -302,14 +302,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="interpreter.MainKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="chainofresponsibility.MainKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="GoF" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="interpreter.MainKt" />
+      <option name="MAIN_CLASS_NAME" value="chainofresponsibility.MainKt" />
       <option name="WORKING_DIRECTORY" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -317,11 +317,11 @@
     </configuration>
     <list>
       <item itemvalue="Kotlin.abstractfactory.VehicleFactoryKt" />
-      <item itemvalue="Kotlin.interpreter.MainKt" />
+      <item itemvalue="Kotlin.chainofresponsibility.MainKt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.interpreter.MainKt" />
+        <item itemvalue="Kotlin.chainofresponsibility.MainKt" />
         <item itemvalue="Kotlin.abstractfactory.VehicleFactoryKt" />
       </list>
     </recent_temporary>
