@@ -7,13 +7,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17781139-3b80-449e-98c2-a162a0bf82e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/command/Car.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/command/Client.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/command/Command.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/command/MacroCommand.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/command/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/command/Receiver.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/command/SimpleCommand.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/CalcExpression.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/Context.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/DivideExpression.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/Expression.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/Main.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/MinusNonterminalExpression.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/MultiplicationExpression.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/PlusNonterminalExpression.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/TerminalExpression.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example1/AndExp.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example1/BooleanExp.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example1/Constant.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example1/Context.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example1/Main.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example1/NotExp.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example1/OrExp.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example1/VariableExp.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example2/Expression.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example2/Ingredient.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example2/Operand.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example2/Operator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example2/Plus.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example2/Wait.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example3/AbstractExpression.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example3/Client.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example3/Context.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example3/NonterminalExpression.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interpreter/example3/TerminalExpression.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GoF/META-INF/GoF.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/META-INF/GoF.kotlin_module" afterDir="false" />
     </list>
@@ -30,64 +51,82 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/command/Car.kt">
+        <entry file="file://$PROJECT_DIR$/src/interpreter/CalcExpression.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="28" column="8" lean-forward="true" selection-end-line="35" selection-end-column="1" />
+            <state relative-caret-position="255">
+              <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/interpreter/Expression.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/command/Client.kt">
+        <entry file="file://$PROJECT_DIR$/src/interpreter/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            <state relative-caret-position="85">
+              <caret line="5" column="83" selection-start-line="5" selection-start-column="83" selection-end-line="5" selection-end-column="83" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/command/Main.kt">
+        <entry file="file://$PROJECT_DIR$/src/interpreter/DivideExpression.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            <state relative-caret-position="51">
+              <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="9" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/command/SimpleCommand.kt">
+        <entry file="file://$PROJECT_DIR$/src/interpreter/MinusNonterminalExpression.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="6" lean-forward="true" selection-end-line="6" selection-end-column="1" />
+            <state relative-caret-position="153">
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/command/Receiver.kt">
+        <entry file="file://$PROJECT_DIR$/src/interpreter/MultiplicationExpression.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            <state relative-caret-position="153">
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/command/Command.kt">
+        <entry file="file://$PROJECT_DIR$/src/interpreter/PlusNonterminalExpression.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            <state relative-caret-position="238">
+              <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/command/MacroCommand.kt">
+        <entry file="file://$PROJECT_DIR$/src/interpreter/TerminalExpression.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            <state relative-caret-position="187">
+              <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/interpreter/Context.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -111,10 +150,12 @@
       <find>clone</find>
       <find>&quot;</find>
       <find>\n</find>
+      <find>%</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>'</replace>
+      <replace>+</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\web\Documents\myapp\gof\src</dir>
@@ -126,37 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/singleton/Manager.kt" />
-        <option value="$PROJECT_DIR$/src/adapter/memo" />
-        <option value="$PROJECT_DIR$/src/bridge/ImpIcon.kt" />
-        <option value="$PROJECT_DIR$/src/bridge/AbstColorIcon.kt" />
-        <option value="$PROJECT_DIR$/src/bridge/MiddleIcon.kt" />
-        <option value="$PROJECT_DIR$/src/bridge/Smallicon.kt" />
-        <option value="$PROJECT_DIR$/src/builder/Main.kt" />
-        <option value="$PROJECT_DIR$/src/bridge/Main.kt" />
-        <option value="$PROJECT_DIR$/src/bridge/BigIcon.kt" />
-        <option value="$PROJECT_DIR$/src/bridge/SmallIcon.kt" />
-        <option value="$PROJECT_DIR$/src/bridge/AbstIcon.kt" />
-        <option value="$PROJECT_DIR$/src/bridge/AbstClearIcon.kt" />
-        <option value="$PROJECT_DIR$/src/bridge/Client.kt" />
-        <option value="$PROJECT_DIR$/src/bridge/AbstBlackAndWhiteIcon.kt" />
-        <option value="$PROJECT_DIR$/src/composite/CompositeInterface.kt" />
-        <option value="$PROJECT_DIR$/src/composite/AbstractComposite.kt" />
-        <option value="$PROJECT_DIR$/src/composite/Composite.kt" />
-        <option value="$PROJECT_DIR$/src/composite/Leaf.kt" />
-        <option value="$PROJECT_DIR$/src/composite/Element.kt" />
-        <option value="$PROJECT_DIR$/src/composite/Directory.kt" />
-        <option value="$PROJECT_DIR$/src/composite/AbstractDirectory.kt" />
-        <option value="$PROJECT_DIR$/src/composite/Main.kt" />
-        <option value="$PROJECT_DIR$/src/composite/File.kt" />
-        <option value="$PROJECT_DIR$/src/composite/DirectoryManager.kt" />
-        <option value="$PROJECT_DIR$/src/decorator/ViewComponent.kt" />
-        <option value="$PROJECT_DIR$/src/decorator/Main.kt" />
-        <option value="$PROJECT_DIR$/src/decorator/TextView.kt" />
-        <option value="$PROJECT_DIR$/src/decorator/ShadowDecorator.kt" />
-        <option value="$PROJECT_DIR$/src/decorator/ScrollDecorator.kt" />
-        <option value="$PROJECT_DIR$/src/decorator/ComponentManager.kt" />
-        <option value="$PROJECT_DIR$/src/facade/Printer.kt" />
         <option value="$PROJECT_DIR$/src/facade/FacadePrinter.kt" />
         <option value="$PROJECT_DIR$/src/facade/Client.kt" />
         <option value="$PROJECT_DIR$/src/facade/Main.kt" />
@@ -177,6 +187,37 @@
         <option value="$PROJECT_DIR$/src/command/Main.kt" />
         <option value="$PROJECT_DIR$/src/command/Car.kt" />
         <option value="$PROJECT_DIR$/src/command/Client.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/OrExp.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/NotExp.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/Constant.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/AndExp.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/BooleanExp.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/VariableExp.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example1/Main.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example2/Program.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example2/Context.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example2/Operand.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example2/Ingredient.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example2/Operator.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example2/Plus.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example2/Wait.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example2/Expression.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example3/AbstractExpression.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example3/Client.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example3/Context.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example3/TerminalExpression.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example3/NonterminalExpression.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/MultipliedExpression.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/Context.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/TerminalExpression.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/example3/CalcExpression.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/Expression.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/CalcExpression.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/MultiplicationExpression.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/MinusNonterminalExpression.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/DivideExpression.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/PlusNonterminalExpression.kt" />
+        <option value="$PROJECT_DIR$/src/interpreter/Main.kt" />
       </list>
     </option>
   </component>
@@ -191,8 +232,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -209,13 +250,7 @@
               <item name="gof" type="b2602c69:ProjectViewProjectNode" />
               <item name="gof" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="builder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="command" type="462c0819:PsiDirectoryNode" />
+              <item name="interpreter" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -225,14 +260,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="main&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/Main.kt&#10;Main&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/Main.kt&#10;compo&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ComponentManager.kt&#10;sc&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ScrollDecorator.kt&#10;shadow&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ShadowDecorator.kt&#10;soccer&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/factorymethod/SoccerFederation.kt&#10;Hiper&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/HiPerformanceEngine.kt&#10; {&#9;null&#9;null&#10;Car&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/CarFactory.kt&#10;Engine&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/Engine.kt&#10;engine&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549250920867" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../KotlinPractice" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551022171173" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="interpreter" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\web\Documents\myapp\gof\src\interpreter\example1" />
       <recent name="C:\Users\web\Documents\myapp\GoF\src\abstractfactory" />
       <recent name="C:\Users\web\Documents\myapp\GoF\src\abstractfactory\after" />
     </key>
@@ -249,7 +288,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.command.MainKt">
+  <component name="RunManager" selected="Kotlin.interpreter.MainKt">
     <configuration name="abstractfactory.VehicleFactoryKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="GoF" />
       <option name="VM_PARAMETERS" />
@@ -263,14 +302,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="command.MainKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="interpreter.MainKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="GoF" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="command.MainKt" />
+      <option name="MAIN_CLASS_NAME" value="interpreter.MainKt" />
       <option name="WORKING_DIRECTORY" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -278,11 +317,11 @@
     </configuration>
     <list>
       <item itemvalue="Kotlin.abstractfactory.VehicleFactoryKt" />
-      <item itemvalue="Kotlin.command.MainKt" />
+      <item itemvalue="Kotlin.interpreter.MainKt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.command.MainKt" />
+        <item itemvalue="Kotlin.interpreter.MainKt" />
         <item itemvalue="Kotlin.abstractfactory.VehicleFactoryKt" />
       </list>
     </recent_temporary>
@@ -319,18 +358,18 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" sideWeight="0.50089765" side_tool="true" weight="0.27238807" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49910232" visible="true" weight="0.23669468" />
+      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49910232" visible="true" weight="0.24019608" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3299566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13672923" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3297587" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35924932" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2855228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299566" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.24167873" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3299566" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3297587" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -343,226 +382,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/bridge/SmallIcon.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bridge/ImpIcon.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/composite/Composite.kt" />
-    <entry file="file://$PROJECT_DIR$/src/composite/Leaf.kt" />
-    <entry file="file://$PROJECT_DIR$/src/composite/AbstractComposite.kt" />
-    <entry file="file://$PROJECT_DIR$/src/bridge/AbstBlackAndWhiteIcon.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bridge/AbstColorIcon.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bridge/AbstClearIcon.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bridge/Client.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bridge/AbstIcon.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/builder/Builder.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/builder/ArtMuseumBuilder.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/composite/AbstractDirectory.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/composite/Element.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/composite/Directory.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/composite/File.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/composite/DirectoryManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/composite/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/decorator/ViewComponent.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/decorator/ShadowDecorator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="16" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/decorator/ScrollDecorator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/decorator/ComponentManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/facade/Printer.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/facade/FacadePrinter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bridge/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/facade/Client.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/decorator/TextView.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/facade/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/flyweight/CharacterFactory.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/decorator/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/flyweight/Charcter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="44" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prototype/Tire.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prototype/ProtoTypeFactory.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prototype/Engine.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample.kt" />
     <entry file="file://$PROJECT_DIR$/src/flyweight/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -613,13 +432,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/StartCarCommand.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/StartCarCommand.kt" />
     <entry file="file://$PROJECT_DIR$/src/builder/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -627,17 +440,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/Car.kt">
+    <entry file="file://$PROJECT_DIR$/src/composite/DirectoryManager.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="28" column="8" lean-forward="true" selection-end-line="35" selection-end-column="1" />
+        <state relative-caret-position="358">
+          <caret line="38" column="21" lean-forward="true" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/MacroCommand.kt">
+    <entry file="file://$PROJECT_DIR$/src/command/Client.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        <state relative-caret-position="188">
+          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/Car.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="8" selection-end-line="35" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/composite/Directory.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/SimpleCommand.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/Receiver.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -648,31 +496,238 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/Receiver.kt">
+    <entry file="file://$PROJECT_DIR$/src/command/MacroCommand.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        <state relative-caret-position="340">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/SimpleCommand.kt">
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example1/BooleanExp.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" lean-forward="true" selection-end-line="6" selection-end-column="1" />
+        <state relative-caret-position="153">
+          <caret line="9" column="53" lean-forward="true" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/Main.kt">
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example1/Constant.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        <state relative-caret-position="221">
+          <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/Client.kt">
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example1/AndExp.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example1/NotExp.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example1/OrExp.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example1/Context.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example2/Program.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example2/Context.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example1/VariableExp.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example2/Wait.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example2/Operand.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example2/Operator.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="613" column="22" selection-start-line="613" selection-start-column="22" selection-end-line="613" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example3/TerminalExpression.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/StringTokenizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="389" column="19" selection-start-line="389" selection-start-column="19" selection-end-line="389" selection-end-column="19" />
+          <folding>
+            <element signature="e#13680#13681#0" expanded="true" />
+            <element signature="e#13718#13719#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example3/AbstractExpression.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="49" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example3/Client.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example3/Context.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example3/NonterminalExpression.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example2/Expression.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example2/Ingredient.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="63" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example2/Plus.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/example1/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/TerminalExpression.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/Context.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/CalcExpression.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/DivideExpression.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/MinusNonterminalExpression.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/MultiplicationExpression.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/PlusNonterminalExpression.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/Expression.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interpreter/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="83" selection-start-line="5" selection-start-column="83" selection-end-line="5" selection-end-column="83" />
         </state>
       </provider>
     </entry>
