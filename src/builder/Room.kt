@@ -2,6 +2,7 @@ package builder
 
 /**
  * 部屋クラス
+ * Product
  */
 class Room(roomNo: Int) {
     val roomNo = roomNo

@@ -2,6 +2,7 @@ package builder
 
 /**
  * 街を作る人
+ * Director
  */
 class Creator {
     init {

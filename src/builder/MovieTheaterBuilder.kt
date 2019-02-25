@@ -2,6 +2,7 @@ package builder
 
 /**
  * 映画館専門建築業者
+ * ConcreteBuilder
  */
 class MovieTheaterBuilder(productName: String): Builder {
     private var product = Product(Builder.ProductType.MovieTheater, productName)

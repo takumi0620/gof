@@ -2,6 +2,7 @@ package builder
 
 /**
  * 建築業者インターフェース
+ * Builder
  */
 interface Builder {
     enum class ProductType(val value: String) {

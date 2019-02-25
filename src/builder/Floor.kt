@@ -2,6 +2,7 @@ package builder
 
 /**
  * 階層クラス 1階 2階...
+ * Product
  */
 class Floor(floorNum: Int) {
     var floorNum = floorNum

@@ -2,6 +2,7 @@ package builder
 
 /**
  * 美術館専門建築業者
+ * ConcreteBuilder
  */
 class ArtMuseumBuilder(productName: String) : Builder {
     private var product = Product(Builder.ProductType.ArtMuseum, productName)

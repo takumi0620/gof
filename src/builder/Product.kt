@@ -2,6 +2,7 @@ package builder
 
 /**
  * 建物
+ * Product
  */
 class Product(productType: Builder.ProductType, productName: String): Cloneable {
 
