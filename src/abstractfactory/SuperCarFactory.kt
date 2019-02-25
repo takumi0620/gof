@@ -2,6 +2,7 @@ package abstractfactory
 
 /**
  * スーパーカー用部品製造工場
+ * ConcreteFactory
  */
 class SuperCarFactory: CarFactory() {
 

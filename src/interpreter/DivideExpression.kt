@@ -1,5 +1,8 @@
 package interpreter
 
+/**
+ * NonterminalExpression
+ */
 class DivideExpression: CalcExpression() {
     override fun calc(): Int {
         var result = numList.first().toInt()

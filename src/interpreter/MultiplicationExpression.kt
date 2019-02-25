@@ -2,6 +2,7 @@ package interpreter
 
 /**
  * 掛け算(<*> ~ </"*>)
+ * NonterminalExpression
  */
 class MultiplicationExpression: CalcExpression() {
     override fun calc(): Int {

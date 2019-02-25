@@ -2,6 +2,7 @@ package abstractfactory
 
 /**
  * 製造された車
+ * AbstractProduct
  */
 open class Car(type: String, engine: Engine, tire: Tire, steering: Steering) {
     val type = type

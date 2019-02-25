@@ -2,6 +2,9 @@ package interpreter
 
 import java.util.ArrayList
 
+/**
+ * NonterminalExpression
+ */
 abstract class CalcExpression: Expression {
     protected val numList = ArrayList<Int>()
     protected val list = ArrayList<Expression>()

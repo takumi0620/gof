@@ -2,6 +2,7 @@ package interpreter
 
 /**
  * 引き算(<-> ~ </->)
+ * NonterminalExpression
  */
 class MinusNonterminalExpression: CalcExpression() {
     override fun calc(): Int {

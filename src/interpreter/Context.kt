@@ -2,6 +2,9 @@ package interpreter
 
 import java.util.*
 
+/**
+ * Context
+ */
 class Context(source: String) {
     private val tokens: StringTokenizer = StringTokenizer(source)
     var token: String? = null

@@ -2,6 +2,7 @@ package abstractfactory
 
 /**
  * 普通の車用部品製造工場
+ * AbstractFactory
  */
 open class CarFactory {
 

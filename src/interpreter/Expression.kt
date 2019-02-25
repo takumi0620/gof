@@ -1,5 +1,8 @@
 package interpreter
 
+/**
+ * AbstractExpression
+ */
 interface Expression {
     enum class Operator(val startTag: String, val endTag: String) {
         Plus("<+>", "</+>"),

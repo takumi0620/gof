@@ -2,6 +2,7 @@ package abstractfactory
 
 /**
  * 自動車ディーラー
+ * Client
  */
 class AutomobileDealer {
 

@@ -2,6 +2,7 @@ package interpreter
 
 /**
  * 足し算(<+> ~ </+>)
+ * NonterminalExpression
  */
 class PlusNonterminalExpression: CalcExpression() {
     override fun calc(): Int {

@@ -2,6 +2,7 @@ package abstractfactory
 
 /**
  * 自動車メーカー
+ * Client
  */
 class Maker {
 

@@ -1,5 +1,8 @@
 package interpreter
 
+/**
+ * TerminalExpression
+ */
 class TerminalExpression: Expression {
     private var saveToken: String? = null
 
