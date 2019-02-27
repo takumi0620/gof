@@ -2,6 +2,7 @@ package factorymethod
 
 /**
  * プロサッカー選手具象クラス
+ * ConcreteProduct
  */
 class ProfessionalSoccerAthlete(name: String): ProfessionalAthlete(Type.Soccer) {
 

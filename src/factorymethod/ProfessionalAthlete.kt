@@ -2,6 +2,7 @@ package factorymethod
 
 /**
  * プロスポーツ選手抽象クラス
+ * Product
  */
 abstract class ProfessionalAthlete(type: Type) {
     enum class Type(val value: String) {

@@ -2,6 +2,7 @@ package factorymethod
 
 /**
  * サッカー連盟具象クラス
+ * ConcreteCreator
  */
 class SoccerFederation: SportsFederation() {
     override fun dispatchRepresentativeAthlete(): ProfessionalAthlete {
