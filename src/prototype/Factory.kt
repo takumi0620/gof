@@ -2,6 +2,7 @@ package prototype
 
 /**
  * 車製造工場クラス
+ * Client 複製を依頼するクラス
  */
 class Factory {
     var carList:MutableList<Car> = mutableListOf()
