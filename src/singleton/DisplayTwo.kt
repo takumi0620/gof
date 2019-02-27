@@ -2,6 +2,7 @@ package singleton
 
 /**
  * 画面2クラス
+ * Singleton
  */
 class DisplayTwo {
     fun start() {

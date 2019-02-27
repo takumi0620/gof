@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17781139-3b80-449e-98c2-a162a0bf82e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/prototype/ProtoType.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prototype/Factory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/prototype/Factory.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prototype/ProtoTypeFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/prototype/ProtoTypeFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/singleton/DisplayOne.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/singleton/DisplayOne.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,14 +24,59 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/prototype/ProtoTypeFactory.kt">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prototype/ProtoType.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="12" selection-end-line="9" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/singleton/KotlinSingletonObject.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/singleton/Main.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/singleton/Manager.kt">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/singleton/DisplayOne.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/prototype/ProtoType.kt">
+        <entry file="file://$PROJECT_DIR$/src/singleton/DisplayTwo.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
@@ -92,8 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/interpreter/example2/Context.kt" />
-        <option value="$PROJECT_DIR$/src/interpreter/example2/Operand.kt" />
         <option value="$PROJECT_DIR$/src/interpreter/example2/Ingredient.kt" />
         <option value="$PROJECT_DIR$/src/interpreter/example2/Operator.kt" />
         <option value="$PROJECT_DIR$/src/interpreter/example2/Plus.kt" />
@@ -143,6 +183,8 @@
         <option value="$PROJECT_DIR$/src/prototype/Factory.kt" />
         <option value="$PROJECT_DIR$/src/prototype/ProtoTypeFactory.kt" />
         <option value="$PROJECT_DIR$/src/prototype/ProtoType.kt" />
+        <option value="$PROJECT_DIR$/src/singleton/DisplayOne.kt" />
+        <option value="$PROJECT_DIR$/src/singleton/DisplayTwo.kt" />
       </list>
     </option>
   </component>
@@ -174,7 +216,7 @@
               <item name="gof" type="b2602c69:ProjectViewProjectNode" />
               <item name="gof" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="prototype" type="462c0819:PsiDirectoryNode" />
+              <item name="singleton" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -185,7 +227,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="main&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/Main.kt&#10;Main&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/Main.kt&#10;compo&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ComponentManager.kt&#10;sc&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ScrollDecorator.kt&#10;shadow&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ShadowDecorator.kt&#10;soccer&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/factorymethod/SoccerFederation.kt&#10;Hiper&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/HiPerformanceEngine.kt&#10; {&#9;null&#9;null&#10;Car&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/CarFactory.kt&#10;Engine&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/Engine.kt&#10;engine&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551275383217" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551277691614" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -283,7 +325,7 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" sideWeight="0.50089765" side_tool="true" weight="0.27238807" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49910232" visible="true" weight="0.24369748" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.49910232" visible="true" weight="0.24369748" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297587" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.35924932" />
@@ -291,7 +333,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299566" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.24128686" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.24128686" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3297587" />
@@ -307,45 +349,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/StringTokenizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="389" column="19" selection-start-line="389" selection-start-column="19" selection-end-line="389" selection-end-column="19" />
-          <folding>
-            <element signature="e#13680#13681#0" expanded="true" />
-            <element signature="e#13718#13719#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/interpreter/example3/AbstractExpression.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="49" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/interpreter/example3/Client.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/interpreter/example3/Context.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/interpreter/example3/NonterminalExpression.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/interpreter/example2/Expression.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -648,12 +651,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prototype/ProtoTypeFactory.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prototype/ProtoType.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="12" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/singleton/KotlinSingletonObject.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/singleton/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/singleton/Manager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/singleton/DisplayOne.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/singleton/DisplayTwo.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />

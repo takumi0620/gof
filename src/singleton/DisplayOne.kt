@@ -2,6 +2,7 @@ package singleton
 
 /**
  * 画面1クラス
+ * Singleton
  */
 class DisplayOne {
     fun draw() {
