@@ -1,5 +1,8 @@
 package bridge
 
+/**
+ * Abstraction 抽象クラス
+ */
 abstract class AbstIcon(iconType: IconType) {
     enum class IconType(val value: String) {
         BlackAndWhite("モノクロアイコン"),

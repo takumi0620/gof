@@ -1,5 +1,8 @@
 package bridge
 
+/**
+ * Implementor 具象クラス
+ */
 interface ImpIcon {
     enum class IconSize(val value: String) {
         Big("大アイコン"),

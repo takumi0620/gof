@@ -1,5 +1,8 @@
 package bridge
 
+/**
+ * ConcreteImplementor Implementorクラスを拡張したクラス
+ */
 class BigIcon(iconType: AbstIcon.IconType): ImpIcon {
 
     private val iconType = iconType
