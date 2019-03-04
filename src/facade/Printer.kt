@@ -1,5 +1,8 @@
 package facade
 
+/**
+ * Facade クライアントがサブシステムを利用するにあたって必要最低限のインターフェースを定義するクラス
+ */
 class Printer {
     fun startUp() { print("起動") }
     fun shutDown() { print("終了") }
