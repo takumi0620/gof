@@ -1,5 +1,8 @@
 package composite
 
+/**
+ * Composite 根または節
+ */
 class Directory(private val name: String): AbstractDirectory() {
 
     override fun getType(): Element.ElementType {

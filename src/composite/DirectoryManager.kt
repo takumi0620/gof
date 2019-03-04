@@ -1,5 +1,8 @@
 package composite
 
+/**
+ * Client 使用者
+ */
 class DirectoryManager {
     init {
         // ルートフォルダ
