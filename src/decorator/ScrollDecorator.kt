@@ -1,5 +1,8 @@
 package decorator
 
+/**
+ * ConcreteDecorator Decoratorクラスの具象クラス
+ */
 class ScrollDecorator(viewComponent: ViewComponent): ViewComponent {
     val viewComponent = viewComponent
 

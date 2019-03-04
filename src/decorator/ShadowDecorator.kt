@@ -1,5 +1,8 @@
 package decorator
 
+/**
+ * ConcreteDecorator Decoratorクラスの具象クラス
+ */
 class ShadowDecorator(viewComponent: ViewComponent): ViewComponent {
     val viewComponent = viewComponent
 
