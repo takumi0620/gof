@@ -10,8 +10,8 @@ class Client {
         }
     }
 
-    private fun getProxyImageList(): ArrayList<ImageProxy> {
-        val proxyImageList = ArrayList<ImageProxy>()
+    private fun getProxyImageList(): ArrayList<Subject> {
+        val proxyImageList = ArrayList<Subject>()
         proxyImageList.add(ImageProxy("./image/りんご.png"))
         proxyImageList.add(ImageProxy("./image/みかん.png"))
         proxyImageList.add(ImageProxy("./image/もも.png"))
@@ -22,8 +22,8 @@ class Client {
         return proxyImageList
     }
 
-    private fun getNonProxyImageList(): ArrayList<Image> {
-        val imageList = ArrayList<Image>()
+    private fun getNonProxyImageList(): ArrayList<Subject> {
+        val imageList = ArrayList<Subject>()
         imageList.add(Image("./image/りんご.png"))
         imageList.add(Image("./image/みかん.png"))
         imageList.add(Image("./image/もも.png"))

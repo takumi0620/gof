@@ -1,5 +1,8 @@
 package flyweight
 
+/**
+ * FlyweightFactory Flyweightクラスを生成するクラス
+ */
 // シングルトンオブジェクトにする
 object CharacterFactory {
 

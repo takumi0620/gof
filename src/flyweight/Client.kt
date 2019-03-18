@@ -1,5 +1,8 @@
 package flyweight
 
+/**
+ * Client 使用者
+ */
 class Client {
     init {
         val characters = ArrayList<Character>()

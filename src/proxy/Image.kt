@@ -1,12 +1,15 @@
 package proxy
 
-class Image(private val filePath: String) {
+/**
+ * RealSubject 本物クラス
+ */
+class Image(private val filePath: String): Subject {
 
     init {
         loadImage(filePath)
     }
 
-    fun draw() {
+    override fun draw() {
         println("${filePath}を描画")
     }
 

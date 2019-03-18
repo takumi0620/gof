@@ -1,9 +1,12 @@
 package proxy
 
-class ImageProxy(private val filePath: String) {
+/**
+ * Proxy 影武者クラス
+ */
+class ImageProxy(private val filePath: String): Subject {
     var image: Image? = null
 
-    fun draw() {
+    override fun draw() {
         image?.let { unwrapImage ->
             unwrapImage.draw()
         } ?: run {
