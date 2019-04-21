@@ -1,5 +1,8 @@
 package chainofresponsibility
 
+/**
+ * Client 使用者
+ */
 class Client {
     init {
         // ウインドウ

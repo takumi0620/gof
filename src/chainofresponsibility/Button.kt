@@ -1,5 +1,8 @@
 package chainofresponsibility
 
+/**
+ * ConcreteHandler Handlerの具象クラス
+ */
 class Button(parent: View?, messageType: View.MessageType): View(parent, messageType) {
 
     fun action(arg: Int) {

@@ -7,13 +7,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17781139-3b80-449e-98c2-a162a0bf82e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/proxy/Subject.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/iterator/Client.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/iterator/ConcreteIterator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/iterator/Iterator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/iterator/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flyweight/CharacterFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/flyweight/CharacterFactory.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flyweight/Charcter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/flyweight/Charcter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flyweight/Client.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/flyweight/Client.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/proxy/Image.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/Image.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/proxy/ImageProxy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/ImageProxy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/META-INF/GoF.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/META-INF/GoF.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/bridge/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/Button.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/Button.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/Dialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/Dialog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/View$MessageType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/View$MessageType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/Window.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/command/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/command/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/facade/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/facade/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/flyweight/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/flyweight/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/proxy/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/proxy/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chainofresponsibility/Button.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/chainofresponsibility/Button.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chainofresponsibility/Client.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/chainofresponsibility/Client.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chainofresponsibility/Dialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/chainofresponsibility/Dialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chainofresponsibility/View.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/chainofresponsibility/View.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chainofresponsibility/Window.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/chainofresponsibility/Window.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,20 +43,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/proxy/ImageProxy.kt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iterator/Iterator.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="143">
+              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/proxy/Image.kt">
+        <entry file="file://$PROJECT_DIR$/src/iterator/ConcreteIterator.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="238">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/iterator/Client.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iterator/Main.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -81,12 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/abstractfactory/Tire.kt" />
-        <option value="$PROJECT_DIR$/src/abstractfactory/SuperCarFactory.kt" />
-        <option value="$PROJECT_DIR$/src/abstractfactory/HiGripTire.kt" />
-        <option value="$PROJECT_DIR$/src/abstractfactory/HiPerformanceEngine.kt" />
-        <option value="$PROJECT_DIR$/src/abstractfactory/Main.kt" />
-        <option value="$PROJECT_DIR$/src/abstractfactory/AutomobileDealer.kt" />
         <option value="$PROJECT_DIR$/src/abstractfactory/Maker.kt" />
         <option value="$PROJECT_DIR$/src/builder/Builder.kt" />
         <option value="$PROJECT_DIR$/src/builder/MovieTheaterBuilder.kt" />
@@ -132,6 +160,12 @@
         <option value="$PROJECT_DIR$/src/proxy/Subject.kt" />
         <option value="$PROJECT_DIR$/src/proxy/Image.kt" />
         <option value="$PROJECT_DIR$/src/proxy/ImageProxy.kt" />
+        <option value="$PROJECT_DIR$/src/proxy/Client.kt" />
+        <option value="$PROJECT_DIR$/src/chainofresponsibility/View.kt" />
+        <option value="$PROJECT_DIR$/src/iterator/Iterator.kt" />
+        <option value="$PROJECT_DIR$/src/iterator/Client.kt" />
+        <option value="$PROJECT_DIR$/src/iterator/Main.kt" />
+        <option value="$PROJECT_DIR$/src/iterator/ConcreteIterator.kt" />
       </list>
     </option>
   </component>
@@ -146,7 +180,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,36 +196,19 @@
               <item name="gof" type="b2602c69:ProjectViewProjectNode" />
               <item name="gof" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="decorator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="facade" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="flyweight" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="proxy" type="462c0819:PsiDirectoryNode" />
+              <item name="iterator" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="main&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/Main.kt&#10;Main&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/Main.kt&#10;compo&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ComponentManager.kt&#10;sc&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ScrollDecorator.kt&#10;shadow&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ShadowDecorator.kt&#10;soccer&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/factorymethod/SoccerFederation.kt&#10;Hiper&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/HiPerformanceEngine.kt&#10; {&#9;null&#9;null&#10;Car&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/CarFactory.kt&#10;Engine&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/Engine.kt&#10;engine&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552914988137" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555694977857" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -220,7 +236,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.proxy.MainKt">
+  <component name="RunManager" selected="Kotlin.iterator.MainKt">
     <configuration name="abstractfactory.VehicleFactoryKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="GoF" />
       <option name="VM_PARAMETERS" />
@@ -234,14 +250,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="proxy.MainKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="iterator.MainKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="GoF" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="proxy.MainKt" />
+      <option name="MAIN_CLASS_NAME" value="iterator.MainKt" />
       <option name="WORKING_DIRECTORY" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -249,11 +265,11 @@
     </configuration>
     <list>
       <item itemvalue="Kotlin.abstractfactory.VehicleFactoryKt" />
-      <item itemvalue="Kotlin.proxy.MainKt" />
+      <item itemvalue="Kotlin.iterator.MainKt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.proxy.MainKt" />
+        <item itemvalue="Kotlin.iterator.MainKt" />
         <item itemvalue="Kotlin.abstractfactory.VehicleFactoryKt" />
       </list>
     </recent_temporary>
@@ -282,7 +298,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1488" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="1" />
@@ -290,15 +305,15 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" sideWeight="0.50089765" side_tool="true" weight="0.27238807" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.49910232" visible="true" weight="0.24369748" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.49910232" visible="true" weight="0.24719888" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297587" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35924932" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35924932" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2855228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299566" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.24128686" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.24128686" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3297587" />
@@ -314,72 +329,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/builder/Floor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/builder/ArtMuseumBuilder.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/builder/MuseumBuilder.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/builder/MovieTheaterBuilder.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/builder/Builder.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/factorymethod/ProfessionalBaseBallAthlete.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/factorymethod/ProfessionalAthlete.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/factorymethod/Organizer.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/factorymethod/Main.kt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/factorymethod/BaseBallFederation.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/factorymethod/ProfessionalSoccerAthlete.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -621,13 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/proxy/Subject.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/flyweight/Client.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -649,17 +591,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/proxy/Image.kt">
+    <entry file="file://$PROJECT_DIR$/src/proxy/Client.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="328">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/proxy/Main.kt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/proxy/ImageProxy.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proxy/Image.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="5" selection-start-line="5" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proxy/Subject.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chainofresponsibility/View.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/abstractfactory/AutomobileDealer.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/Receiver.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iterator/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iterator/Iterator.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iterator/ConcreteIterator.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iterator/Client.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
         </state>
       </provider>
     </entry>

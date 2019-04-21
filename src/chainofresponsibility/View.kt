@@ -1,5 +1,8 @@
 package chainofresponsibility
 
+/**
+ * Handler 親子クラスの抽象クラス
+ */
 abstract class View(private val parent: View?, private val messageType: MessageType) {
     enum class MessageType {
         Normal,
