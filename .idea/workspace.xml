@@ -1,763 +1,272 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeSettings">
-    <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
-    </configurations>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="17781139-3b80-449e-98c2-a162a0bf82e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/templatemethod/Client.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templatemethod/DoubleBubbleSort.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templatemethod/IntBubbleSort.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templatemethod/Main.kt" afterDir="false" />
+    <list default="true" id="268a983f-c85d-440c-98a3-1bb19ab6f211" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GoF/META-INF/GoF.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/META-INF/GoF.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GoF/strategy/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/strategy/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoF.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GoF.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/META-INF/GoF.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/AutomobileDealer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Car.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/CarFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Engine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/HiGripTire.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/HiPerformanceEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Maker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Steering.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/SuperCarFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/abstractfactory/Tire.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/AbstBlackAndWhiteIcon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/AbstClearIcon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/AbstColorIcon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/AbstIcon$IconType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/AbstIcon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/BigIcon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/ImpIcon$IconSize.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/ImpIcon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/MiddleIcon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/bridge/SmallIcon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/ArtMuseumBuilder$addFloor$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/ArtMuseumBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/Builder$ProductType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/Creator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/Floor$addRoom$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/Floor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/MovieTheaterBuilder$addFloor$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/MovieTheaterBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/MuseumBuilder$addFloor$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/MuseumBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/builder/Room.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/Button.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/Dialog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/View$MessageType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/View$WhenMappings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/View.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/chainofresponsibility/Window.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/command/Car.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/command/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/command/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/command/MacroCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/command/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/command/Receiver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/command/SimpleCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/composite/AbstractDirectory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/composite/Directory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/composite/DirectoryManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/composite/Element$ElementType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/composite/Element.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/composite/File.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/composite/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/decorator/ComponentManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/decorator/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/decorator/ScrollDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/decorator/ShadowDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/decorator/TextView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/decorator/ViewComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/facade/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/facade/FacadePrinter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/facade/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/facade/Printer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/BaseBallFederation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/Organizer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/ProfessionalAthlete$Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/ProfessionalAthlete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/ProfessionalBaseBallAthlete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/ProfessionalSoccerAthlete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/SoccerFederation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/factorymethod/SportsFederation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/flyweight/Character.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/flyweight/CharacterFactory$AllCharacter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/flyweight/CharacterFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/flyweight/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/flyweight/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/CalcExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/Context.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/DivideExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/Expression$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/Expression$Operator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/Expression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/MinusNonterminalExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/MultiplicationExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/PlusNonterminalExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/TerminalExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example1/AndExp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example1/BooleanExp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example1/Constant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example1/Context.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example1/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example1/NotExp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example1/OrExp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example1/VariableExp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example2/Expression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example2/Ingredient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example2/Operand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example2/Operator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example2/Plus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example2/Wait.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example3/AbstractExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example3/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example3/Context.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example3/NonterminalExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/interpreter/example3/TerminalExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/iterator/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/iterator/ConcreteIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/iterator/Iterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/iterator/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/mediator/Button.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/mediator/CheckBox$Sex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/mediator/CheckBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/mediator/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/mediator/Colleague$Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/mediator/Colleague.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/mediator/ConcreteMediator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/mediator/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/mediator/Mediator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/mediator/TextBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/memento/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/memento/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/memento/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/memento/MemoryCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/memento/SaveData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/observer/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/observer/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/observer/PlayStore$UpdateListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/observer/PlayStore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/observer/RaidenSmartPhone$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/observer/RaidenSmartPhone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/observer/SnakeSmartPhone$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/observer/SnakeSmartPhone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/prototype/Car.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/prototype/Engine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/prototype/Factory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/prototype/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/prototype/ProtoType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/prototype/ProtoTypeFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/prototype/Tire.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/proxy/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/proxy/Image.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/proxy/ImageProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/proxy/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/proxy/Subject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/singleton/DisplayOne.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/singleton/DisplayTwo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/singleton/JavaSingletonObject$Assets.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/singleton/JavaSingletonObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/singleton/KotlinSingletonObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/singleton/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/singleton/Manager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/strategy/BubbleSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/strategy/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/strategy/DoubleSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/strategy/IntSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/strategy/MainKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/strategy/ShakerSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/strategy/Sort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/templatemethod/BubbleSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/templatemethod/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/templatemethod/DoubleBubbleSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/templatemethod/IntBubbleSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GoF/templatemethod/MainKt.class" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="gof" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templatemethod/IntBubbleSort.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="5" lean-forward="true" selection-end-line="22" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templatemethod/DoubleBubbleSort.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templatemethod/BubbleSort.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" lean-forward="true" selection-end-line="21" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/templatemethod/Client.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="22" column="44" lean-forward="true" selection-end-line="28" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templatemethod/Main.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="18" selection-start-column="18" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Kotlin Interface" />
-        <option value="Class" />
-        <option value="Kotlin Script" />
-        <option value="Kotlin File" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>enum</find>
-      <find>interface</find>
-      <find>clone</find>
-      <find>&quot;</find>
-      <find>\n</find>
-      <find>%</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-      <replace>'</replace>
-      <replace>+</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>C:\Users\web\Documents\myapp\gof\src</dir>
-    </dirStrings>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/decorator/ViewComponent.kt" />
-        <option value="$PROJECT_DIR$/src/decorator/ScrollDecorator.kt" />
-        <option value="$PROJECT_DIR$/src/decorator/ShadowDecorator.kt" />
-        <option value="$PROJECT_DIR$/src/decorator/TextView.kt" />
-        <option value="$PROJECT_DIR$/src/facade/FacadePrinter.kt" />
-        <option value="$PROJECT_DIR$/src/facade/Printer.kt" />
-        <option value="$PROJECT_DIR$/src/flyweight/Charcter.kt" />
-        <option value="$PROJECT_DIR$/src/flyweight/CharacterFactory.kt" />
-        <option value="$PROJECT_DIR$/src/flyweight/Client.kt" />
-        <option value="$PROJECT_DIR$/src/proxy/Subject.kt" />
-        <option value="$PROJECT_DIR$/src/proxy/Image.kt" />
-        <option value="$PROJECT_DIR$/src/proxy/ImageProxy.kt" />
-        <option value="$PROJECT_DIR$/src/proxy/Client.kt" />
-        <option value="$PROJECT_DIR$/src/chainofresponsibility/View.kt" />
-        <option value="$PROJECT_DIR$/src/iterator/Iterator.kt" />
-        <option value="$PROJECT_DIR$/src/iterator/Client.kt" />
-        <option value="$PROJECT_DIR$/src/iterator/Main.kt" />
-        <option value="$PROJECT_DIR$/src/iterator/ConcreteIterator.kt" />
-        <option value="$PROJECT_DIR$/src/mediator/Colleague.kt" />
-        <option value="$PROJECT_DIR$/src/mediator/Button.kt" />
-        <option value="$PROJECT_DIR$/src/mediator/TextBox.kt" />
-        <option value="$PROJECT_DIR$/src/mediator/ConcreteMediator.kt" />
-        <option value="$PROJECT_DIR$/src/mediator/Mediator.kt" />
-        <option value="$PROJECT_DIR$/src/mediator/Main.kt" />
-        <option value="$PROJECT_DIR$/src/mediator/Client.kt" />
-        <option value="$PROJECT_DIR$/src/mediator/CheckBox.kt" />
-        <option value="$PROJECT_DIR$/src/memento/MemoryCard.kt" />
-        <option value="$PROJECT_DIR$/src/memento/Main.kt" />
-        <option value="$PROJECT_DIR$/src/memento/SaveData.kt" />
-        <option value="$PROJECT_DIR$/src/memento/Game.kt" />
-        <option value="$PROJECT_DIR$/src/memento/Client.kt" />
-        <option value="$PROJECT_DIR$/src/observer/Subject.kt" />
-        <option value="$PROJECT_DIR$/src/observer/Client.kt" />
-        <option value="$PROJECT_DIR$/src/observer/Main.kt" />
-        <option value="$PROJECT_DIR$/src/observer/PlayStore.kt" />
-        <option value="$PROJECT_DIR$/src/observer/RaidenSmartPhone.kt" />
-        <option value="$PROJECT_DIR$/src/observer/SnakeSmartPhone.kt" />
-        <option value="$PROJECT_DIR$/src/strategy/Sort.kt" />
-        <option value="$PROJECT_DIR$/src/strategy/IntSort.kt" />
-        <option value="$PROJECT_DIR$/src/strategy/BubbleSort.kt" />
-        <option value="$PROJECT_DIR$/src/strategy/ShakerSort.kt" />
-        <option value="$PROJECT_DIR$/src/strategy/Main.kt" />
-        <option value="$PROJECT_DIR$/src/strategy/DoubleSort.kt" />
-        <option value="$PROJECT_DIR$/src/strategy/Client.kt" />
-        <option value="$PROJECT_DIR$/src/templatemethod/BubbleSorter.kt" />
-        <option value="$PROJECT_DIR$/src/templatemethod/IntBubbleSorter.kt" />
-        <option value="$PROJECT_DIR$/src/templatemethod/DoubleBubbleSorter.kt" />
-        <option value="$PROJECT_DIR$/src/templatemethod/Main.kt" />
-        <option value="$PROJECT_DIR$/src/templatemethod/IntBubbleSort.kt" />
-        <option value="$PROJECT_DIR$/src/templatemethod/BubbleSort.kt" />
-        <option value="$PROJECT_DIR$/src/templatemethod/Client.kt" />
-      </list>
-    </option>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="22" />
-    <option name="width" value="1680" />
-    <option name="height" value="959" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="gof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gof" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gof" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="templatemethod" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
+  <component name="ProjectId" id="1UIaDTz3Hsyhze65Xos5jELVMcC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="main&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/Main.kt&#10;Main&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/Main.kt&#10;compo&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ComponentManager.kt&#10;sc&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ScrollDecorator.kt&#10;shadow&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/decorator/ShadowDecorator.kt&#10;soccer&#9;FILE&#9;file://C:/Users/web/Documents/myapp/gof/src/factorymethod/SoccerFederation.kt&#10;Hiper&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/HiPerformanceEngine.kt&#10; {&#9;null&#9;null&#10;Car&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/CarFactory.kt&#10;Engine&#9;FILE&#9;file://C:/Users/web/Documents/myapp/GoF/src/abstractfactory/Engine.kt&#10;engine&#9;null&#9;null" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566387180433" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../agile_software_develop_secrets" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="interpreter" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\web\Documents\myapp\gof\src\interpreter\example1" />
-      <recent name="C:\Users\web\Documents\myapp\GoF\src\abstractfactory" />
-      <recent name="C:\Users\web\Documents\myapp\GoF\src\abstractfactory\after" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Kotlin.templatemethod.MainKt">
-    <configuration name="abstractfactory.VehicleFactoryKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <module name="GoF" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="abstractfactory.VehicleFactoryKt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="templatemethod.MainKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <module name="GoF" />
+  <component name="RunManager">
+    <configuration name="Unnamed" type="JetRunConfigurationType" factoryName="Kotlin" nameIsGenerated="true">
+      <module name="gof" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="templatemethod.MainKt" />
+      <option name="MAIN_CLASS_NAME" value="prototype.MainKt" />
       <option name="WORKING_DIRECTORY" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Kotlin.abstractfactory.VehicleFactoryKt" />
-      <item itemvalue="Kotlin.templatemethod.MainKt" />
-    </list>
-    <recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <item itemvalue="Kotlin.templatemethod.MainKt" />
-        <item itemvalue="Kotlin.abstractfactory.VehicleFactoryKt" />
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
-    </recent_temporary>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="17781139-3b80-449e-98c2-a162a0bf82e6" name="Default Changelist" comment="" />
-      <created>1536460401839</created>
+      <changelist id="268a983f-c85d-440c-98a3-1bb19ab6f211" name="Default Changelist" comment="" />
+      <created>1575046443533</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1536460401839</updated>
+      <updated>1575046443533</updated>
     </task>
     <servers />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <layout>
-      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="1" />
-      <window_info id="Designer" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="Favorites" order="5" sideWeight="0.50089765" side_tool="true" weight="0.27238807" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49910232" visible="true" weight="0.24362417" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3297587" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35924932" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.44101876" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3299566" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.24128686" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3297587" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
-      <window_info anchor="right" id="Maven" order="8" />
-    </layout>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/decorator/ShadowDecorator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/decorator/ViewComponent.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/decorator/ComponentManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/decorator/ScrollDecorator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/flyweight/Client.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/flyweight/CharacterFactory.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/flyweight/Charcter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/proxy/Client.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/proxy/ImageProxy.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/proxy/Image.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="5" selection-start-line="5" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/proxy/Subject.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chainofresponsibility/View.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/abstractfactory/AutomobileDealer.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/Receiver.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/iterator/Iterator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/iterator/ConcreteIterator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/iterator/Client.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/iterator/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mediator/Client.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mediator/ConcreteMediator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="36" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mediator/CheckBox.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="18" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mediator/TextBox.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="38" lean-forward="true" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mediator/Button.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" lean-forward="true" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mediator/Colleague.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mediator/Mediator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mediator/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/memento/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/memento/Client.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="26" column="39" lean-forward="true" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/memento/Game.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/memento/MemoryCard.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="53" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/memento/SaveData.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/observer/Subject.kt" />
-    <entry file="file://$PROJECT_DIR$/src/observer/RaidenSmartPhone.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/observer/SnakeSmartPhone.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/observer/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/observer/Client.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/observer/PlayStore.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/proxy/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy/Sort.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy/IntSort.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy/Client.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy/ShakerSort.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy/BubbleSort.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy/DoubleSort.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templatemethod/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templatemethod/BubbleSort.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templatemethod/IntBubbleSort.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="5" lean-forward="true" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templatemethod/DoubleBubbleSort.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templatemethod/Client.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="22" column="44" lean-forward="true" selection-end-line="28" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>GoF</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>KotlinJavaRuntime</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="WindowStateProjectService">
+    <state x="304" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575046770146">
+      <screen x="0" y="23" width="1680" height="962" />
+    </state>
+    <state x="304" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.962@0.23.1680.962" timestamp="1575046770146" />
+    <state x="577" y="295" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1575046768341">
+      <screen x="0" y="23" width="1680" height="962" />
+    </state>
+    <state x="577" y="295" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.1680.962@0.23.1680.962" timestamp="1575046768341" />
+    <state x="341" y="143" key="SettingsEditor" timestamp="1575046701621">
+      <screen x="0" y="23" width="1680" height="962" />
+    </state>
+    <state x="341" y="143" key="SettingsEditor/0.23.1680.962@0.23.1680.962" timestamp="1575046701621" />
+    <state x="505" y="244" width="670" height="676" key="search.everywhere.popup" timestamp="1575046569627">
+      <screen x="0" y="23" width="1680" height="962" />
+    </state>
+    <state x="505" y="244" width="670" height="676" key="search.everywhere.popup/0.23.1680.962@0.23.1680.962" timestamp="1575046569627" />
   </component>
 </project>

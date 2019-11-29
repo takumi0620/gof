@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GoF.iml" filepath="$PROJECT_DIR$/GoF.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gof.iml" filepath="$PROJECT_DIR$/gof.iml" />
     </modules>
   </component>
 </project>
