@@ -1,0 +1,653 @@
+<html>
+<head>
+<title>VISITOR</title>
+<meta http-equiv="Content-Type" content="text/html; charset=x-sjis">
+</head>
+<body bgcolor=#ffffff text=#000000>
+
+<font size="3">
+
+<img src="img/title/vis.gif" hspace="10" vspace="10">
+
+<br><br><br>
+<a name="moku">
+<img src="img/00/moku.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　あるオブジェクト構造上の要素で実行されるオペレーションを表現する。Visitor パターンにより、オペレーションを加えるオブジェクトのクラスに変更を加えずに、新しいオペレーションを定義することができるようになる。
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="douki">
+<img src="img/00/douki.gif "hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　アブストラクト・シンタックスツリーとしてプログラムを表現するコンパイラを考える。このコンパイラでは、すべての変数が定義されていることをチェックするような“静的なセマンティック”分析を行うために、アブストラクト・シンタックスツリー上のオペレーションを実行する必要がある。また、このコンパイラではコードを生成する必要もある。したがって、型チェック、コードの最適化、制御フロー分析、事前に値を割り当てられている変数のチェック、などのためのオペレーションを定義することになるだろう。また、アブストラクト・シンタックスツリーを、さらに、きれいな印刷、プログラムの再構築、補助コードの埋め込み、プログラムのさまざまなメトリクスの計算、などのために使うこともできる。
+
+<br><font style="text-indent:10pt">
+
+　これらのオペレーションのほとんどは、変数あるいは算術表記を表現するノードとは別に、代入文を表現するノードを扱う必要がある。このことから、代入文のためのクラス、変数アクセスのためのクラス、算術表記のためのクラスなどが存在することになる。もちろん、ノードのクラスの集合はコンパイルされる言語によるが、言語によりそれほど大きく変わるわけではない。
+
+<br><br><br><p align="center">
+<img src="img/pics/visit006.gif"></p>
+<br><br><br>
+
+このダイアグラムは、Node クラスの階層の一部を示している。ここでの問題は、数多くのノードのクラスにわたってこれらのオペレーションを分散させることが、システムを理解しにくく、保守しにくく、変更しにくくしてしまうということである。型チェックのためのコードを、きれいな印刷のためのコードや制御フロー分析のためのコードと一緒にしてしまうと、混乱が生じることになる。また、新しいオペレーションを追加すると、たいていこれらのクラスをすべて再コンパイルする必要が出てくる。もし、新しいオペレーションをクラスとは別に追加することができ、また、ノードのクラスが適用されるオペレーションから独立しているならば、問題は改善されるだろう。
+
+<br><font style="text-indent:10pt">
+
+　そこで、関連するオペレーションを各クラスから取り出して別のオブジェクト（visitor と呼ばれる）にまとめ、アブストラクト・シンタックスツリーを走査するときにその要素にこのオブジェクトを渡す、というアプローチをとることができる。要素が visitor を受け入れるときには、要素は、自分のクラス名をコード化した要求をその visitor に対して送る。その際、この要求には引数としてその要素自身が含まれる。すると visitor は、その要素のためにオペレーション（元は、その要素のクラスにあったオペレーション）を実行する。
+
+<br><font style="text-indent:10pt">
+
+　たとえば、visitor を利用しないコンパイラでは、アブストラクト・シンタックスツリー上で TypeCheck オペレーションを呼び出すことにより、1つの手続きの型チェックを行うだろう。そして、このツリー上の各ノードでは、その構成要素に対してさらに TypeCheck オペレーションを呼び出すように TypeCheck オペレーションを実装するだろう（前述のクラスダイアグラムを参照）。もし、このコンパイラが visitor を使って手続きの型チェックを行うのであれば、このコンパイラは TypeCheckingVisitor オブジェクトを生成し、このオブジェクトを引数として与え、アブストラクト・シンタックスツリー上の Accept オペレーションを呼び出すだろう。各ノードでは、Accept オペレーションは visitor に呼び出しをかけるように実装されている。たとえば、AssignmentNode オブジェクトは visitor の VisitAssignment オペレーションを呼び出し、VariableRefNode オブジェクトは VisitVariableReference オペレーションを呼び出す。元は AssignmentNode クラスにあった TypeCheck オペレーションが、TypeCheckingVisitor クラスの VisitAssignment オペレーションになっている。
+
+<br><font style="text-indent:10pt">
+
+　visitor に型チェックだけでなく別の処理をさせるためには、アブストラクト・シンタックスツリーのすべての visitor に対して、親クラスとなる抽象クラス NodeVisitor が必要になる。NodeVisitor クラスでは、ノードの各クラスに対してオペレーションを宣言することになる。プログラムのメトリクスを計算する必要があるアプリケーションでは、NodeVisitor クラスの新しいサブクラスを定義すればよく、ノードのクラスに対してアプリケーション特有のコードを追加する必要はなくなる。Visitor パターンでは、コンパイルの各フェーズで必要になるオペレーションをそのフェーズに関連する Visitor クラスにカプセル化する。
+
+<br><br><br><p align="center">
+<img src="img/pics/visit005.gif"></p>
+<br><br><br>
+<p align="center">
+<img src="img/pics/visit004.gif"></p>
+<br><br><br>
+
+<font style="text-indent:10pt">
+
+　Visitor パターンでは、2つのクラス階層を定義する。1つはオペレーションを加えられる要素のためのクラス階層（Node クラス階層）であり、もう1つは要素のオペレーションを定義する visitor のためのクラス階層（NodeVisitor クラス階層）である。visitor のクラス階層に新しいサブクラスを追加することにより、新しいオペレーションを生成する。コンパイラが認めている文法が変わらない（つまり、Node に新しいサブクラスを追加する必要がない）限り、単に NodeVisitor に新しいサブクラスを定義することで、新しい機能を追加することができる。
+
+</font></font></font></font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="teki">
+<img src="img/00/teki.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Visitor パターンは次のような場合に使用する。
+
+<br><br>
+
+<ul><li>オブジェクト構造にインタフェースが異なる多くのクラスのオブジェクトが存在し、これらのオブジェクトに対して、各クラスで別々に定義されているオペレーションを実行したい場合。
+
+<br><br>
+
+<li>関連のない異なるオペレーションをオブジェクト構造の中のオブジェクトに対して実行する必要があり、さらに、これらのオペレーションをクラスに持たせることで、クラスを“汚くする”ことを避けたい場合。visitor を利用すれば関連するオペレーションを1つのクラスの中に定義するので、それらをまとめておくことができるようになる。オブジェクト構造が多くのアプリケーションで共有されるときには、オペレーションをそれらのアプリケーションで共通に使うことができるように Visitor パターンを使用する。
+
+<br><br>
+
+<li>オブジェクト構造を定義するクラスはほとんど変わらないが、その構造に新しいオペレーションを定義することがしばしば起こる場合。オブジェクト構造のクラスを変更する場合には、すべての visitor のインタフェースを再定義する必要があり、潜在的にコストは高くつく。もしオブジェクト構造のクラスを変更することがしばしばあるならば、それらのクラスにオペレーションを定義しておく方がよいだろう。</ul>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kouzou">
+<img src="img/00/kouzou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+<p align="center">
+<img src="img/pics/visitor.gif"></p>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kousei">
+<img src="img/00/kousei.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+<ul><li><b>Visitor クラス</b> （NodeVisitor クラス）
+<ul><li>オブジェクト構造内の各 ConcreteElement クラスのために、Visit オペレーションを宣言する。オペレーションの名前とシグニチャによって、Visit 要求を visitor に対して送ったクラスを識別する。これにより、操作対象となる要素がどの具象クラスのオブジェクトなのかを、visitor がはっきり定めることができるようになる。そして、visitor は特定のインタフェースを通じて直接その要素にアクセスできるようになる。</ul>
+
+<br><br>
+
+<li><b>ConcreteVisitor クラス</b>  （TypeCheckingVisitor クラス）
+<ul><li>Visitor クラスで宣言された各オペレーションを実装する。各オペレーションは、オブジェクト構造内の対応するクラスに対して定義されたアルゴリズムを実装する。ConcreteVisitor クラスは、アルゴリズムに対してコンテキストオブジェクトを与え、そこでのローカルな状態を格納しておく。構造を走査していく過程で、状態に結果が蓄積されていくことがしばしばある。</ul>
+
+<br><br>
+
+<li><b>Element クラス</b>  （Node クラス）
+<ul><li>要素の抽象クラス。
+<li>引数として visitor をとる Accept オペレーションを定義する。</ul>
+
+<br><br>
+
+<li><b>ConcreteElement クラス</b>  （AssignmentNode クラス、VariableRefNode クラス）
+<ul><li>要素の具象クラス。
+<li>引数として visitor をとる Accept オペレーションを実装する。</ul>
+
+<br><br>
+
+<li><b>ObjectStructure クラス</b>  （Program クラス）
+<ul><li>要素を列挙することができる。
+<li>要素に対するオペレーションを visitor に任せるためのハイレベルなインタフェースを提供することもある。
+<li>composite（<a href="08.html" target="down">Composite パターン</a>を参照）かリストや集合のようなコレクションオブジェクトになるだろう。</ul></ul>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kyou">
+<img src="img/00/kyou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+<ul><li>Visitor パターンを利用するクライアントは、ConcreteVisitor オブジェクトを生成してから ObjectStructure オブジェクトを走査しなければならない。ObjectStructure オブジェクトは、ConcreteVisitor オブジェクトを使って各要素にオペレーションを加えていく。
+
+<br><br>
+
+<li>ある要素にオペレーションの順番がまわってきたときには、ConcreteVisitor オブジェクトに対して、この要素のクラスに対応するオペレーションを呼び出す。この要素はオペレーションの引数として自身を与え、もし必要ならば、ConcreteVisitor オブジェクトがその状態にアクセスできるようにする。
+
+<br><font style="text-indent:10pt">
+
+　次のインタラクションダイアグラムは、ObjectStructure オブジェクトと ConcreteVisitor オブジェクトと2つの ConcreteElement オブジェクトの間の協力関係を示している。
+
+<br><br><br><p align="center">
+<img src="img/pics/visit003.gif"></p>
+</ul>
+
+</font></font>
+
+
+
+
+
+<br><br><br>
+<a name="kekka">
+<img src="img/00/kekka.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Visitor パターンの利点と欠点のうち、いくつかを次に示す。
+
+<br><br>
+
+<ol><li><b>Visitor パターンは新しいオペレーションを簡単に追加できるようにする。</b>visitor は、複合オブジェクトの構成要素に関するオペレーションを追加することを容易にする。単に新しい visitor を追加することで、オブジェクト構造上に新しいオペレーションを定義することができる。これとは対照的に、多くのクラスに機能を分配する場合には、新しいオペレーションを定義するために各クラスを変更しなければならなくなる。
+
+<br><br>
+
+<li><b>visitor は、関連するオペレーションをまとめ、関連しないオペレーションは分離する。</b>関連する振る舞いを、オブジェクト構造を定義するクラス全体に広げず、1つの visitor に局所化する。関連しない振る舞いは、それぞれを別々の visitor にすることで分離する。これにより、要素を定義するクラスと visitor で定義されるアルゴリズムの両方を簡単なものにし、アルゴリズムに特有のどんなデータ構造も、visitor の中に隠ぺいすることができる。
+
+<br><br>
+
+<li><b>新しい ConcreteElement クラスを加えることは難しい。</b>Visitor パターンでは、Element の新しいサブクラスを加えることを難しくする。新しい ConcreteElement クラスを導入することにより、Visitor クラスでは新しい抽象化されたオペレーションを宣言し、各 ConcreteVisitor クラスではそれに対応する実装を行わなければならなくなる。デフォルトの実装を Visitor クラスで与えて、ほとんどの ConcreteVisitor クラスにこれを継承させることもときにはできるだろう。しかし、これは例外的な場合である。
+
+<br><font style="text-indent:10pt">
+
+　したがって、Visitor パターンを適用する際に主に考えるべきことは、オブジェクト構造に適用されるアルゴリズムを変更することになりそうなのか、それとも構造を構成しているオブジェクトのクラスを変更することになりそうなのか、という点である。新しい ConcreteElement クラスがひんぱんに追加されるときには、Visitor クラスの階層を保守することが難しくなる危険性がある。このような場合には、構造を構成しているクラスにオペレーションを定義すればおそらくより簡単になるだろう。もし、Element クラスの階層は安定しているのだが、絶えずオペレーションを追加し、アルゴリズムを変更するという場合は、Visitor パターンが変更の管理を容易にしてくれるだろう。
+
+<br><br>
+
+<li><b>操作対象が1つのクラスである必要はない。</b>iterator（<a href="16.html" target="down">Iterator パターン</a>を参照）は、構造内を走査しながらオブジェクトに対してオペレーションの呼び出しを行うことで、各オブジェクトにオペレーションを加えていく。しかし iterator は、異なる型の要素からなる構造に対してはその役目を果たすことはできない。たとえば、<a href="16.html" target="down">Iterator パターン</a>の「サンプルコード」の節で定義した Iterator クラスのインタフェースでは、Item 型のオブジェクトにしかアクセスできない。
+
+<br><br><pre>
+    template &lt;class Item>
+    class Iterator {
+        // ...
+        Item CurrentItem() const;
+    };
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　これは、iterator が操作対象とする要素はすべて、共通の親クラス Item を持っていなければならないことを意味している。
+
+<br><font style="text-indent:10pt">
+
+　しかし、visitor にはこの制限はない。visitor は共通の親クラスを持たないオブジェクトを操作対象にすることができる。Visitor クラスのインタフェースに対して、どんな型のオブジェクトも追加することができる。たとえば、次のようになる。
+
+<br><br><pre>
+    class Visitor {
+    public:
+        // ...
+        void VisitMyType(MyType*);
+        void VisitYourType(YourType*);
+    };
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　この例で、MyType と YourType は継承による関係を持つ必要はまったくない。
+
+<br><br>
+
+<li><b>状態を蓄積する。</b>visitor は、オブジェクト構造内の各要素にオペレーションを加えていく際、状態を蓄積することができる。visitor がなければ、この状態は走査を行うオペレーションに特別な引数として渡されるか、またはグローバル変数として現れることになるだろう。
+
+<br><br>
+
+<li><b>カプセル化を破る。</b>visitor によるアプローチでは、ConcreteElement クラスのインタフェースが、visitor が仕事を行うのに十分、強力であることを仮定している。その結果、このパターンでは要素の内部状態にアクセスする公開オペレーションを提供するように強いられることがしばしばある。したがって、カプセル化に対して妥協を与えることになるかもしれない。</ol>
+
+</font></font></font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="jissou">
+<img src="img/00/jissou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　各オブジェクト構造には、それに関連する Visitor クラスを持たせることができる。この抽象クラスでは、オブジェクト構造を定義する各 ConcreteElement クラスに対して、VisitConcreteElement オペレーションが宣言される。Visitor クラスの各オペレーションは、特定の ConcreteElement オブジェクトを引数として受け取り、Vistor クラスが ConcreteElement クラスのインタフェースを直接アクセスできるようにする。ConcreteVisitor クラスでは、ConcreteElement クラスに対してその visitor に特有の振る舞いを実装して、Visitor クラスの各オペレーションをオーバーライドする。
+
+<br><font style="text-indent:10pt">
+
+　Visitor クラスは、C++では次のように宣言される。
+
+<br><br><pre>
+    class Visitor {
+    public:
+        virtual void VisitElementA(ElementA*);
+        virtual void VisitElementB(ElementB*);
+    
+        // and so on for other concrete elements
+    protected:
+        Visitor();
+    };
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　各 ConcreteElement クラスは、自身のために作成された visitor 上のオペレーション Visit. . .  を呼び出す Accept オペレーションを実装する。このように、呼び出されることになるオペレーションは、要素のクラスと visitor のクラスの両方に依存している。
+
+<font style="text-indent:10pt">
+
+　ConcreteElement のクラスは、次のように宣言される。
+
+<br><br><pre>
+    class Element {
+    public:
+        virtual ~Element();
+        virtual void Accept(Visitor&amp;) = 0;
+    protected:
+        Element();
+    };
+    
+    class ElementA : public Element {
+    public:
+        ElementA();
+        virtual void Accept(Visitor&amp; v) { v.VisitElementA(this); }
+    };
+    
+    class ElementB : public Element {
+    public:
+        ElementB();
+        virtual void Accept(Visitor&amp; v) { v.VisitElementB(this); }
+    };
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　CompositeElement クラスは Accept オペレーションを次のように実装する。
+
+<br><br><pre>
+    class CompositeElement : public Element {
+    public:
+        virtual void Accept(Visitor&amp;);
+    private:
+        List&lt;Element*>* _children;
+    };
+    
+    void CompositeElement::Accept (Visitor&amp; v) {
+        ListIterator&lt;Element*> i(_children);
+    
+        for (i.First(); !i.IsDone(); i.Next()) {
+            i.CurrentItem()->Accept(v);
+        }
+        v.VisitCompositeElement(this);
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　ここで、Visitor パターンを適用するときに生じる実装上の問題を他に2つ示す。
+
+<br><br>
+
+<ol><li><b>ダブルディスパッチ。</b>Visitor パターンでは事実上、クラスを変更せずに、クラスに対してオペレーションを追加することができる。visitor は、ダブルディスパッチと呼ばれる技術を使ってこれを達成する。これはよく知られた技術である。事実、いくつかのプログラミング言語はこれを直接サポートしている（たとえば CLOS）。C++や Smalltalk のような言語はシングルディスパッチをサポートしている。
+
+<br><font style="text-indent:10pt">
+
+　シングルディスパッチ言語では、どのオペレーションが要求を満たすのかは2つの規準（要求の名前と受け手の型）により決められる。たとえば、GenerateCode 要求により呼び出されるオペレーションは、要求の送り先のノードのオブジェクトの型に依存している。C++では、VariableRefNode のインスタンスに対して GenerateCode オペレーションを呼び出すと、VariableRefNode::GenerateCode オペレーション（変数参照のためのコードを生成する）が呼び出される。AssignmentNode オブジェクトに対して GenerateCode オペレーションを呼び出すと、AssignmentNode::GenerateCode オペレーション（代入のためのコードを生成する）が呼び出される。すなわち、実行されるオペレーションは要求の種類と受け手の型の両方に依存する。
+
+<br><font style="text-indent:10pt">
+
+　“ダブルディスパッチ”とは、単に、実行されるオペレーションが要求の種類と2つの受け手の型に依存することを意味している。Accept オペレーションは、ダブルディスパッチオペレーションである。その意味は、2つの型（Visitor の型と Element の型）に依存するということである。ダブルディスパッチにより、visitor は要素のクラスごとに異なるオペレーションを要求することができるようになる。
+
+<br><font style="text-indent:10pt">
+
+　この点、すなわち、実行されるオペレーションが、Visitor の型と Element の型の両方に依存するということは、Visitor パターンにとって重要である。オペレーションを Element クラスのインタフェースに静的に結合する代わりに、1つの Visitor クラスにオペレーションを集めて、Element クラスとの結合を実行時に行うような Accept オペレーションを使うことができるようになる。Element クラスのインタフェースを拡張するには、Element の多くのサブクラスを新たに定義し直すよりも、Visitor クラスに新しいサブクラスを1つ定義することになる。
+
+<br><br>
+
+<li><b>オブジェクト構造を走査する責任をどのオブジェクトに持たせるのか。</b>visitor は、オブジェクト構造内の各要素に対してオペレーションを加えていかなければならない。問題は、どのようにして visitor がそれを実現するかである。この問題は、次にあげる3つのオブジェクト、すなわち ObjectStructure、visitor、iterator（<a href="16.html" target="down">Iterator パターン</a>を参照）のいずれかに走査の責任を与えることで解決できるだろう。
+
+<br><font style="text-indent:10pt">
+
+　ObjectStructure オブジェクトに、iteration の責任を持たせることがしばしばある。コレクションオブジェクトは、要素上で iteration を行い、各要素に対して Accept オペレーションを呼び出していく。composite では通常、Accept オペレーションで子オブジェクトを走査し、さらにそれぞれの子オブジェクトに対して再帰的に Accept オペレーションを呼び出すようにして、構造内の走査を行っている。
+
+<br><font style="text-indent:10pt">
+
+　もう1つの解決方法として、iterator を使うことが考えられる。C++では、何が手に入るのか、また何がもっとも効果的なのかにより、内部 iterator と外部 iterator を使い分けることができる。Smalltalk では通常、do: メソッドとブロックを使った内部 iterator を利用する。内部 iterator は ObjectStructure オブジェクトにより実装されるので、内部 iterator を使うことは、ObjectStructure オブジェクトに iteration の責任を持たせることにたいへん近い。主な違いは、内部 iterator はダブルディスパッチを起こさないということである（内部 iterator では、要素に対して引数として visitor を与えてオペレーションを呼び出すのではなく、逆に、visitor に対して引数として要素を与えてオペレーションを呼び出す）。しかし、もし visitor のオペレーションが再帰を行わずに、単に要素のオペレーションを呼び出すだけならば、内部 iterator とともに Visitor パターンを使うことは容易になる。
+
+<br><font style="text-indent:10pt">
+
+　visitor の中に走査のアルゴリズムを入れることもできる。しかし、各ConcreteVisitor クラスの中で、集約を実現している各 ConcreteElement クラスに対して、走査のためのコードを重ねて記述することになってしまう。visitor の中に走査のアルゴリズムを入れる主な理由は、特に複雑な走査、たとえばオブジェクト構造に対するオペレーションの結果を使うような走査を実装するためである。「サンプルコード」の節で、そのような場合の例を示す。</ol>
+
+</font></font></font></font></font></font></font></font></font></font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="sample">
+<img src="img/00/sample.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　visitor は通常 composite と関連があるので、Visitor パターンを説明するために、<a href="08.html" target="down">Composite パターン</a>の「サンプルコード」の節で定義した Equipment クラスを利用する。原料の在庫と1つの装置の値段を計算するオペレーションを定義するために、Visitor パターンを使う。Equipment クラスはとても簡単なので、実際には Visitor パターンを利用する必要はない。しかし、この例により、このパターンを実装するためにはどのようなことを考えなければならないのかを容易に理解することができる。
+
+<br><font style="text-indent:10pt">
+
+　ここで再び、<a href="08.html" target="down">Composite パターン</a>の Equipment クラスについて考える。まず、visitor とともに使うために Accept オペレーションを入れて拡張した。
+
+<br><br><pre>
+    class Equipment {
+    public:
+        virtual ~Equipment();
+    
+        const char* Name() { return _name; }
+    
+        virtual Watt Power();
+        virtual Currency NetPrice();
+        virtual Currency DiscountPrice();
+    
+        virtual void Accept(EquipmentVisitor&amp;);
+    protected:
+        Equipment(const char*);
+    private:
+        const char* _name;
+    };
+</pre><br><br>
+
+<br><font style="text-indent:10pt">
+
+　Equipment クラスのオペレーションは、消費電力と値段のような、1つの装置の属性を返す。サブクラスでは、装置の型（たとえば、シャーシ、ドライブ、工作機械）に応じて、適切にこのオペレーションを再定義する。
+
+<br><font style="text-indent:10pt">
+
+　すべての visitor に対する抽象クラスには、Equipment の各サブクラスのために、次に示すような仮想関数を持たせる。すべての仮想関数はデフォルトでは何もしない。
+
+<br><br><pre>
+    class EquipmentVisitor {
+    public:
+        virtual ~EquipmentVisitor();
+    
+        virtual void VisitFloppyDisk(FloppyDisk*);
+        virtual void VisitCard(Card*);
+        virtual void VisitChassis(Chassis*);
+        virtual void VisitBus(Bus*);
+    
+        // and so on for other concrete subclasses of Equipment
+    protected:
+        EquipmentVisitor();
+    };
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　Equipment のサブクラスは、Accept オペレーションを基本的に同じように定義する。つまりこのサブクラスは、次に示すように、EquipmentVisitor クラスで宣言された、Accept 要求を受け取ったクラスに対応するオペレーションを呼び出す。
+
+<br><br><pre>
+    void FloppyDisk::Accept (EquipmentVisitor&amp; visitor) {
+       visitor.VisitFloppyDisk(this);
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　他の装置を構成要素として持つ装置（特に、<a href="08.html" target="down">Composite パターン</a>の CompositeEquipment のサブクラス）では、子オブジェクト上で iteration を行い、各子オブジェクトに対してAcceptオペレーションを呼び出すように、Accept オペレーションを実装する。そして、各子オブジェクトは visitor に対して自身を引数に与えて Visit オペレーションを呼び出す。たとえば、Chassis::Accept オペレーションは、次に示すように Chassis オブジェクトの中のすべての部品を走査している。
+
+<br><br><pre>
+    void Chassis::Accept (EquipmentVisitor&amp; visitor) {
+        for (
+            ListIterator<Equipment*> i(_parts);
+            !i.IsDone();
+            i.Next()
+        ) {
+            i.CurrentItem()->Accept(visitor);
+        }
+        visitor.VisitChassis(this);
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　EquipmentVisitor のサブクラスでは、装置全体に対して特定のアルゴリズムを定義する。PricingVisitor クラスは、装置全体の価格を計算する。その際、基本装置（たとえば、フロッピー）に対しては正価を、合成装置（たとえば、シャーシやバス）に対しては割引価格を加算していく。
+
+<br><br><pre>
+    class PricingVisitor : public EquipmentVisitor {
+    public:
+        PricingVisitor();
+    
+        Currency&amp; GetTotalPrice();
+    
+        virtual void VisitFloppyDisk(FloppyDisk*);
+        virtual void VisitCard(Card*);
+        virtual void VisitChassis(Chassis*);
+        virtual void VisitBus(Bus*);
+        // ...
+    private:
+        Currency _total;
+    };
+    
+    void PricingVisitor::VisitFloppyDisk (FloppyDisk* e) {
+        _total += e->NetPrice();
+    }
+    
+    void PricingVisitor::VisitChassis (Chassis* e) {
+        _total += e->DiscountPrice();
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　PricingVisitor クラスは、装置を構成している基本装置や合成装置の価格の合計を計算する。ここで、PricingVisitor クラスが装置のクラスに対して適切な価格方針を選択して、その方針に該当するメンバ関数にディスパッチしていることに注意してほしい。さらに、PricingVisitor クラスを変更するだけで、装置全体に対する価格方針を変更することができる。
+
+<br><font style="text-indent:10pt">
+
+　在庫を計算する visitor は次のように定義することができる。
+
+<br><br><pre>
+    class InventoryVisitor : public EquipmentVisitor {
+    public:
+        InventoryVisitor();
+    
+        Inventory&amp; GetInventory();
+    
+        virtual void VisitFloppyDisk(FloppyDisk*);
+        virtual void VisitCard(Card*);
+        virtual void VisitChassis(Chassis*);
+        virtual void VisitBus(Bus*);
+        // ...
+    
+    private:
+        Inventory _inventory;
+    };
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　InventoryVisitor クラスは、装置の型ごとに在庫の総数を蓄えていく。InventoryVisitor クラスは、装置を追加するインタフェースを定義している Inventory クラス（ここでは、あえて定義しない）を利用する。
+
+<br><br><pre>
+    void InventoryVisitor::VisitFloppyDisk (FloppyDisk* e) {
+        _inventory.Accumulate(e);
+    }
+    
+    void InventoryVisitor::VisitChassis (Chassis* e) {
+        _inventory.Accumulate(e);
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　ここで、装置全体に対して InventoryVisitor オブジェクトをどのように利用できるかを示す。
+
+<br><br><pre>
+    Equipment* component;
+    InventoryVisitor visitor;
+    
+    component->Accept(visitor);
+    cout &lt;&lt; "Inventory "
+         &lt;&lt; component->Name()
+         &lt;&lt; visitor.GetInventory();
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　次に、<a href="15.html" target="down">Interpreter パターン</a>の「サンプルコード」の節の Smalltalk の例を、Visitor パターンを使って実装する方法を示す。前の例のように、この例もたいへん小さいので、Visitor パターンの良い点がおそらくあまり伝わらないであろう。ここでは、パターンを使う方法について説明する。また、iteration が visitor の責任で行われるという状況を説明する。
+
+<br><font style="text-indent:10pt">
+
+　オブジェクト構造（正規表現）は4つのクラスからなり、この4つのクラスのすべてが引数として visitor をとる accept: メソッドを持っている。SequenceExpression クラスでは、accept: メソッドは次の通りである。
+
+<br><br><pre>
+    accept: aVisitor
+         ^ aVisitor visitSequence: self
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　RepeatExpression クラスでは、accept: メソッドは visitRepeat: メッセージを送る。AlternationExpression クラスでは、このメソッドは visitAlternation: メッセージを送る。LiteralExpression クラスでは、このメソッドは visitLiteral: メッセージを送る。
+
+<br><font style="text-indent:10pt">
+
+　また、4つのクラスは、visitor が利用できるアクセスのための関数を持っている。SequenceExpression クラスでは、expression1 関数とexpression2 関数がこれにあたる。AlternationExpression クラスでは、alternative1 関数と alternative2 関数がこれにあたる。RepeatExpression クラスでは、repetition 関数がこれにあたる。LiteralExpression クラスでは、components 関数がこれにあたる。
+
+<br><font style="text-indent:10pt">
+
+　ConcreteVisitor クラスは、REMatchingVisitor クラスである。走査のアルゴリズムは不規則なので、このクラスに走査を行う責任がある。もっとも不規則なことは、RepeatExpression オブジェクトがその構成要素を繰り返し走査するということである。REMatchingVisitor クラスは、インスタンス変数 inputState を持っている。このクラスのメソッドは、<a href="15.html" target="down">Interpreter パターン</a>のクラスで定義された match: メソッドと本質的に同じである。ただしこのメソッドでは、マッチしたオブジェクトの代わりに inputState を引数としてとる。しかしこのメソッドは、その時点での状態を識別するために、表現に一致したストリームの集合も返すようにしている。
+
+<br><br><pre>
+    visitSequence: sequenceExp
+        inputState := sequenceExp expression1 accept: self.
+        ^ sequenceExp expression2 accept: self.
+    
+    visitRepeat: repeatExp
+        | finalState |
+        finalState := inputState copy.
+        [inputState isEmpty]
+            whileFalse:
+                [inputState := repeatExp repetition accept: self.
+                finalState addAll: inputState].
+        ^ finalState
+    
+    visitAlternation: alternateExp
+        | finalState originalState |
+        originalState := inputState.
+        finalState := alternateExp alternative1 accept: self.
+        inputState := originalState.
+        finalState addAll: (alternateExp alternative2 accept: self).
+        ^ finalState
+    
+    visitLiteral: literalExp
+        | finalState tStream |
+        finalState := Set new.
+        inputState
+            do:
+                [:stream | tStream := stream copy.
+                    (tStream nextAvailable:
+                        literalExp components size
+                    ) = literalExp components
+                        ifTrue: [finalState add: tStream]
+                ].
+        ^ finalState
+</pre>
+
+</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="siyou">
+<img src="img/00/siyou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Smalltalk-80のコンパイラは、ProgramNodeEnumerator クラスと呼ばれる Visitor クラスを持っている。このクラスは、主にソースコードを解析するアルゴリズムのために利用されている。しかし、コード生成やきれいな印刷のためには利用されていない（利用可能ではあるが）。
+
+<br><font style="text-indent:10pt">
+
+　IRIS Inventor［Str93］は、3-D グラフィックアプリケーションを開発するためのツールキットである。Inventor では、3次元のシーンをノードの階層として表現する。それぞれのノードは、幾何学的な図形オブジェクト、あるいはその属性のどちらかを表現している。シーンを描写したり入力イベントをマッピングするオペレーションは、それぞれ別の方法でこの階層を走査する必要がある。Inventor では、actions と呼ばれる visitor を使ってこれを行う。描写したり、イベントを処理したり、検索したり、ファイリングしたり、境界ボックスを決定したり、そういった機能に対してそれぞれ別々に visitor が存在する。
+
+<br><font style="text-indent:10pt">
+
+　新しいノードの追加をさらに容易にするために、Inventor はC++のためのダブルディスパッチスキーマを実装している。このスキーマは、実行時の型情報と、行が visitor で列がノードのクラスを表す2次元のテーブルに依っている。セルは、visitor とノードのクラスに対応する関数へのポインタを格納している。
+
+<br><font style="text-indent:10pt">
+
+　Mark Linton は、X コンソーシアムによる Fresco アプリケーションツールキットの仕様［LP93］の中で、Visitor という用語を新しく作った。
+
+</font></font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="kanren">
+<img src="img/00/kanren.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　<a href="08.html" target="down">Composite パターン</a>: Visitor パターンは、<a href="08.html" target="down">Composite パターン</a>で定義されるオブジェクト構造上にオペレーションを適用するために使うことができる。
+
+<br><font style="text-indent:10pt">
+
+　<a href="15.html" target="down">Interpreter パターン</a>: Visitor パターンを言語の解釈のために適用してもよい。
+
+</font></font>
+
+<br><br><br>
+
+</body>
+</html>

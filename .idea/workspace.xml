@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="268a983f-c85d-440c-98a3-1bb19ab6f211" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/state/Client.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/state/Context.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/state/LackState.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/state/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/state/State.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/state/SufficientState.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/state/VendingMachine.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/visitor/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GoF/META-INF/GoF.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GoF/META-INF/GoF.kotlin_module" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,14 +39,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin" />
   </component>
   <component name="RunManager">
-    <configuration name="state.MainKt" type="JetRunConfigurationType" factoryName="Kotlin" nameIsGenerated="true">
+    <configuration name="visitor.MainKt" type="JetRunConfigurationType" factoryName="Kotlin" nameIsGenerated="true">
       <module name="gof" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="state.MainKt" />
+      <option name="MAIN_CLASS_NAME" value="visitor.MainKt" />
       <option name="WORKING_DIRECTORY" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -86,10 +79,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="304" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575180755885">
+    <state x="304" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575192495392">
       <screen x="0" y="23" width="1680" height="962" />
     </state>
-    <state x="304" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.962@0.23.1680.962" timestamp="1575180755885" />
+    <state x="304" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.962@0.23.1680.962" timestamp="1575192495392" />
     <state x="622" y="227" key="#com.intellij.ide.util.MemberChooser" timestamp="1575184935912">
       <screen x="0" y="23" width="1680" height="962" />
     </state>
@@ -98,22 +91,22 @@
       <screen x="0" y="23" width="1680" height="962" />
     </state>
     <state x="577" y="295" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.1680.962@0.23.1680.962" timestamp="1575046768341" />
-    <state width="1358" height="245" key="GridCell.Tab.0.bottom" timestamp="1575185415536">
+    <state width="1358" height="245" key="GridCell.Tab.0.bottom" timestamp="1575192499040">
       <screen x="0" y="23" width="1680" height="962" />
     </state>
-    <state width="1358" height="245" key="GridCell.Tab.0.bottom/0.23.1680.962@0.23.1680.962" timestamp="1575185415536" />
-    <state width="1358" height="245" key="GridCell.Tab.0.center" timestamp="1575185415535">
+    <state width="1358" height="245" key="GridCell.Tab.0.bottom/0.23.1680.962@0.23.1680.962" timestamp="1575192499040" />
+    <state width="1358" height="245" key="GridCell.Tab.0.center" timestamp="1575192499039">
       <screen x="0" y="23" width="1680" height="962" />
     </state>
-    <state width="1358" height="245" key="GridCell.Tab.0.center/0.23.1680.962@0.23.1680.962" timestamp="1575185415535" />
-    <state width="1358" height="245" key="GridCell.Tab.0.left" timestamp="1575185415535">
+    <state width="1358" height="245" key="GridCell.Tab.0.center/0.23.1680.962@0.23.1680.962" timestamp="1575192499039" />
+    <state width="1358" height="245" key="GridCell.Tab.0.left" timestamp="1575192499038">
       <screen x="0" y="23" width="1680" height="962" />
     </state>
-    <state width="1358" height="245" key="GridCell.Tab.0.left/0.23.1680.962@0.23.1680.962" timestamp="1575185415535" />
-    <state width="1358" height="245" key="GridCell.Tab.0.right" timestamp="1575185415536">
+    <state width="1358" height="245" key="GridCell.Tab.0.left/0.23.1680.962@0.23.1680.962" timestamp="1575192499038" />
+    <state width="1358" height="245" key="GridCell.Tab.0.right" timestamp="1575192499039">
       <screen x="0" y="23" width="1680" height="962" />
     </state>
-    <state width="1358" height="245" key="GridCell.Tab.0.right/0.23.1680.962@0.23.1680.962" timestamp="1575185415536" />
+    <state width="1358" height="245" key="GridCell.Tab.0.right/0.23.1680.962@0.23.1680.962" timestamp="1575192499039" />
     <state x="341" y="143" key="SettingsEditor" timestamp="1575046701621">
       <screen x="0" y="23" width="1680" height="962" />
     </state>

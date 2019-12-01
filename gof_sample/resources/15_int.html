@@ -1,0 +1,741 @@
+<html>
+<head>
+<title>INTERPRETER</title>
+<meta http-equiv="Content-Type" content="text/html; charset=x-sjis">
+</head>
+<body bgcolor=#ffffff text=#000000>
+
+<font size="3">
+
+<img src="img/title/int.gif" hspace="10" vspace="10">
+
+<br><br><br>
+<a name="moku">
+<img src="img/00/moku.gif" hspace="10">
+<br><br>
+
+
+
+
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　言語に対して、文法表現と、それを使用して文を解釈するインタプリタを一緒に定義する。
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="douki">
+<img src="img/00/douki.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　ある特定の種類の問題がしばしば起こるときには、その問題の実例を簡単な言語の文として表現しておくことは意義があるだろう。そうすれば、この文を解釈することにより、問題を解決するインタプリタを生成することができる。
+
+<br><font style="text-indent:10pt">
+
+　たとえば、あるパターンに一致する文字列を探す、というのはよくある問題である。正規表現は、文字列のパターンを明確にするための標準的な言語である。この場合、各パターンと文字列を比較するアルゴリズムを個々に作っていくのではなく、一致する文字列の集合を表現している正規表現を検索アルゴリズムに解釈させる、という形になる。
+
+<br><font style="text-indent:10pt">
+
+　Interpreter パターンでは、簡単な言語に対する文法の定義の方法、言語における文の表現の方法、これらの文の解釈の方法について説明する。例として、正規表現を使ってこれらを説明する。
+
+<br><font style="text-indent:10pt">
+
+　正規表現を定義する次のような文法を考える。
+
+<br><br><pre>
+    expression ::= literal | alternation | sequence | repetition |
+                   '(' expression ')'
+    alternation ::= expression  '|' expression
+    sequence ::= expression '&amp;' expression
+    repetition ::= expression '*'
+    literal ::= 'a' | 'b' | 'c' | ... { 'a' | 'b' | 'c' | ... }*
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　expression というのは解釈の際の出発点となる記号で、literal というのは簡単な単語を定義している終端の記号である。
+
+<br><font style="text-indent:10pt">
+
+　Interpreter パターンでは、1つ1つの文法規則を表現するためにクラスを使う。規則の右側の記号は、これらのクラスのインスタンス変数になる。上の文法は5つのクラス、すなわち、抽象クラス RegularExpression とサブクラス LiteralExpression、AlternationExpression、SequenceExpression、RepetitionExpression で表現される。最後の3つのクラスは、部分表現を入れておくための変数を定義していることになる。
+
+<br><br><br><p align="center">
+<img src="img/pics/inter043.gif"></p>
+<br><br><br>
+
+<font style="text-indent:10pt">
+
+　この文法により定義される正規表現は、すべてこれらのクラスのインスタンスから構成されるアブストラクト・シンタックスツリーにより表される。たとえば、以下のアブストラクト・シンタックスツリー
+
+<br><br><br><p align="center">
+<img src="img/pics/inter042.gif"></p>
+<br><br><br>
+
+は、次の正規表現を表している。
+
+<br><br><pre>
+    raining &amp; (dogs | cats) *
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　RegularExpression の各サブクラスに対して Interpret オペレーションを定義することにより、これらの正規表現のインタプリタを作ることができる。Interpret オペレーションは、表現を解釈するための状況を引数として受け取っている。状況は、入力された文字列とそれまでにその中のどれだけが照合されたのかに関する情報を含んでいる。RegularExpression の各サブクラスは、その時点での状況を基にして、入力文字列の次の部分を照合する Interpret オペレーションを実装する。たとえば、次のような場合がある。
+
+<br><br>
+
+<ul><li>LiteralExpression クラスでは、入力が literal で定義しているものに一致するかどうかをチェックする。
+
+<br><br>
+
+<li>AlternationExpression クラスでは、入力が alternation であげるいずれかの表現に一致するかどうかをチェックする。
+
+<br><br>
+
+<li>RepetitionExpression クラスでは、入力に repetition であげたような表現の繰り返しが現れるかどうかをチェックする。</ul>
+
+</font></font></font></font></font></font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="teki">
+<img src="img/00/teki.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　ステートメントがアブストラクト・シンタックスツリーとして表現できるような言語を解釈する際に Interpreter パターンを使う。Interpreter パターンは次のような場合に適用するのがもっとも適している。
+
+<br><br>
+
+<ul><li>文法が単純な場合。文法が複雑な場合には文法を表現するクラス階層が大きくなり、管理できなくなる。そのような場合には、パーザジェネレータのようなツールの方が適している。パーザジェネレータでは、アブストラクト・シンタックスツリーを構築せずに表現を解釈するので、メモリと処理時間を節約することができる。
+
+<br><br>
+
+<li>効率が重要な関心事ではない場合。もっとも効率的なインタプリタは、通常は、構文解析木を直接解釈するのではなく、最初に別の形に変換するように実装されている。たとえば、正規表現はしばしば状態機械に変換される。しかし、そのような場合でも、Interpreter パターンを適用して変換を実装することができる。</ul>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kouzou">
+<img src="img/00/kouzou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+<p align="center">
+<img src="img/pics/inter041.gif"></p>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kousei">
+<img src="img/00/kousei.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+<ul><li><b>AbstractExpression クラス</b> （RegularExpression クラス）
+<ul><li>アブストラクト・シンタックスツリーのすべてのノードに共通な抽象化されたInterpretオペレーションを宣言する。</ul>
+
+<br><br>
+
+<li><b>TerminalExpression クラス</b>  （LiteralExpression クラス）
+<ul><li>文法中の終端記号に関する Interpret オペレーションを実装する。
+<li>文中の1つ1つの終端記号について、インスタンスが生成される。</ul>
+
+<br><br>
+
+<li><b>NonterminalExpression クラス</b>  （AlternationExpression クラス、RepetitionExpression クラス、SequenceExpression クラス）
+<ul><li>文法中のR::=R1R2. . . Rn の形で表された規則1つ1つについて、このクラスが定義される。
+<li>R1からRn の各記号について、AbstractExpression の型のインスタンス変数を保持する。
+<li>文法中の非終端記号について Interpret オペレーションを実装する。Interpret オペレーションは、典型的には、R1 から Rn で表された変数上で、自身を再帰的に呼び出していく。</ul>
+
+<br><br>
+
+<li><b>Context クラス</b> 
+<ul><li>インタプリタにとって、グローバルな情報を含んでいる。</ul>
+
+<br><br>
+
+<li><b>Client クラス</b> 
+<ul><Li>文法により定められた言語において、文を表現するアブストラクト・シンタックスツリーを作る（または、与えられる）。アブストラクト・シンタックスツリーは、NonterminalExpression クラスや TerminalExpression クラスのインスタンスから組み立てられる。
+<li>Interpret オペレーションの呼び出しを行う。</ul></ul>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kyou">
+<img src="img/00/kyou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+<ul><li>Client オブジェクトは、文を、NonterminalExpression クラスと TerminalExpression クラスのインスタンスからなるアブストラクト・シンタックスツリーの形にする（または、ツリーは外部から与えられる）。そして、Context オブジェクトを初期化して、Interpret オペレーションの呼び出しを行う。
+
+<br><br>
+
+<li>NonterminalExpression クラスでは、Interpret オペレーションを、下位のノードにあたるインスタンスに対して呼び出す形で定義する。TerminalExpression クラスでは、Interpret オペレーションの再帰的な呼び出しの中でベースケースとなるものが定義される。
+
+<br><br>
+
+<li>各ノードで、Interpret オペレーションは、インタプリタの状態を保存したりアクセスしたりするために Context オブジェクトを使う。</ul>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kekka">
+<img src="img/00/kekka.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Interpreter パターンには、次のような利点と傾向がある。
+
+<br><br>
+
+<ol><li><b>文法を変更したり拡張するのが容易である。</b>このパターンでは文法規則を表現するためにクラスを使っているので、文法を変更したり拡張するために継承を使うことができる。既存の表現をインクリメンタルに修正していくことができるし、新しい表現を古いものに対するバリエーションとして定義することもできる。
+
+<br><br>
+
+<li><b>文法を実装するのも容易である。</b>アブストラクト・シンタックスツリーのノードを定義するクラスは、どれも同じように実装することができる。これらのクラスは容易に書くことができ、その生成は、しばしばコンパイラやパーザジェネレータにより自動的に行われる。
+
+<br><br>
+
+<li><b>複雑な文法は保守していくのが難しい。</b>Interpreter パターンでは、文法の各規則について、少なくとも1つのクラスを定義する（BNF 方式を使って定義される文法規則には、複数のクラスが必要になるだろう）。したがって、多くの規則を持っている文法は、管理/保守していくのが難しくなるだろう。この問題点を和らげるために、他のデザインパターンを適用することもできる（「実装」の節を参照）。しかし文法が複雑なときには、パーザやコンパイラジェネレータのような他の技術を使う方が適当だろう。
+
+<br><br>
+
+<li><b>表現を解釈する新しい方法を追加する。</b>Interpreter パターンは、表現を新しい方法で評価することを容易にする。たとえば、クラス上に新しいオペレーションを定義することにより、きれいな印刷や型チェックをサポートすることもできる。もし、表現を解釈する新しい方法を継続的に追加していこうとするならば、<a href="23.html" target="down">Visitor パターン</a>を使って文法クラスに変更が及ぶのを避けるようにすることを考える。</ol>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="jissou">
+<img src="img/00/jissou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Interpreter パターンと <a href="08.html" target="down">Composite パターン</a>は、実装上の問題において多くの共通点を持っている。次にあげるのは、Interpreter パターンに特有の問題である。
+
+<br><br>
+
+<ol><li><b>アブストラクト・シンタックスツリーを生成する。</b>Interpreter パターンでは、アブストラクト・シンタックスツリーの生成の方法までは説明していない。別の言い方をすれば、構文解析については触れていない。アブストラクト・シンタックスツリーは、表を使ったパーザや手作りの（たいてい、代々受け継がれている）パーザ、または Client オブジェクトにより直接生成される。
+
+<br><br>
+
+<li><b>Interpret オペレーションを定義する。</b>必ずしも、TerminalExpression クラスや NonterminalExpression クラスで Interpret オペレーションを定義する必要はない。もし新しいインタプリタを生成することがよく起こるならば、<a href="23.html" target="down">Visitor パターン</a>を使って、Interpret オペレーションを visitor の中に持たせるようにする方がよい。たとえば、プログラム言語に関する文法の場合、アブストラクト・シンタックスツリー上に、型チェック、最適化、コード生成など、多くのオペレーションを持たせることになるだろう。文法のすべてのクラス内でこれらのオペレーションを定義するのを避けるためには、visitor を使うべきであろう。
+
+<br><br>
+
+<li><b><a href="11.html" target="down">Flyweight パターン</a>を使って、終端記号を共有する。</b>文中に多くの終端記号が出現するような文法では、そのような記号を1つのオブジェクトで共有できればメリットは大きいだろう。コンピュータプログラムの文法は良い例である（プログラムで使われる各変数は、コード中のいたるところに現れるであろう）。「動機」の節であげた例を使えば、ある文では終端記号の dog（LiteralExpression クラスでモデル化されている）がたびたび現れるかもしれない。</ol>
+
+<br><br><font style="text-indent:10pt">
+
+　終端のノードは、一般的には、アブストラクト・シンタックスツリー内での位置に関する情報を持つことはない。終端のノードには、解釈の際に必要となる状況に関する情報は、すべて親のノードが渡す。したがって、<a href="11.html" target="down">Flyweight パターン</a>を適用するには、共有化された（intrinsic）状態と親から渡される（extrinsic）状態とを区別しておく必要がある。
+
+<br><font style="text-indent:10pt">
+
+　たとえば、dog を表す LiteralExpression クラスの各インスタンスは、それまでに照合した部分文字列を含んでいる Context オブジェクトを受け取る。そしてそれらのインスタンスは、ツリーの中のどこにあろうとも、Interpret オペレーション内では同じことを行う（入力が dog を含んでいないかどうかをチェックする）。
+
+</font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="sample">
+<img src="img/00/sample.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　2つの例を示す。最初に示すのは、シーケンスが、ある正規表現に一致しているかどうかをチェックするためのSmalltalkで書かれた例である。次にあげるのは、Bool 表現を評価するためのC++によるプログラムである。
+
+<br><font style="text-indent:10pt">
+
+　正規表現との一致判定では、文字列が正規表現により定義された言語の要素になるのかどうかをテストする。正規表現は次の文法により定義されている。
+
+<br><br><pre>
+    expression ::= literal | alternation | sequence | repetition |
+                   '(' expression ')'
+    alternation ::= expression  '|' expression
+    sequence ::= expression '&amp;' expression
+    repetition ::= expression 'repeat'
+    literal ::= 'a' | 'b' | 'c' | ... { 'a' | 'b' | 'c' | ... }*
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　この文法は、動機のところであげた例にわずかに変更を加えたものである。具体的には、正規表現のシンタックスを少し変更した。すなわち、repeatを“*”の代わりに使っているのだが、これは“*”が、Smalltalk においては、ポストフィックスオペレーションにはなり得ないためである。たとえば、正規表現
+
+<br><br><pre>
+    (('dog ' | 'cat ') repeat &amp; 'weather')
+</pre><br><br>
+は、入力文字列“dog dog cat weather”に一致する。
+
+<br><font style="text-indent:10pt">
+
+　正規表現との一致判定を実装するために、261ページであげた5つのクラスを定義する。SequenceExpression クラスには、アブストラクト・シンタックスツリー内の子オブジェクトを入れるために、インスタンス変数 expression1 と expression2 を持たせる。AlternationExpression クラスでは、インスタンス変数 alternative1 と alternative2 の中に、選択肢となる2つの表現をそれぞれ持たせる。RepetitionExpression クラスでは、インスタンス変数 repetition の中に、繰り返しの基になる表現を持たせる。LiteralExpression クラスでは、インスタンス変数 components の中にオブジェクト（おそらく、文字）のリストを持たせる。これらは入力シーケンスが一致しなければならない文字列を表している。
+
+<br><font style="text-indent:10pt">
+
+　match: メソッドは正規表現のためのインタプリタを実装している。アブストラクト・シンタックスツリーを定義する各クラスで、このメソッドが実装される。このメソッドは、入力文字列の一部を読み込んで一致判定を行うプロセスにおいて、その時点での状態を表している inputState を引数として受け取る。
+
+<br><font style="text-indent:10pt">
+
+　この状態は、それまでに正規表現と一致していると認められたものを表している入力ストリームの集合からなる（これは、等価な有限状態オートマトンが、その時点までの入力ストリームを読み込んだときに、取り得るすべての状態を記録しておくことにほぼ等しい）。
+
+<br><font style="text-indent:10pt">
+
+　この状態は repeat オペレーションにとってもっとも重要である。たとえば、もし正規表現が
+
+<br><br><pre>
+    'a' repeat
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　であれば、インタプリタは“a”、“aa”、“aaa”などを一致させることができるだろう。また、
+
+<br><br><pre>
+    'a' repeat &amp; 'bc'
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　であれば、インタプリタは“abc”、“aabc”、“aaabc”などを一致させることができるだろう。しかし、もし正規表現が
+
+<br><br><pre>
+    'a' repeat &amp; 'abc'
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　であれば、入力“aabc”を部分表現“'a' repeat”に一致させた場合には、2つの入力ストリームを作り出すことになる。すなわち、1つは、入力中の1文字を一致させた場合、また、もう1つは、2文字を一致させた場合である。そして、1文字を一致させたストリームだけが残りの“abc”と一致することになる。
+
+<br><font style="text-indent:10pt">
+
+　ところで、正規表現を表す各クラスについて、match: メソッドの定義を考える。SequenceExpression クラスの match: メソッドは、シーケンスを二分する任意の部分表現に一致するようになっている。しかし、部分表現に対して match: メソッドを適用していく中で、それまでに認められた入力ストリームは inputState から削除されていくことになるだろう。
+
+<br><br><pre>
+    match: inputState
+        ^ expression2 match: (expression1 match: inputState).
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　AlternationExpression クラスの match: メソッドは、各選択肢からの状態集合の和集合を返す。その定義は次の通りである。
+
+<br><br><pre>
+    match: inputState
+        | finalState |
+        finalState := alternative1 match: inputState.
+        finalState addAll: (alternative2 match: inputState).
+        ^ finalState
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　RepetitionExpression クラスの match: メソッドは、一致する状態をできるだけ多く見つけようとする。
+
+<br><br><pre>
+    match: inputState
+        | aState finalState |
+        aState := inputState.
+        finalState := inputState copy.
+        [aState isEmpty]
+            whileFalse:
+                [aState := repetition match: aState.
+                finalState addAll: aState].
+            ^ finalState
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　出力時の状態は、たいてい入力時の状態よりも多くの状態を含んでいる。なぜならば、RepetitionExpression クラスは、入力時の状態を基にして repetition を何回でも一致させることができるからである。出力時の状態ではすべての可能性を表現しておき、どの状態が正しいかは、正規表現の次の要素に決めさせるようにしている。
+
+<br><font style="text-indent:10pt">
+
+　最後に、LiteralExpression クラスの match: メソッドは、どのような入力ストリームに対しても、その構成要素を一致させようと試みる。そして、一致した入力ストリームだけをとっておく。
+
+<br><br><pre>
+    match: inputState
+        | finalState tStream |
+        finalState := Set new.
+        inputState
+            do:
+                [:stream | tStream := stream copy.
+                    (tStream nextAvailable:
+                         components size
+                    ) = components
+                        ifTrue: [finalState add: tStream]
+                ].
+            ^ finalState
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　nextAvailable: メッセージは入力ストリームを先に進める。LiteralExpression クラスの match: メソッドは、ストリームを先に進める唯一の match: メソッドである。このメソッドにより返される状態には、入力ストリームのコピーが加えられるので、一致することにより入力ストリームの側に変化が及ぶことは決してないことに注意してほしい。コピーについては、AlternativeExpression クラスの各選択肢で、入力ストリームの同一コピーを参照させるようにしておくべき、という点からも重要である。
+
+<br><font style="text-indent:10pt">
+
+　これで、アブストラクト・シンタックスツリーを構成するクラスを定義したので、次にそれをどのように作成するのかということを述べる。正規表現のためのパーザを書くよりは、Smalltalk の表現を評価することにより正規表現に対するアブストラクト・シンタックスツリーを作り出してくれるようなメソッドを、RegularExpression クラス上に定義する。そのために、あたかも正規表現のパーザのように、作り付けの Smalltalk コンパイラを使うことになる。
+
+<br><font style="text-indent:10pt">
+
+　アブストラクト・シンタックスツリーを作るために、“｜”や“repeat”や“&”を RegularExpression クラス上のメソッドとして定義する必要がある。これらのメソッドは RegularExpression クラスで次のように定義される。
+
+<br><br><pre>
+    &amp; aNode
+        ^ SequenceExpression new
+            expression1: self expression2: aNode asRExp
+    
+    repeat
+        ^ RepetitionExpression new repetition: self
+    
+    | aNode
+        ^ AlternationExpression new
+        alternative1: self alternative2: aNode asRExp
+    
+    asRExp 
+        ^ self
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　asRExp メソッドは文字列を RegularExpression オブジェクトに変換する。これらのメソッドは String クラスで次のように定義される。
+
+<br><br><pre>
+    &amp; aNode
+        ^ SequenceExpression new
+            expression1: self asRExp expression2: aNode asRExp
+    
+    repeat
+        ^ RepetitionExpression new repetition: self
+    
+    | aNode
+        ^ AlternationExpression new
+            alternative1: self asRExp alternative2: aNode asRExp
+    
+    asRExp
+        ^ LiteralExpression new components: self
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　もし、これらのメソッドをクラス階層の上層（Smalltalk-80 の SequenceableCollection クラスや、Smalltalk/V の IndexedCollection クラス）で定義すれば、Array や OrderedCollection のようなクラスに対しても定義できるだろう。これにより、正規表現を、いかなる種類のオブジェクトのシーケンスにも一致させることができるようになる。
+
+<br><font style="text-indent:10pt">
+
+　次の例は、C++で実装された Bool 表現を操作/評価するシステムである。この言語の終端記号は Bool 変数で、それは定数 true と false を値としてとる。非終端記号は、and、or、not といったオペレータを含む表現を表している。文法は次のように定義されている。
+
+<br><br><pre>
+    BooleanExp ::= VariableExp | Constant | OrExp | AndExp | NotExp |
+                   '(' BooleanExp ')'
+    AndExp ::= BooleanExp  'and' BooleanExp
+    OrExp ::= BooleanExp  'or' BooleanExp
+    NotExp ::= 'not' BooleanExp
+    Constant ::= 'true' |  'false'
+    VariableExp ::= 'A' | 'B' | ... | 'X' | 'Y' | 'Z'
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　Bool 表現に関して2つのオペレーションを定義する。第1のオペレーション Evaluate は、各変数に true や false といった値を代入して Bool 表現を評価する。第2のオペレーション Replace は、変数を表現に置き換えることにより新しい Bool 表現を作り出す。Replace オペレーションは、表現を評価する以外にも Interpreter パターンが使われることを示している。この場合には、それは表現自体を操作している。
+
+<br><font style="text-indent:10pt">
+
+　ここでは、BooleanExp クラス、VariableExp クラス、AndExp クラスについてのみ、その詳細を与える。OrExp クラスと NotExp クラスは AndExp クラスと同様である。Constant クラスは Bool 表現の定数を表している。
+
+<br><font style="text-indent:10pt">
+
+　BooleanExp クラスは、Bool 表現を定義するすべてのクラスに対してインタフェースを定義している。
+
+<br><br><pre>
+    class BooleanExp {
+    public:
+        BooleanExp();
+        virtual ~BooleanExp();
+    
+        virtual bool Evaluate(Context&amp;) = 0;
+        virtual BooleanExp* Replace(const char*, BooleanExp&amp;) = 0;
+        virtual BooleanExp* Copy() const = 0;
+    };
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　Context クラスは変数から Bool の値へのマッピングを定義している。Bool の値は、C++の定数 true と false を使って表すことにする。Context クラスは次のようなインタフェースを持つ。
+
+<br><br><pre>
+    class Context {
+    public:
+        bool Lookup(const char*) const;
+        void Assign(VariableExp*, bool);
+    };
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　VariableExp クラスは、名前付けされた変数を表している。
+
+<br><br><pre>
+    class VariableExp : public BooleanExp {
+    public:
+        VariableExp(const char*);
+        virtual ~VariableExp();
+    
+        virtual bool Evaluate(Context&amp;);
+        virtual BooleanExp* Replace(const char*, BooleanExp&amp;);
+        virtual BooleanExp* Copy() const;
+    private:
+        char* _name;
+    };
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　コンストラクタでは、変数の名前を引数としてとり、-name に設定する。
+
+<br><br><pre>
+    VariableExp::VariableExp (const char* name) {
+        _name = strdup(name);
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　Evaluate オペレーションでは、その時点の Context オブジェクトにおいて、その変数に入っている値を返す。
+
+<br><br><pre>
+    bool VariableExp::Evaluate (Context&amp; aContext) {
+        return aContext.Lookup(_name);
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　Copy オペレーションでは、新しい VariableExp オブジェクトを生成して返す。
+
+<br><br><pre>
+    BooleanExp* VariableExp::Copy () const {
+        return new VariableExp(_name);
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　Replace オペレーションでは、変数を表現で置き換えるために、その変数が引数で渡された名前と同じ名前を持っているかどうかを確認するようにしている。
+
+<br><br><pre>
+    BooleanExp* VariableExp::Replace (
+        const char* name, BooleanExp&amp; exp
+    ) {
+        if (strcmp(name, _name) == 0) {
+            return exp.Copy();
+        } else {
+            return new VariableExp(_name);
+       }
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　AndExp クラスは、2つの Bool 表現の and をとることにより得られる表現を表している。
+
+<br><br><pre>
+    class AndExp : public BooleanExp {
+    public:
+        AndExp(BooleanExp*, BooleanExp*);
+        virtual ~ AndExp();
+    
+        virtual bool Evaluate(Context&amp;);
+        virtual BooleanExp* Replace(const char*, BooleanExp&amp;);
+        virtual BooleanExp* Copy() const;
+    private:
+        BooleanExp* _operand1;
+        BooleanExp* _operand2;
+    };
+    
+    AndExp::AndExp (BooleanExp* op1, BooleanExp* op2) {
+        _operand1 = op1;
+        _operand2 = op2;
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　Evaluate オペレーションでは、-operand1 と-operand2 を評価して、その結果の論理和を返す。
+
+<br><br><pre>
+    bool AndExp::Evaluate (Context&amp; aContext) {
+        return
+            _operand1->Evaluate(aContext) &amp;&amp;
+            _operand2->Evaluate(aContext);
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　Copy オペレーションと Replace オペレーションは、-operand1 と-operand2 に対してそれらのオペレーションを再帰的に呼び出すことにより実装される。
+
+<br><br><pre>
+    BooleanExp* AndExp::Copy () const {
+        return
+            new AndExp(_operand1->Copy(), _operand2->Copy());
+    }
+    
+    BooleanExp* AndExp::Replace (const char* name, BooleanExp&amp; exp) {
+        return
+            new AndExp(
+                _operand1->Replace(name, exp),
+                _operand2->Replace(name, exp)
+            );
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　ところで、Bool 表現は次のように定義できる。
+
+<br><br><pre>
+    (true and x) or (y and (not x))
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　これを、変数 x と y への true と false の代入を基に評価することができる。
+
+<br><br><pre>
+    BooleanExp* expression;
+    Context context;
+    
+    VariableExp* x = new VariableExp("X");
+    VariableExp* y = new VariableExp("Y");
+    
+    expression = new OrExp(
+        new AndExp(new Constant(true), x),
+        new AndExp(y, new NotExp(x))
+    );
+    
+    context.Assign(x, false);
+    context.Assign(y, true);
+    
+    bool result = expression->Evaluate(context);
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　たとえば、x に false、y に true を代入した場合、この表現は true と評価される。単に Context オブジェクトを変えることにより、変数への異なる代入のもとで、その表現を評価することができる。
+
+<br><font style="text-indent:10pt">
+
+　最後に、変数 y を別の表現で置き換えて再評価することもできることを示す。
+
+<br><br><pre>
+    VariableExp* z = new VariableExp("Z");
+    NotExp not_z(z);
+    
+    BooleanExp* replacement = expression->Replace("Y", not_z);
+    
+    context.Assign(z, true);
+    
+    result = replacement->Evaluate(context);
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　この例は、多くの種類のオペレーションが文を解釈することができるという、Interpreter パターンの重要な点を示している。BooleanExp クラスで定義された3つのオペレーションの中では、Evaluate オペレーションが、インタプリタは何をすべきかに対する我々の考え方にもっとも合っている（すなわち、プログラムや表現を解釈して単純な結果を返すという点で）。
+
+<br><font style="text-indent:10pt">
+
+　しかし、Replace オペレーションも、同様にインタプリタとして見なすことができる。つまり、Context オブジェクトが置き換えの対象となる変数と表現の組であり、結果は置き換えが行われた後の新しい表現であるようなインタプリタとして見なすことができる。Copy オペレーションでさえも、空の Context オブジェクトを持つインタプリタと考えることができる。Replace や Copy はツリー上の基本的なオペレーションにすぎないので、これらをインタプリタと考えるのは少し奇妙に感じられるかもしれない。<a href="23.html" target="down">Visitor パターン</a>の例では、3つのオペレーションを別々のインタプリタ visitor にリファクタリングできることを説明するが、そこでも、3つはたいへん類似していることが示される。
+
+<br><font style="text-indent:10pt">
+
+　Interpreter パターンには、<a href="08.html" target="down">Composite パターン</a>を使ったクラス階層上に1つのオペレーションを分散させる、ということ以上の意味がある。BooleanExp クラスの階層は言語を表現するものと考えられるので、Evaluate オペレーションをインタプリタと見なす。しかし、自動車の部品組み立てを表す類似のクラス階層があったときに、Weight や Copy のようなオペレーションがたとえ <a href="08.html" target="down">Composite パターン</a>を使ったクラス階層上に分散していても、それらをインタプリタと見なすことはないだろう。なぜならば、自動車部品を言語とは考えないからである。もし自動車部品の文法について本が出版され始めたならば、部品上のオペレーションをその言語を解釈する手段と見なすことができるのかもしれないが、そのようなことは起こり得ないだろう。
+
+</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font>
+
+
+
+
+
+
+<br><br><br>
+<a name="siyou">
+<img src="img/00/siyou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Interpreter パターンは、Smalltalk のコンパイラのように、オブジェクト指向言語により実装されたコンパイラでは広く使われている。SPECTalk は、入力ファイルのフォーマット［Sza92］の記述を解釈するために、このパターンを使っている。QOCA の制約解消ツールキットは、制約を評価するためにこのパターンを使っている［HHMV92］。
+
+<br><font style="text-indent:10pt">
+
+　もっとも一般的な形式（つまり、1つのオペレーションを <a href="08.html" target="down">Composite パターン</a>に基づくクラス階層上に分散させるような場合）を考えると、<a href="08.html" target="down">Composite パターン</a>はほとんどの場合に Interpreter パターンを含んだ形で使われる。しかし Interpreter パターンは、クラス階層を言語を定義するものとして考えたい場合に限り使用すべきである。
+
+</font></font>
+
+
+
+
+
+<br><br><br>
+<a name="kanren">
+<img src="img/00/kanren.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　<a href="08.html" target="down">Composite パターン</a>: アブストラクト・シンタックスツリーは、<a href="08.html" target="down">Composite パターン</a>のインスタンスである。
+
+<br><font style="text-indent:10pt">
+
+　<a href="11.html" target="down">Flyweight パターン</a>: アブストラクト・シンタックスツリー内で終端記号を共有する方法を示している。
+
+<br><font style="text-indent:10pt">
+
+　<a href="16.html" target="down">Iterator パターン</a>: インタプリタが構造内を走査する際に Iterator オブジェクトを使うことができる。
+
+<br><font style="text-indent:10pt">
+
+　<a href="23.html" target="down">Visitor パターン</a>: アブストラクト・シンタックスツリー内の各ノードの振る舞いを1つのクラスにまとめて持たせるために、使うことができる。
+
+</font></font></font>
+
+<br><br><br>
+
+</body>
+</html>

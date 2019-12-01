@@ -1,0 +1,505 @@
+<html>
+<head>
+<title>MEDIATOR</title>
+<meta http-equiv="Content-Type" content="text/html; charset=x-sjis">
+</head>
+<body bgcolor=#ffffff text=#000000>
+
+<font size="3">
+
+<img src="img/title/med.gif" hspace="10" vspace="10">
+
+<br><br><br>
+<a name="moku">
+<img src="img/00/moku.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　オブジェクト群の相互作用をカプセル化するオブジェクトを定義する。Mediator パターンは、オブジェクト同士がお互いを明示的に参照し合うことがないようにして、結合度を低めることを促進する。それにより、オブジェクトの相互作用を独立に変えることができるようになる。
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="douki">
+<img src="img/00/douki.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　オブジェクト指向設計では、オブジェクト間に振る舞いを分配することを積極的に検討していく。しかし、そのような分配はオブジェクト間に多くの関連を生み出すことになる。最悪の場合には、各オブジェクトが他のすべてのオブジェクトのことを知っていなければならなくなる。
+
+<br><font style="text-indent:10pt">
+
+　1つのシステムを多くのオブジェクトに分割することは、一般に再利用性を高めるが、オブジェクト間の関連を増やすことがせっかく高めた再利用性を再び低める傾向がある。関連が多くなると、あるオブジェクトは他のオブジェクトがなければ働かない、すなわち、システムがあたかも一枚岩のように振る舞うということが起こり得る。さらに、振る舞いを多くのオブジェクト間に分配しているので、システムの振る舞いを大きく変えることは難しくなるだろう。結果として、システムの振る舞いをカスタマイズするために多くのサブクラスを定義しなければならなくなるだろう。
+
+<br><font style="text-indent:10pt">
+
+　例として、グラフィックユーザインタフェースのダイアログボックスの実装について考える。ダイアログボックスは、次に示すように、ボタンやメニューや入力フィールドのようなウィジェットの集まりを表示するためにウィンドウを使う。
+
+<br><br><br><p align="center">
+<img src="img/pics/fontc047.gif"></p>
+<br><br><br>
+
+<font style="text-indent:10pt">
+
+　しばしば、ダイアログ内のウィジェット間には依存関係がある。たとえば、入力フィールドが空のときには、ボタンは無効な状態になっている。リストボックスと呼ばれる選択リストから項目を選ぶと、入力フィールドの内容が変化する。逆に、入力フィールド内にテキストを打ち込むと、リストボックス内にある1つまたはそれ以上の対応する項目が自動的に選択される。入力フィールドにテキストが入ればボタンは有効になり、それをユーザがマウスでクリックすることにより、テキストが指しているものを変更したり削除したりといったことができるようになる。
+
+<br><font style="text-indent:10pt">
+
+　別のダイアログボックスでは、ウィジェット間に異なる依存関係が存在するだろう。したがって、たとえダイアログが同じ種類のウィジェットを表示していても、同じウィジェットクラスを再利用することはできない。すなわち、そのダイアログに特有の依存関係を反映させてカスタマイズしなければならない。このようなカスタマイズをサブクラス化により個々に行っていくのは、多くのクラスが関係しているだけにわずらわしいだろう。
+
+<br><font style="text-indent:10pt">
+
+　協調的な振る舞いを mediator オブジェクトにカプセル化することにより、これらの問題を回避することができる。mediator には、グループ内のオブジェクト間での相互作用を、制御/調整する責任がある。mediator は、グループ内のオブジェクトが他のオブジェクトと互いに明示的に参照し合わなくても済むように、仲介役を務める。オブジェクトは mediator を知っているだけでよいので、相互関係の数を減らすことができる。
+
+<br><font style="text-indent:10pt">
+
+　たとえば、FontDialogDirector クラスは、ダイアログボックス内のウィジェット間の mediator となる。FontDialogDirector オブジェクトはダイアログ内のウィジェットを知っており、それらの間の相互作用を調整している。それは、ウィジェット間の通信におけるハブとして活動する。
+
+<br><br><br><p align="center">
+<img src="img/pics/media033.gif"></p>
+<br><br><br>
+
+<font style="text-indent:10pt">
+
+　下のインタラクションダイアグラムは、リストボックス内での選択を変えたときに、オブジェクトがどのように協力してそれに対処するのかを説明している。
+
+<br><font style="text-indent:10pt">
+
+　ここでは、ListBox オブジェクトで選択されたものが EntryField オブジェクトに渡されるまでのイベントのつながりをあげている。
+
+<br><br>
+
+<ol><li>ListBox オブジェクトは、変化があったことを FontDialogDirecto rオブジェクトに伝える。
+
+<br><br>
+
+<li>FontDialogDirector オブジェクトは、選択されたものを ListBox オブジェクトから受け取る。
+
+<br><br><br><p align="center">
+<img src="img/pics/media031.gif"></p>
+<br><br><br>
+
+<li>FontDialogDirector オブジェクトは、選択されたものを EntryField オブジェクトに渡す。
+
+<br><br>
+
+<li>EntryField オブジェクト内にテキストが入ったので、FontDialogDirector オブジェクトは Button オブジェクトがアクションを実行できるようにする（たとえば、ボタン上の文字を太くしたり、斜体にしたりする）。</ol>
+
+<br><font style="text-indent:10pt">
+
+　FontDialogDirector オブジェクトが、ListBox オブジェクトと EntryField オブジェクトの仲介をするやり方に着目してほしい。ウィジェット同士は、FontDialogDirector オブジェクトを通して間接的に通信し合う。したがって、ウィジェットは他のウィジェットのことを知っている必要はなく、FontDialogDirector オブジェクトだけを知っていればよいのである。さらに、振る舞いは1つのクラスに集められているので、そのクラスを拡張したり入れ替えたりすることで振る舞いを変えることができるようになる。
+
+<br><font style="text-indent:10pt">
+
+　抽出された FontDialogDirector クラスが、クラスライブラリの中にどのような形で統合されるのかを次に示す。
+
+<br><br><br><p align="center">
+<img src="img/pics/media034.gif"></p>
+<br><br><br>
+
+<font style="text-indent:10pt">
+
+　DialogDirector クラスは、ダイアログ全体の振る舞いを定義している抽象クラスである。クライアントは、ダイアログをスクリーン上に表示するために ShowDialog オペレーションを呼び出す。CreateWidgets オペレーションは、ダイアログ内のウィジェットを生成する抽象化されたオペレーションである。また、WidgetChanged オペレーションも抽象化されたオペレーションである。Widget オブジェクトは、自らが変化したことを DialogDirector オブジェクトに知らせるために WidgetChanged オペレーションを呼び出す。DialogDirector のサブクラスは、適切なウィジェットを生成するために CreateWidgets オペレーションをオーバーライドし、変化に対処するために WidgetChanged オペレーションをオーバーライドする。
+
+</font></font></font></font></font></font></font></font></font></font></font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="teki">
+<img src="img/00/teki.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Mediator パターンは次のような場合に使う。
+
+<br><br>
+
+<ul><li>しっかりと定義されているが複雑な方法で、オブジェクトの集まりが通信する場合。その結果、オブジェクト間の依存関係が構造化できず、理解が難しい。
+
+<br><br>
+
+<li>あるオブジェクトが他の多くのオブジェクトに対して参照を持ち、それらと通信するので、それを再利用するのが難しい場合。
+
+<br><br>
+
+<li>いくつかのクラス間に分配された振る舞いを、できるだけサブクラス化を行わずにカスタマイズしたい場合。</ul>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kouzou">
+<img src="img/00/kouzou.gif" hspace="10">
+
+
+<font style="margin-left:40px;text-indent:10pt">
+
+<br><br><br><p align="center">
+<img src="img/pics/mediator.gif"></p>
+
+<font style="text-indent:10pt">
+
+　典型的なオブジェクトの構造は、次のようになるだろう。
+
+<br><br><br><p align="center">
+<img src="img/pics/media030.gif"></p>
+
+</font></font>
+
+
+
+
+
+<br><br><br>
+<a name="kousei">
+<img src="img/00/kousei.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+<ul><li><b>Mediator クラス</b> （DialogDirectorクラス）
+<ul><li>Colleague オブジェクトと通信するためのインタフェースを定義する。</ul>
+
+<br><br>
+
+<li><b>ConcreteMediator クラス</b> （FontDialogDirector クラス）
+<ul><li>Colleague オブジェクト間の調整を図ることにより、協調的な振る舞いを実装する。
+<li>Colleague オブジェクトを保持している。</ul>
+
+<br><br>
+
+<li>Colleague クラス </b>（ListBox クラス、EntryField クラス）
+<ul><li>各 Colleague クラスが Mediator オブジェクトを知っている。
+<li>各 Colleague オブジェクトは、他の Colleague オブジェクトと通信しなければならないときには、常に Mediator オブジェクトを介して行う。</ul></ul>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kyou">
+<img src="img/00/kyou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+<ul><li>Colleague オブジェクトは、Mediator オブジェクトに対して要求を送信し、Mediator オブジェクトから要求を受信する。ConcreteMediator オブジェクトは、適当な Colleague オブジェクトに対して要求を順番に送信していくことにより、協調的な振る舞いを実現する。</ul>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kekka">
+<img src="img/00/kekka.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Mediator パターンには、次の利点と欠点がある。
+
+<br><br>
+
+<ol><li><b>サブクラス化を制限する。</b>mediator は、それを用いなければいくつかのオブジェクト間に分配されるであろう振る舞いを、局所化する。この振る舞いを変更するには、Mediator クラスをサブクラス化するだけでよい。Colleague クラスはそのままで再利用することができる。
+
+<br><br>
+
+<li><b>Colleague オブジェクトの結合度を低くする。</b>mediator は、Colleague オブジェクト間の結合度を低めることを促進する。さまざまな Colleague クラスや Mediator クラスを独立に再利用することができる。
+
+<br><br>
+
+<li><b>オブジェクトのプロトコルを簡単なものにする。</b>mediator は、多対多の相互作用を mediator と Colleague オブジェクト間での一対多の相互作用に置き換える。一対多の関係は、理解、保守、拡張を容易にする。
+
+<br><br>
+
+<li><b>オブジェクトをどのように協力させるのかを抽出する。</b>仲介という概念を独立なものとしてオブジェクトの中にカプセル化することにより、個々のオブジェクトの振る舞いから離れたところで、オブジェクト同士がどのように相互作用し合うのかを集中して考えることができるようになる。そのことは、オブジェクトがシステムの中でどのように相互作用し合うのかを明確にするための助けとなる。
+
+<br><br>
+
+<li><b>制御を集中化する。</b>Mediator パターンは、相互作用の複雑度を mediator 内の複雑度に置き換える。mediator はプロトコルをカプセル化するので、個々の Colleague オブジェクトよりも複雑になり得る。このことは、mediator 自体を保守が難しい一枚岩にする。</ol>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="jissou">
+<img src="img/00/jissou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Mediator パターンに関する実装の問題を次にあげる。
+
+<br><br>
+
+<ol><li><b>抽象クラス Mediator を省略する。</b>Colleague オブジェクトの仲介をする mediator が1つしか考えられないときには、抽象クラス Mediator を定義する必要はない。Mediator クラスが提供する抽象的結合は、Mediator の異なるサブクラスが Colleague オブジェクトを仲介できるようにする。また、逆も真である。
+
+<br><br>
+
+<li><b>Colleague-Mediator 通信。</b>Colleague オブジェクトは、それに関係するイベントが発生したときには mediator と通信をしなければならない。1つのアプローチとしては、<a href="19.html" target="down">Observer パターン</a>を使って Mediator クラスを Observer として実装することがあげられる。その場合、Colleague クラスは Subject として活動するように記述される。すなわち、Colleague オブジェクトはその状態が変化したときには mediator に対して通知を送るようにする。mediator は、その変化による影響を他の Colleague オブジェクトに伝えるように反応する。
+
+<br><font style="text-indent:10pt">
+
+　もう1つのアプローチでは、Colleague オブジェクトがより直接的に通信に関与するように、Mediator クラスに特別な通知のためのインタフェースを定義する。Smalltalk/V では委譲の形式を使用している。mediator と通信するときには、Colleague オブジェクトは自身を引数として与え、mediator に送信元を識別させるようにする。「サンプルコード」の節ではこのアプローチを紹介する。また、Smalltalk/V での実装については「使用例」の節でさらに論じる。</ol>
+
+</font></font>
+
+
+
+
+
+<br><br><br>
+<a name="sample">
+<img src="img/00/sample.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　動機で示したフォントに関するダイアログボックスを実装するために、DialogDirector クラスを使うことにする。抽象クラス DialogDirector は、ディレクタ全般のためのインタフェースを定義する。
+
+<br><br><pre>
+    class DialogDirector {
+    public:
+        virtual ~DialogDirector();
+    
+        virtual void ShowDialog();
+        virtual void WidgetChanged(Widget*) = 0;
+    
+    protected:
+        DialogDirector();
+        virtual void CreateWidgets() = 0;
+    };
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　Widget クラスはウィジェット全般のための抽象基底クラスである。ウィジェットはディレクタを知っている。
+
+<br><br><pre>
+    class Widget {
+    public:
+        Widget(DialogDirector*);
+        virtual void Changed();
+    
+        virtual void HandleMouse(MouseEvent&amp; event);
+        // ...
+    private:
+        DialogDirector* _director;
+    };
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　Changed オペレーションは、ディレクタに対して WidgetChanged オペレーションを呼び出す。ウィジェットは、意味のあるイベントが起こったことをディレクタに対して知らせるために WidgetChanged オペレーションを呼び出す。
+
+<br><br><pre>
+    void Widget::Changed () {
+        _director->WidgetChanged(this);
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　DialogDirector のサブクラスは、適当なウィジェットに影響を与えるように WidgetChanged オペレーションをオーバーライドする。ウィジェットは、ディレクタが変化の起きたウィジェットを識別できるように、自身への参照を WidgetChanged オペレーションに引数として渡す。DialogDirector のサブクラスは、ダイアログ内のウィジェットを生成するために、純粋仮想関数として宣言されていた CreateWidgets オペレーションを再定義する。
+
+<br><font style="text-indent:10pt">
+
+　ListBox クラス、EntryField クラス、Button クラスは、特定のユーザインタフェース要素のために定義された Widget のサブクラスである。ListBox クラスは、現在選択されている項目を取得するために GetSelection オペレーションを提供している。EntryField クラスの SetText オペレーションは、新しいテキストをフィールド内に入れる。
+
+<br><br><pre>
+    class ListBox : public Widget {
+    public:
+        ListBox(DialogDirector*);
+    
+        virtual const char* GetSelection();
+        virtual void SetList(List&lt;char*>* listItems);
+        virtual void HandleMouse(MouseEvent&amp; event);
+        // ...
+    };
+    
+    class EntryField : public Widget {
+    public:
+        EntryField(DialogDirector*);
+    
+        virtual void SetText(const char* text);
+        virtual const char* GetText();
+        virtual void HandleMouse(MouseEvent&amp; event);
+        // ...
+    };
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　Button クラスは、それが押されたときに必ず Changed オペレーションを呼び出す簡単なサブクラスである。これは HandleMouse オペレーションで実装されている。
+
+<br><br><pre>
+    class Button : public Widget {
+    public:
+        Button(DialogDirector*);
+    
+        virtual void SetText(const char* text);
+        virtual void HandleMouse(MouseEvent&amp; event);
+        // ...
+    };
+    
+    void Button::HandleMouse (MouseEvent&amp; event) {
+        // ...
+        Changed();
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　FontDialogDirector クラスは、ダイアログボックス内のウィジェット間の仲介を行う。FontDialogDirector クラスは DialogDirector のサブクラスである。
+
+<br><br><pre>
+    class FontDialogDirector : public DialogDirector {
+    public:
+        FontDialogDirector();
+        virtual ~FontDialogDirector();
+        virtual void WidgetChanged(Widget*);
+    
+    protected:
+        virtual void CreateWidgets();
+    
+    private:
+        Button* _ok;
+        Button* _cancel;
+        ListBox* _fontList;
+        EntryField* _fontName;
+    };
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　FontDialogDirector クラスは、表示するウィジェットを保持しており、ウィジェットを生成してそれらへの参照を初期化するように、CreateWidgets オペレーションを再定義する。
+
+<br><br><pre>
+    void FontDialogDirector::CreateWidgets () {
+        _ok = new Button(this);
+        _cancel = new Button(this);
+        _fontList = new ListBox(this);
+        _fontName = new EntryField(this);
+    
+        // fill the listBox with the available font names
+    
+        // assemble the widgets in the dialog
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　WidgetChanged オペレーションは、ウィジェット同士がともに適切に働くことを保証している。
+
+<br><br><pre>
+    void FontDialogDirector::WidgetChanged (
+        Widget* theChangedWidget
+    ) {
+        if (theChangedWidget == _fontList) {
+            _fontName->SetText(_fontList->GetSelection());
+    
+        } else if (theChangedWidget == _ok) {
+            // apply font change and dismiss dialog
+            // ...
+    
+        } else if (theChangedWidget == _cancel) {
+            // dismiss dialog
+        }
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　WidgetChanged オペレーションの複雑度は、ダイアログの複雑度に比例して増えていく。したがって、ダイアログが大がかりだとそれに伴って mediator も複雑になるので、このパターンの利点は減ることになるだろう（ダイアログが大がかりなことは、もちろん他の理由からも望ましくないのだが）。
+
+</font></font></font></font></font></font></font></font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="siyou">
+<img src="img/00/siyou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　ET++［WGM88］と THINK C クラスライブラリ［Sym93b］の両方で、ディレクタのようなオブジェクトをダイアログ内のウィジェット間の mediator として使用している。
+
+<br><font style="text-indent:10pt">
+
+　Windows 対応の Smalltalk/V のアプリケーションアーキテクチャは、mediator の構造に基づいている［LaL94］。この環境では、アプリケーションはペインの集合を含むウィンドウからなり立っている。ライブラリには、あらかじめ定義されたいくつかのペインオブジェクトがある。たとえば、TextPane クラス、ListBox クラス、Button クラスなどである。これらのペインはサブクラス化しなくても使うことができる。アプリケーションの開発者は、ペイン間の調整を行う責任がある ViewManager クラスをサブクラス化するだけでよい。ViewManager は Mediator クラスであり、各ペインはこの ViewManager のオブジェクトのみを知っていればよい（このオブジェクトがペインを“所有している”と考えられる）。ペイン同士は、お互いに相手を直接参照し合うようなことはない。
+
+<br><font style="text-indent:10pt">
+
+　次のオブジェクトダイアグラムは、実行時のアプリケーションのスナップショットを示している。
+
+<br><br><br><p align="center">
+<img src="img/pics/media032.gif"></p>
+<br><br><br>
+
+<font style="text-indent:10pt">
+
+　Smalltalk/V では、ペインと ViewManager の通信のためにイベントメカニズムを使っている。ペインは、mediator から情報を得たいとき、または重要なことが起こったことを mediator に知らせたいときには、イベントを生成する。イベントはその内容を識別できるようにシンボル（たとえば、#select）を定義している。イベントを扱うために、ViewManager のオブジェクトはペインにメソッドセレクタを登録する。このセレクタはイベントハンドラになる。それは、イベントが起こったときに呼び出される。次のコードの抜粋は、ListPane オブジェクトが ViewManager のサブクラスの中でどのように生成され、また ViewManager クラスが#select イベントに対してイベントハンドラをどのように登録するのかを示している。
+
+<br><br><pre>
+    self addSubpane: (ListPane new
+         paneName: 'myListPane';
+         owner: self;
+         when: #select perform: #listSelect:).
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　Mediator パターンのもう1つの適用として、複雑な更新を調整する場合があげられる。例としては、<a href="19.html" target="down">Observer パターン</a>で説明する ChangeManager クラスがあげられる。ChangeManager クラスは冗長な更新を避けるために、subject と observer の仲介をする。あるオブジェクトが変化すると、そのことが ChangeManager オブジェクトに知らされる。すると ChangeManager オブジェクトは、変化が起こったオブジェクトに対して依存関係にあるオブジェクトにそれを知らせることにより更新を行う。
+
+<br><font style="text-indent:10pt">
+
+　似たような適用例が Unidraw の描画フレームワーク［VL90］に現れる。そこでは、コネクタ間の接続に関する制約を満たすようにするために、CSolver と呼ばれるクラスを使っている。図形エディタ内では、オブジェクトを異なる方法でつなぎ合わせることができる。コネクタは、ダイアグラムエディタや回路設計システムのように、接続関係を自動的に維持していくアプリケーションで役に立つ。そこでは、CSolver クラスがコネクタ間の仲介をする。接続に関する制約を解決し、それを反映するようにコネクタの位置を更新する。
+
+</font></font></font></font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="kanren">
+<img src="img/00/kanren.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　<a href="10.html" target="down">Facade パターン</a>: <a href="10.html" target="down">Facade パターン</a>は、その目的がより便利なインタフェースを提供するためにサブシステムを構成しているオブジェクトを抽象化するという点で、Mediator パターンとは異なっている。そのプロトコルは一方向である。すなわち、Facade オブジェクトはサブシステムを構成しているオブジェクトに対して要求を出すが、その逆はない。それとは対照的に、Mediator パターンは、Colleague オブジェクトが提供していない、または提供できない協調的な振る舞いを可能にし、そのプロトコルは双方向である。
+
+<br><font style="text-indent:10pt">
+
+　<a href="19.html" target="down">Observer パターン</a>: Colleague オブジェクトは、<a href="19.html" target="down">Observer パターン</a>を使って mediator と通信することができる。
+
+</font></font>
+
+<br><br><br>
+
+</body>
+</html>

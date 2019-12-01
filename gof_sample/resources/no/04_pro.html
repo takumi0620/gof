@@ -1,0 +1,464 @@
+<html>
+<head>
+<title>PROTOTYPE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=x-sjis">
+</head>
+<body bgcolor=#ffffff text=#000000>
+
+<font size="3">
+
+<img src="img/title/pro.gif" hspace="10" vspace="10">
+
+<br><br><br>
+<a name="moku">
+
+<img src="img/00/moku.gif" hspace="10">
+<br><br>
+<font style="margin-left:40px;text-indent:10pt">
+
+　生成すべきオブジェクトの種類を原型となるインスタンスを使って明確にし、それをコピーすることで新たなオブジェクトの生成を行う。
+</font>
+
+<br><br><br>
+<a name="douki">
+<img src="img/00/douki.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　図形エディタの一般的なフレームワークを適宜カスタマイズし、さらに、音符、休止符、譜表を表現する新たなオブジェクトを追加することで、楽譜編集用のエディタを作ることができるとしよう。このフレームワークは、いろいろな種類の楽譜用オブジェクトを譜面に追加するために、ツールパレットを持っている。このパレットには、楽譜用オブジェクトを選択したり、移動したり、その他のオペレーションを行うためのツールも含まれるだろう。たとえば、ユーザは四分音符ツールを選択して、これを使って楽譜上に四分音符を書き加えたり、移動ツールを使って音符を譜表上で上下させて音程を変えたりする。
+
+<br><font style="text-indent:10pt">
+
+　このフレームワークは、音符や譜表のような図形オブジェクトを表現するための抽象クラス Graphic を提供している。また、パレット上のツールを定義するための抽象クラス Tool も提供している。さらに、フレームワークでは、図形オブジェクトを生成して書類上に追加するツールのために、サブクラス GraphicTool があらかじめ定義されている。
+
+<br><font style="text-indent:10pt">
+
+　しかし、GraphicTool クラスは、フレームワークの設計者にとって問題になる。GraphicTool クラスはフレームワークに属しているものの、音符や譜表などのクラスはこの楽譜編集エディタに固有のものであるため、GraphicTool クラスは、音符などのクラスのインスタンスを楽譜に加えるためにどのように生成したらよいのかを知らない。楽譜を構成するオブジェクトごとに GraphicTool のサブクラスを作ることもできるが、生成するオブジェクトの種類だけが異なる多数のサブクラスを作り出す結果になってしまう。オブジェクトコンポジションは一般にサブクラス化に代わる柔軟な方法である。しかし、インスタンス化される Graphic のクラスにより GraphicTool クラスのインスタンスをパラメータ化するために、フレームワークがオブジェクトコンポジションをどのように利用したらよいのかは、問題になる点である。
+
+<br><font style="text-indent:10pt">
+
+　解決策として、GraphicTool クラスが、複製、すなわち Graphic のサブクラスのインスタンスを“クローン化”して、新たなオブジェクトを生成する方法をあげることができる。このインスタンスのことを prototype と呼ぶ。GraphicTool クラスは、prototype によりパラメータ化され、この prototype の複製によりオブジェクトを生成して、これを楽譜に追加する。もし、Graphic のすべてのサブクラスが、複製のためのオペレーション Clone をサポートするならば、GraphicTool クラスは Graphic の任意のサブクラスについて複製を行うことができるようになる。
+
+<br><font style="text-indent:10pt">
+
+　楽譜編集エディタの場合には、楽譜オブジェクトを生成する各ツールはそれぞれ別々の prototype で初期化された GraphicTool クラスのインスタンスである。各インスタンスは、prototype の複製を行い、それを楽譜に追加していく。
+
+<br><br><br>
+<p align="center">
+<img src="img/pics/proto019.gif">
+</p>
+<br><br><br>
+
+<font style="text-indent:10pt">
+
+　Prototype パターンを使うことで、クラスの数をかなり減らすことができる。ダイアグラムでは二分音符（ half note ）と全音符（ whole note ）が別々のクラスになっているが、これは必要のないことである。これらは、異なるビットマップと長さで初期化される、同一クラスのインスタンスとして表現することができる。全音符用のツールは、全音符で初期化された MusicalNote オブジェクトを prototype として持つ GraphicTool オブジェクトである。このようにすることで、システム全体で必要になるクラスの数を大幅に減らすことができる。さらに、楽譜編集エディタに新たな音符を追加することも容易になる。
+
+</font></font></font></font></font></font>
+
+<br><br><br>
+<a name="teki">
+<img src="img/00/teki.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Prototype パターンは、オブジェクトがどのように生成され、組み合わされ、表現されるのかということからシステムが独立であるべき場合に、適用することができる。さらに、以下のような場合にも適用できる。
+
+<br><br>
+<ul><li>インスタンス化されるクラスが、たとえば、ダイナミックローディングにより、実行時に明らかになる場合。
+<br><br><li>
+生成されるオブジェクトのクラス階層とパラレルな関係になる factory のクラス階層を作ることを避けたい場合。
+<br><br><li>
+クラスのインスタンスが、状態の数少ない組み合わせの中の1つを取る場合。この可能な組み合わせ1つ1つに相当するインスタンスを prototype としてあらかじめ用意しておき、その複製を行う方が、毎回クラスを適当な状態でインスタンス化するよりも便利であろう。
+</ul>
+
+</font>
+
+<br><br><br>
+<a name="kouzou">
+<img src="img/00/kouzou.gif" hspace="10">
+<br><br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+<p align="center">
+<img src="img/pics/proto018.gif">
+</p>
+</font>
+
+<br><br><br>
+<a name="kousei">
+<img src="img/00/kousei.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+<ul>
+<li><b>Prototype クラス</b> （ Graphic クラス）
+<ul><li>複製のためのインタフェースを宣言する。</ul>
+<br><br>
+<li><b>ConcretePrototype クラス</b> （ Staff クラス、WholeNote クラス、HalfNote クラス）
+<ul><li>自身の複製を行うためのオペレーションを実装する。</ul>
+<br><br>
+<li><b>Client クラス</b> （ GraphicTool クラス）
+<ul><li>rototype に複製を依頼することで、新たなオブジェクトを生成する。</ul>
+</ul>
+
+</font>
+
+<br><br><br>
+<a name="kyou">
+<img src="img/00/kyou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+<ul><li>Clientオブジェクトは ConcretePrototype オブジェクトに複製を依頼する。
+</ul>
+
+</font>
+
+<br><br><br>
+<a name="kekka">
+<img src="img/00/kekka.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Prototype パターンを適用すると、<a href="01.html" target="down">Abstract Factory パターン</a>や <a href="02.html" target="down">Builder パターン</a>と同様の結果が得られる。Prototype パターンは、Client オブジェクトに対してインスタンス化する具象クラスを隠ぺいしているので、Client クラスが把握しておく必要のあるクラス名の数は少なくて済むことになる。さらにこれらのパターンでは、Client オブジェクトを、修正せずに特定のアプリケーション向けのクラスと協調させることができるようになる。
+
+<br><font style="text-indent:10pt">
+
+　他にも、Prototype パターンには次にあげる利点がある。
+
+<br><br>
+
+<ol><li><b>
+生成するオブジェクトの追加/削除を実行時に行える。</b>Prototype パターンでは、Client オブジェクトに prototype を登録するだけで、新たな具象クラスをシステム内に取り込むことができるようになる。この方法では、Client オブジェクトが実行時に prototype を追加したり削除したりできるので、生成に関する他のパターンと比べて、より柔軟性が得られる。
+
+<br><br>
+
+<li><b> 値を変えることでオブジェクトの仕様を変更できる。</b>きわめて動的なシステムでは、新たなクラスを定義することによってではなく、たとえば、オブジェクトの変数の値を変えることにより、オブジェクトの新たな振る舞いを定義できるようになっている。すなわち、既存のクラスをインスタンス化して prototype として Client オブジェクトに登録することで、事実上、新たな種類のオブジェクトを定義することができる。Client オブジェクトは、prototype に責任を委譲することで新たな振る舞いを示すことができる。
+
+<br><font style="text-indent:10pt">
+
+　このような設計により、ユーザは、プログラムすることなしに新たなクラスを定義することができるようになる。実際、prototype の複製は、あるクラスをインスタンス化することに類似している。したがって、Prototype パターンは、システムが必要とするクラスの数を大幅に減少させることになる。楽譜編集エディタの例では、1つの GraphicTool クラスが限りない種類のオブジェクトを生成できるようになっている。
+
+
+<br><br>
+
+<li><b>構造を変えることでオブジェクトの仕様を変更できる。</b>多くのアプリケーションでは、オブジェクトを部品を使って作成している。たとえば回路設計エディタでは、回路をいくつかの部分回路から作成するようになっている。
+
+<br><font style="text-indent:10pt">
+
+　このようなアプリケーションでは、便宜上、ある特定の部分回路を繰り返し使うことになるため、しばしば、ユーザが定義した複雑な構造をインスタンス化することになる。Prototype パターンでは、この点もサポートしている。すなわち、部分回路を回路部品のパレットに prototype として追加するだけでよい。回路を表す合成オブジェクトが、Clone オペレーションを“深いコピー”として実装していれば、構造の異なる回路をそれぞれ prototype にすることができる。
+
+<br><br>
+
+<li><b>サブクラス化を減らす。</b><a href="03.html" target="down">Factory Method パターン</a>は、しばしば生成されるオブジェクトのクラス階層とパラレルな Creator のクラス階層を作り出す。Prototype パターンでは、factory method に新たなオブジェクトの生成を依頼する代わりに、prototype の複製を行うので、Creator のクラス階層を作る必要はなくなる。このことは、C++のようにクラスが first-class オブジェクトとして扱われない言語にとってはメリットがあるのだが、Smalltalk や Objective C のような言語ではクラスオブジェクトを使うことができるので、メリットは少なくなる。こうした言語では、すでにクラスオブジェクトが prototype のように振る舞っているからである。
+
+<br><br>
+
+<li><b>アプリケーションのクラス構成を動的に決める。</b>ある実行環境では、アプリケーションにクラスを動的にロードしなければならない場合がある。Prototype パターンは、C++のような言語においてこの機能を実現する手段になる。アプリケーションが、動的にロードされたクラスのインスタンスを生成する場合、そのコンストラクタを静的に参照することはできない。その代わりに、実行環境はクラスがロードされると自動的にそのインスタンスを生成し、それを prototype マネージャに登録する（「実装」の節を参照）。それにより、アプリケーションは、prototype マネージャに対して、新たにロードされたクラス、すなわち、プログラムにもともとリンクされていなかったクラスのインスタンスを要求することができるようになる。ET++におけるアプリケーションフレームワーク［WGM88］では、この方式を使った実行システムを備えている。
+
+<br><font style="text-indent:10pt">
+
+　Prototype パターンの主な問題点として、prototype の各サブクラスが Clone オペレーションを実装しなければならず、これが困難な場合があるということがあげられる。たとえば、すでに存在しているクラスに対して Clone オペレーションを追加することは難しい。あるいは、その内部に複製をサポートしていないオブジェクトや循環する参照を持つオブジェクトを含む場合には、Clone オペレーションを実装することが困難になる。
+</ol>
+
+</font></font></font></font></font>
+
+<br><br><br>
+<a name="jissou">
+<img src="img/00/jissou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Prototype パターンは、クラスがオブジェクトとして扱われず、実行時に得られるタイプ情報が少ないかあるいはまったくない、C++のような静的な言語において特に有効である。一方 Smalltalk や Objective C のように、各クラスがインスタンスを生成するために prototype に相当する機能（つまり、クラスオブジェクト）を提供している言語でのメリットは少ない。Prototype パターンは、Self［US87］のようにすべてのオブジェクト生成を prototype の複製で行う言語に組み込まれている。
+
+<br><font style="text-indent:10pt">
+
+　このパターンを実装する場合には、以下の点を考慮する必要がある。
+
+<br><br>
+
+<ol><li><b>
+prototype マネージャを利用する。</b>システム内の prototype の数が固定的でない（すなわち、実行時に動的に生成されたり破壊されたりする）場合には、利用可能な prototype を登録しておくための機構が必要になる。Client オブジェクトは prototype を直接扱うのではなく、登録されているものを検索したり、新たに登録したりする。Client オブジェクトは、複製を行うに先立って、この登録機構に対して必要な prototype がすでに登録されているかどうかを問い合わせる。この登録機構を prototype マネージャと呼ぶ。
+
+<br><font style="text-indent:10pt">
+
+　prototype マネージャは、与えられたキーに合致する prototype を返す連想記憶になっており、キーとともに prototype を登録するオペレーションや、登録を削除するオペレーションを持つ。また、Client オブジェクトは登録されている prototype を実行時に変更したり、一覧することができる。したがって、Client クラスでは prototype の追加や利用のためのコードを書く必要はない。
+
+<br><br>
+
+<li><b>
+Clone オペレーションを実装する。</b>Prototype パターンの実現でもっとも困難な点は、Clone オペレーションを正しく実装することである。特に、オブジェクト構造が循環する参照を含む場合は扱いにくい。
+
+<br><font style="text-indent:10pt">
+
+　オブジェクトの複製を行うために何らかのサポートを提供している言語が多い。たとえば、Smalltalk では、Object クラスのすべてのサブクラスが copy メソッドの実装を継承して提供している。C++では、コピーコンストラクタが提供されている。しかし、これらの機能は、“浅いコピーと深いコピー”の問題［GR83］を解決するものではない。つまり、オブジェクトの複製を行うということを、元のインスタンス変数を共有させることにするのか、またはインスタンス変数の複製を行うことにするのか、という問題が残される。
+
+<br><font style="text-indent:10pt">
+
+　浅いコピーの方が単純で、多くの場合にはそれで十分と言える。Smalltalk では、デフォルトで浅いコピーが提供されている。C++で提供されているデフォルトのコピーコンストラクタは、メンバごとのコピーであり、ポインタはコピーとコピー元とが共有することになる。複雑な構造を持つ prototype の複製を行う場合には、複製と prototype との独立性を確保するために、通常、深いコピーが必要になる。したがって、prototype の構成要素についても複製を行わなければならない。複製を行う場合には、共有によりどのようなことが起きるのかを事前に判断しなければならない。
+
+<br><font style="text-indent:10pt">
+
+　システム内のオブジェクトが Save オペレーションと Load オペレーションを提供しているのであれば、それらを使って、単にオブジェクトをセーブしてすぐにロードすることで Clone オペレーションのデフォルトの実装を与えることができる。Save オペレーションではメモリバッファにオブジェクトを格納し、Load オペレーションではバッファ中からオブジェクトを再生成して複製を作り出す。
+
+<br><br>
+
+<li><b>
+複製の初期化を行う。</b>Client オブジェクトにとって、複製をあるがままの状態にしておけばよい場合もあるが、複製の内部状態の一部あるいは全部を特定の値で初期化しなければならない場合もあるだろう。しかし、一般に Clone オペレーションにそのための値を渡すことはできない。なぜならば、初期化のために複数のパラメータを必要とする prototype もあれば、パラメータをまったく必要としない prototype もあるというように、prototype のクラスごとに必要なパラメータの数が異なるからである。したがって、Clone オペレーションにパラメータを渡す方法では、統一的なインタフェースを作ることはできない。
+
+<br><font style="text-indent:10pt">
+
+　prototype のクラスで、状態の（再）設定のためのオペレーションがすでに定義されている場合もあるだろう。この場合には、クライアントは複製を行った後、ただちにこのオペレーションを実行することになる。定義されていない場合には、初期化のためのパラメータを引数として取り、それを基に複数の内部状態を設定する Initialize オペレーション（「サンプルコード」の節を参照）を導入しなければならない。Clone オペレーションが、深いコピーを行う場合には、再設定をする前に、（明示的に、あるいは Initialize オペレーションの中で）それまでの複製を削除しなければならないことに注意してほしい。
+</ol>
+
+</font></font></font></font></font></font></font>
+
+<br><br><br>
+<a name="sample">
+<img src="img/00/sample.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　MazeFactory（<a href="01.html" target="down">Abstract Factory パターン</a>の「サンプルコード」の節を参照）のサブクラスとして、MazePrototypeFactory クラスを定義しよう。この MazePrototypeFactory クラスは、壁や部屋のクラスを変更するためだけにサブクラス化を行わなくても済むように、生成するオブジェクトをあらかじめ prototype として持つように初期化される。MazePrototypeFactory クラスは、MazeFactory クラスのインタフェースの他に、prototype を引数として取るコンストラクタを備えている。
+
+<p><pre>
+    class MazePrototypeFactory : public MazeFactory {
+    public:
+        MazePrototypeFactory(Maze*, Wall*, Room*, Door*);
+    
+        virtual Maze* MakeMaze() const;
+        virtual Room* MakeRoom(int) const;
+        virtual Wall* MakeWall() const;
+        virtual Door* MakeDoor(Room*, Room*) const;
+    
+    private:
+        Maze* _prototypeMaze;
+        Room* _prototypeRoom;
+        Wall* _prototypeWall;
+        Door* _prototypeDoor;
+    };
+</pre><p>
+
+<font style="text-indent:10pt">
+
+　新たなコンストラクタは、単に prototype を初期化するだけである。
+
+<p><pre>
+    MazePrototypeFactory::MazePrototypeFactory (
+        Maze* m, Wall* w, Room* r, Door* d
+    ) {
+       _prototypeMaze = m;
+       _prototypeWall = w;
+       _prototypeRoom = r;
+       _prototypeDoor = d;
+    }
+</pre><p>
+
+<font style="text-indent:10pt">
+
+　壁、部屋、ドアを生成するメンバ関数は互いに類似している。すなわち、それらは prototype の複製と初期化を行う。MakeWall と MakeDoor の定義を次に示す。
+
+<p><pre>
+    Wall* MazePrototypeFactory::MakeWall () const {
+        return _prototypeWall->Clone();
+    }
+    
+    Door* MazePrototypeFactory::MakeDoor (Room* r1, Room *r2) const {
+        Door* door = _prototypeDoor->Clone();
+        door->Initialize(r1, r2);
+        return door;
+    }
+</pre><p>
+
+<font style="text-indent:10pt">
+
+　MazePrototypeFactory オブジェクトを、迷路の基本要素の prototype で初期化すれば、原型となる迷路をデフォルトで作成することができる。
+
+<p><pre>
+    MazeGame game;
+    MazePrototypeFactory simpleMazeFactory(
+        new Maze, new Wall, new Room, new Door
+    );
+    
+    Maze* maze = game.CreateMaze(simpleMazeFactory);
+</pre><p>
+
+<font style="text-indent:10pt">
+
+　他の迷路を作成する場合には、MazePrototypeFactory オブジェクトを別の prototype で初期化すればよい。次の例では、BombedDoor オブジェクトと RoomWithABomb オブジェクトを使って迷路を生成している。
+
+<p><pre>
+    MazePrototypeFactory bombedMazeFactory(
+        new Maze, new BombedWall,
+        new RoomWithABomb, new Door
+    );
+</pre><p>
+
+<font style="text-indent:10pt">
+
+　Wall クラスのように、そのインスタンスを prototype として使うことのできるクラスは、Clone オペレーションを提供していなければならない。また、複製のためのコピーコンストラクタも持たなければならない。さらに、内部状態を再初期化するためのオペレーションが必要になる場合もある。Client オブジェクトが複製の Door オブジェクトのメンバ変数を初期化できるように、Door クラスに Initialize オペレーションを追加する。
+
+<br><font style="text-indent:10pt">
+
+　次の Door クラスの定義を91ページの定義と比較してみてほしい。
+
+<p><pre>
+    class Door : public MapSite {
+    public:
+        Door();
+        Door(const Door&amp;);
+    
+        virtual void Initialize(Room*, Room*);
+        virtual Door* Clone() const;
+    
+        virtual void Enter();
+        Room* OtherSideFrom(Room*);
+    private:
+        Room* _room1;
+        Room* _room2;
+    };
+    
+    Door::Door (const Door&amp; other) {
+        _room1 = other._room1;
+        _room2 = other._room2;
+    }
+    
+    void Door::Initialize (Room* r1, Room* r2) {
+        _room1 = r1;
+        _room2 = r2;
+    }
+    
+    Door* Door::Clone () const {
+        return new Door(*this);
+    }
+</pre><p>
+
+<font style="text-indent:10pt">
+
+　BombedWall クラスでは、コピーコンストラクタを適切に実装して、これを使って Clone オペレーションをオーバーライドしなければならない。
+
+<p><pre>
+    class BombedWall : public Wall {
+    public:
+        BombedWall();
+        BombedWall(const BombedWall&amp;);
+    
+        virtual Wall* Clone() const;
+        bool HasBomb();
+    private:
+        bool _bomb;
+    };
+    
+    BombedWall::BombedWall (const BombedWall&amp; other) : Wall(other) {
+        _bomb = other._bomb;
+    }
+    
+    Wall* BombedWall::Clone () const {
+        return new BombedWall(*this);
+    }
+</pre><p>
+
+<font style="text-indent:10pt">
+
+　BombedWall::CloneはWall*を返すように宣言されているが、その実装ではサブクラスの新たなインスタンスへのポインタ、すなわち BombedWall*が返されることになる。Clone オペレーションをこのように定義した理由は、prototype の複製を行う Client オブジェクトが具象サブクラスを知らなくても済むようにするためである。Client オブジェクトの側では、Clone オペレーションの返却値を望む型にダウンキャストしなくてもよいようにしておくべきである。
+
+<br><font style="text-indent:10pt">
+
+　Smalltalk では、任意の MapSite のオブジェクトの複製を行うために、Object クラスから継承される標準的な copy メソッドを利用することができる。必要な prototype の複製を行うためには、MazeFactory クラスを使うことができる。たとえば、#room という名前を与えて部屋のオブジェクトを生成することができる。MazeFactory オブジェクトには名前と prototype の対応関係を示す辞書が保持されている。そこで make: メソッドは次のようになる。
+
+<p><pre>
+    make: partName
+        ^ (partCatalog at: partName) copy
+</pre><p>
+
+<font style="text-indent:10pt">
+
+　MazeFactory オブジェクトを prototype で初期化するための適当なメソッドがそろっているとすると、次のようなコードで簡単な迷路を作成することができる。
+
+<p><pre>
+    CreateMaze
+        on: (MazeFactory new
+            with: Door new named: #door;
+            with: Wall new named: #wall;
+            with: Room new named: #room;
+            yourself)
+</pre><p>
+
+<font style="text-indent:10pt">
+
+　CreateMaze メソッドの中で使用するクラスメソッド on: の定義は次のようになる。
+
+<p><pre>
+    on: aFactory
+        | room1 room2 |
+        room1 := (aFactory make: #room) location: 1@1.
+        room2 := (aFactory make: #room) location: 2@1.
+        door := (aFactory make: #door) from: room1 to: room2.
+    
+        room1
+            atSide: #north put: (aFactory make: #wall);
+            atSide: #east put: door;
+            atSide: #south put: (aFactory make: #wall);
+            atSide: #west put: (aFactory make: #wall).
+        room2
+            atSide: #north put: (aFactory make: #wall);
+            atSide: #east put: (aFactory make: #wall);
+            atSide: #south put: (aFactory make: #wall);
+            atSide: #west put: door.
+        ^ Maze new
+            addRoom: room1;
+            addRoom: room2;
+            yourself
+</pre>
+
+</font></font></font></font></font></font></font></font></font></font></font></font>
+
+<br><br><br>
+<a name="siyou">
+<img src="img/00/siyou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Prototype パターンを最初に使ったのは、おそらく、Ivan Sutherland による Sketchpad システム［Sut63］であろう。オブジェクト指向言語にこのパターンを適用して最初に有名になったのは、ThingLab においてであった。この言語では、ユーザが作成した合成オブジェクトを、再利用可能なオブジェクトとしてライブラリに登録することで、prototype として利用することができた［Bor81］。Goldberg と Robson はパターンとしての prototype について論じているが［GR83］、Coplien［Cop92］はさらに詳細な説明を行っている。彼は Prototype パターンに関連するC++の慣用コードについて説明し、多くの例や変形を示している。
+
+<br><font style="text-indent:10pt">
+
+　ET++上に実現されているデバッガのフロントエンド Etgdb は、さまざまな行デバッガに対して、マウスによるポインティングとクリックを使ったインタフェースを提供する。各デバッガは、それぞれ DebuggerAdaptor のサブクラスを持っている。たとえば GdbAdaptor クラスは、Etgdb を GNU gdb のコマンドシンタックスに合わせる機能を持っている。同様に SunDbxAdaptor クラスは、Etgdb を Sun の dbx デバッガに合わせている。Etgdb クラスでは、これらの DebuggerAdaptor のサブクラスを直接コード中に記述しているのではなく、利用すべき adaptor の名前を環境変数から読み込んで、その名前に対応する prototype をグローバルなテーブルの中から探し、それの複製を行うようになっている。新たなデバッガについては、そのデバッガのために働く DebuggerAdaptor のサブクラスを導入して同様に扱うことにより、対応が可能になる。
+
+<br><font style="text-indent:10pt">
+
+　Mode Composer における“インタラクション技術ライブラリ”には、さまざまなインタラクション技術をサポートする prototype が保存されている［Sha90］。Mode Composer により作成されたインタラクション技術は、このライブラリに保存することで、prototype として使うことができるようになる。これにより、Mode Composer ではインタラクション技術をいくらでも扱うことができるようになっている。
+
+<br><font style="text-indent:10pt">
+
+　先にあげた楽譜編集エディタの例は、Unidraw の描画フレームワーク［VL90］に基づいている。
+
+</font></font></font></font>
+
+<br><br><br>
+<a name="kanren">
+<img src="img/00/kanren.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　<a href="01.html" target="down">Abstract Factory パターン</a>: この章の最後で述べるが、Prototype パターンと <a href="01.html" target="down">Abstract Factory パターン</a>はある面で競合している。しかし、これらは一緒に使うこともできる。すなわち、<a href="01.html" target="down">Abstract Factory パターン</a>に prototype の集合を保存しておき、その中からオブジェクトの複製を行ってそれを返すようにすることができる。
+
+<br><font style="text-indent:10pt">
+
+　<a href="08.html" target="down">Composite パターン</a>、<a href="09.html" target="down">Decorator パターン</a>: これらのパターンを駆使している設計では、Prototype パターンも有効に使える場合が多い。
+
+</font></font>
+
+<br><br><br>
+
+
+</body>
+</html>

@@ -1,0 +1,448 @@
+<html>
+<head>
+<title>SINGLETON</title>
+<meta http-equiv="Content-Type" content="text/html; charset=x-sjis">
+</head>
+<body bgcolor=#ffffff text=#000000>
+
+<font size="3">
+
+<img src="img/title/sin.gif" hspace="10" vspace="10">
+
+<br><br><br>
+<a name="moku">
+<img src="img/00/moku.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　あるクラスに対してインスタンスが1つしか存在しないことを保証し、それにアクセスするためのグローバルな方法を提供する。
+
+</font>
+
+<br><br><br>
+<a name="douki">
+<img src="img/00/douki.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　クラスにインスタンスが1つしか存在しないことが重要になる場合がある。たとえば、システムには多数のプリンタを接続することができるが、プリンタスプーラは1つでなければならない。同様に、ファイルシステムやウィンドウマネージャも1つでなければならない。1つのデジタルフィルタは、1つの A/D コンバータを持つだろう。また、1つの会計システムは1つの会社の専用になるだろう。
+
+<br><font style="text-indent:10pt">
+
+　どのようにすれば、クラスがインスタンスを1つしか持たないようにして、また、そのインスタンスに手軽にアクセスできるようになるのだろうか。グローバル変数を使えば容易にアクセスできるようになるが、それだけではインスタンスが複数生成されないようにすることはできない。
+
+<br><font style="text-indent:10pt">
+
+　より良い解決方法は、クラス自体がその唯一のインスタンスを管理する責任を持つようにすることである。クラスは、新しいオブジェクトの生成要求を制御してインスタンスが1つしか生成されないことを保証し、また、そのインスタンスにアクセスする方法も提供することができる。これが Singleton パターンである。
+
+</font></font></font>
+
+<br><br><br>
+<a name="teki">
+<img src="img/00/teki.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Singleton パターンは次のような場合に利用できる。
+
+<br><br>
+
+<ul><li>
+クラスに対してインスタンスが1つしか存在してはならず、また、クライアントが、そのインスタンスを公開されたアクセスポイントを通してアクセスできるようにしなければならない場合。
+
+<br><br>
+
+<li>
+唯一のインスタンスがサブクラス化により拡張可能で、また、クライアントが、拡張されたインスタンスをコードの修正なしに利用できるようにしたい場合。
+</ul>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kouzou">
+<img src="img/00/kouzou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+<p align="center">
+<img src="img/pics/singl014.gif">
+</p>
+</font>
+
+
+
+<br><br><br>
+<a name="kousei">
+<img src="img/00/kousei.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+<ul><li><b>Singleton クラス</b>
+
+<ul><li>Instance オペレーションを定義し、クライアントが唯一のインスタンスにアクセスできるようにする。Instance オペレーションは、Smalltalk におけるクラスメソッドやC++における静的メンバ関数のようなクラスオペレーションである。
+<br><li>インスタンスが1つしか生成されないようにする。
+</ul></ul>
+
+</font>
+
+
+
+
+
+
+<br><br><br>
+<a name="kyou">
+<img src="img/00/kyou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+<ul><li>クライアントは、Singleton クラスの唯一のインスタンスに対して、Singleton クラスのクラスオペレーション Instance を通してアクセスする。
+</ul>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kekka">
+<img src="img/00/kekka.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Singleton パターンの効果を次にあげる。
+
+<br><br>
+
+<ol><li><b>
+インスタンスへのアクセスを制御する。</b>Singleton クラスはその唯一のインスタンスをカプセル化しているので、クライアントが、どのように、いつそれにアクセスするのかを厳しく制御することができる。
+
+<br><br>
+
+<li><b>名前空間を減らす。</b>Singleton パターンはグローバル変数の改良である。唯一のインスタンスを格納するグローバル変数を宣言する必要はなくなる。
+
+<br><br>
+
+<li><b>オペレーションや内部表現を詳細化できる。</b>Singleton クラスをサブクラス化して、そのサブクラスのインスタンスを使ってアプリケーションを組むことが容易にできる。必要なクラスのインスタンスを使って実行時にアプリケーションを組むこともできる。
+
+<br><br>
+
+<li><b>インスタンスの数を変えることができる。</b>Singleton クラスのインスタンスの数を2つ以上に変更することも容易にできるようになっている。さらに、同様のアプローチで、アプリケーションが利用するインスタンスの数をコントロールすることも可能である。Singleton クラスのインスタンスにアクセスするオペレーションだけを変更すればよい。
+
+<br><br>
+
+<li><b>クラスオペレーションよりも柔軟である。</b>Singleton パターンと同等の機能を提供する別の方法として、クラスオペレーション（C++における静的メンバ関数、Smalltalk におけるクラスメソッド）を用いることもできる。しかし、このような言語上のテクニックで対処する方法では、クラスのインスタンスを1つ以上に変更する場合に困難になる。さらに、C++における静的メンバ関数は仮想関数にすることができないので、サブクラスでポリモルフィックにオーバーライドすることはできない。
+</ol>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="jissou">
+<img src="img/00/jissou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Singleton パターンを利用する場合に考慮すべき実装上の問題をまとめておく。
+
+<br><br>
+
+<ol><li><b>インスタンスの唯一性を保証する。</b>Singleton パターンでは、唯一のインスタンスを特別扱いすることはないが、クラスはインスタンスを1つしか生成しないように記述されている。このようにするためによく使われる方法としては、クラスを生成するオペレーションを（静的メンバ関数やクラスメソッドなどの）クラスオペレーション内に隠ぺいして、インスタンスを1つしか生成できないようにすることである。このオペレーションは、唯一のインスタンスを格納する変数にアクセスするが、その際に、変数がインスタンスで初期化されていることを確認する。このようにして、Singleton クラスでは、初めて利用される前に必ずインスタンスが生成され初期化が行われるようになっている。
+
+<br><font style="text-indent:10pt">
+
+　C++では、Singleton クラスの静的メンバ関数 Instance を用いてこのようなクラスオペレーションを定義することができる。Singleton クラスは、静的メンバ変数- instance を定義して唯一のインスタンスへのポインタを保持する。
+
+<br><font style="text-indent:10pt">
+
+　Singleton クラスは次のように宣言される。
+
+<p><pre>
+    class Singleton {
+    public:
+        static Singleton* Instance();
+    protected:
+        Singleton();
+    private:
+        static Singleton* _instance;
+    };
+</pre><p>
+
+<br><font style="text-indent:10pt">　
+
+　実装は次のようになる。
+
+<p><pre>
+    Singleton* Singleton::_instance = 0;
+    
+    Singleton* Singleton::Instance () {
+        if (_instance == 0) {
+            _instance = new Singleton;
+        }
+        return _instance;
+    }
+</pre><p>
+
+<br><font style="text-indent:10pt">
+
+　クライアントはメンバ関数 Instance を通じて、唯一のインスタンスに排他的にアクセスする。変数- instance は 0 に初期化される。Instance は- instance の値が0であれば、唯一のインスタンスで初期化してからそのインスタンスを返す。つまり、Instance は遅延初期化を使っており、最初に- instance へのアクセスが行われるまでは、インスタンスは生成、格納されることはない。
+
+<br><font style="text-indent:10pt">
+
+　コンストラクタは保護的に宣言されていることに注意されたい。すなわち、クライアントが直接 Singleton クラスをインスタンス化しようとする場合には、コンパイル時にエラーが発生する。これにより、インスタンスが1つしか生成されないことが保証される。
+
+<br><font style="text-indent:10pt">
+
+　さらに、- instance は Singleton オブジェクトへのポインタであるので、メンバ関数 Instance は、Singleton のサブクラスのインスタンスへのポインタをこの変数に代入することができる。この点は「サンプルコード」の節で例をあげる。
+
+<br><font style="text-indent:10pt">
+
+　C++で実装する場合には注意しなければならないことがさらにある。つまり、Singleton クラスのインスタンスをグローバルすなわち静的なオブジェクトとして定義し、自動的な初期化に頼る方法は十分ではないということである。これは次の3つの理由による。
+
+<br><br>
+
+<ol type="a"><li>静的オブジェクトとして宣言されたインスタンスが唯一であることを保証する方法が存在しない。
+
+<br><br>
+
+<li>静的な初期化の際に、Singleton クラスをインスタンス化するのに必要なすべての情報がそろっているとは限らないこと。プログラムの実行に伴って後で計算される値を必要とする場合もある。
+
+<br><br>
+
+<li>C++では、グローバルオブジェクト間でコンストラクタが呼ばれる順序を変換単位を越えて横断的に定義することができないこと［ES90］。これは、Singleton オブジェクト間に依存関係がある場合を扱えないことを意味している。もし依存関係があれば、エラーは避けられないことになる。
+
+</ol>
+
+<br><font style="text-indent:10pt">
+
+　グローバルすなわち静的なオブジェクトによるアプローチを用いる場合、すべての Singleton オブジェクトを、それが使われるかどうかにかかわらず生成しておかなければならない、という負担が（ごくわずかであるが）増えることになる。静的メンバ関数を用いることで、このような問題をすべて解決することができる。
+
+<br><font style="text-indent:10pt">
+
+　Smalltalk では、唯一のインスタンスを返す関数は Singleton クラスのクラスメソッドとして実装される。インスタンスが1つしか生成されないことを保証するために、new メソッドをオーバーライドする。結局、Singleton クラスは、次のような2つのクラスメソッドを持つことになる。ここで、SoleInstance は、他では使われることのないクラス変数である。
+
+<p><pre>
+    new
+        self error: 'cannot create new object'
+    
+    default
+        SoleInstance isNil ifTrue: [SoleInstance := super new].
+        ^ SoleInstance
+</pre><p>
+
+<li><b>Singleton のサブクラス化。</b>ここで取り上げる問題は、サブクラスを定義することではなく、その唯一のインスタンスを生成してクライアントが利用できるようにすることである。本質的には、Singleton オブジェクトを参照する変数を、サブクラスのインスタンスで初期化することになる。そのためのもっとも簡単な方法は、どのサブクラスのインスタンスを使うのかを Singleton クラスの Instance オペレーションで決める、というものである。「サンプルコード」の節の例は、環境変数を用いてこれを実装する方法を示している。
+
+<br><font style="text-indent:10pt">
+
+　Singleton のサブクラスを選択するための別の方法として、Instance オペレーションの実装を親クラス（たとえば、MazeFactory クラス）の外に出して、サブクラスに入れることがあげられる。これにより、使用するサブクラスをプログラマがリンク時に決定できるようになる（たとえば、異なる実装を含むオブジェクトファイルをリンクすることによる）。しかし、クライアントからは隠ぺいしておくことができる。
+
+<br><font style="text-indent:10pt">
+
+　この方法では、サブクラスの選択をリンク時に行うので、実行時に選択するのは困難である。サブクラスを決定するために、条件文を用いればより柔軟にすることができるが、使われる可能性のあるサブクラスを直接コード中に記述することになる。どちらの方法も、すべての場合に適用できるほど柔軟なものではない。
+
+<br><font style="text-indent:10pt">
+
+　さらに柔軟な方法として、Singleton オブジェクトの登録機構を用いることがあげられる。選択できるサブクラスの集合を Instance オペレーションで定義する代わりに、各サブクラスがそのインスタンスと名前を、一般に公開されている登録機構に登録する。
+
+<br><font style="text-indent:10pt">
+
+　登録機構では、名前とインスタンスの間の対応関係が維持される。Instance オペレーションがインスタンスを必要とするときには、その名前でインスタンスを探してもらうように登録機構に依頼する。登録機構は対応するインスタンスを検索して、存在すればそれを返す。この方法では、Instance オペレーションが選択可能なサブクラスやインスタンスを把握しておく必要がなくなる。その代わりに、Singleton の全クラスに対して、登録機構に対するオペレーションを備えた共通のインタフェースが必要になる。
+
+<p><pre>
+    class Singleton {
+    public:
+        static void Register(const char* name, Singleton*);
+        static Singleton* Instance();
+    protected:
+        static Singleton* Lookup(const char* name);
+    private:
+        static Singleton* _instance;
+        static List&lt;NameSingletonPair>* _registry;
+    };
+</pre><p>
+
+<br><font style="text-indent:10pt">
+
+　Register オペレーションは、与えられた名前でインスタンスを登録する。単純化のために、登録機構には NameSingletonPair オブジェクトのリストを持たせることにする。各 NameSingletonPair オブジェクトは、名前とインスタンスの対応を保持している。Lookup オペレーションは、名前を基にインスタンスを探す。ここでは、必要なインスタンスの名前が環境変数に明記されていることにしている。
+
+<p><pre>
+    Singleton* Singleton::Instance () {
+        if (_instance == 0) {
+            const char* singletonName = getenv("SINGLETON");
+            // user or environment supplies this at startup
+    
+            _instance = Lookup(singletonName);
+            // Lookup returns 0 if there's no such singleton
+        }
+        return _instance;
+    }
+</pre><p>
+
+<br><font style="text-indent:10pt">
+
+　サブクラスは自身のインスタンスをどこで登録するのだろうか。1つの可能性としては、コンストラクタ内があげられる。たとえば、サブクラスMySingletonでは次のようにすることができる。
+
+<p><pre>
+    MySingleton::MySingleton() {
+        // ...
+        Singleton::Register("MySingleton", this);
+    }
+</pre><p>
+
+<br><font style="text-indent:10pt">
+
+　もちろん、コンストラクタはそのクラスがインスタンス化されなければ起動されないので、Singleton パターンで解決しようとしていた問題が再び生じることになる。C++では、MySingleton クラスの静的インスタンスを定義することにより、この問題を回避することができる。たとえば、
+
+<p><pre>
+    static MySingleton theSingleton;
+</pre><p>
+
+<br><font style="text-indent:10pt">
+
+　のように、MySingleton クラスの実装を記述するファイルの中で定義しておくことができる。
+
+<br><font style="text-indent:10pt">
+
+　このようにすることで、Singleton クラスは唯一のインスタンスの生成に対してもはや責任を持つ必要はなくなり、その代わりに、選択されたインスタンスをシステム内でアクセスできるようにする責任を持つことになる。静的オブジェクトを使う方法にはそれでも潜在的な欠点が含まれている。つまり、選択される可能性のあるサブクラスのインスタンスをすべて生成しておかなければ、それらは登録されないということである。
+</ol>
+
+</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="sample">
+<img src="img/00/sample.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　<a href="01.html" target="down">Abstract Factory パターン</a>の「サンプルコード」の節で述べたような迷路作成の MazeFactory クラスを定義することを考えてみよう。MazeFactory クラスは、迷路の異なる部分を作るためのインタフェースを定義している。サブクラスでは、Wall オブジェクトの代わりに BombedWall オブジェクト、というように特定の部品集合のクラスのインスタンスを返すようにオペレーションを再定義することができた。
+
+<br><font style="text-indent:10pt">
+
+　ここでの話題に関係するのは、迷路作成のアプリケーションは MazeFactory クラスのインスタンスを1つしか必要としていないということと、そのインスタンスは迷路の異なる部分を作成する各コードからアクセスできるようになっていなければならないということである。これらの点を実現するために Singleton パターンを適用する。MazeFactory クラスを Singleton クラスにすることで、グローバル変数に頼らずに MazeFactory オブジェクトをグローバルにアクセス可能にすることができる。
+
+<br><font style="text-indent:10pt">
+
+　簡単にするために、MazeFactory はサブクラス化されることはないものとする（その代替案については後ほどすぐに考える）。MazeFactory クラスをC++での Singleton クラスにするために、静的なオペレーション Instance と、唯一のインスタンスを保持するための静的なメンバ- instance を追加する。さらに、誤って2回以上のインスタンス化が行われることがないようにするために、コンストラクタを保護的に宣言しなければならない。
+
+<br><br><pre>
+    class MazeFactory {
+    public:
+        static MazeFactory* Instance();
+    
+        // existing interface goes here
+    protected:
+        MazeFactory();
+    private:
+        static MazeFactory* _instance;
+    };
+</pre><br><br>
+
+<br><font style="text-indent:10pt">
+
+　対応する実装は次のようになる。
+
+<br><br><pre>
+    MazeFactory* MazeFactory::_instance = 0;
+    
+    MazeFactory* MazeFactory::Instance () {
+        if (_instance == 0) {
+            _instance = new MazeFactory;
+        }
+        return _instance;
+    }
+</pre><br><br>
+
+<br><font style="text-indent:10pt">
+
+　さて、MazeFactory にサブクラスがあり、アプリケーションがどれを使うのかを決めなければならない場合にどのようになるのかを考えよう。環境変数から作成すべき迷路の種類を選択し、環境変数の値に従って MazeFactory の適切なサブクラスをインスタンス化するようなコードを追加する。Instance オペレーションに、このためのコードを書くのが適当である。なぜならば、このオペレーションはすでに MazeFactory クラスをインスタンス化するようになっているからである。
+
+<br><br><pre>
+    MazeFactory* MazeFactory::Instance () {
+        if (_instance == 0) {
+            const char* mazeStyle = getenv("MAZESTYLE");
+    
+            if (strcmp(mazeStyle, "bombed") == 0) {
+                _instance = new BombedMazeFactory;
+    
+            } else if (strcmp(mazeStyle, "enchanted") == 0) {
+                _instance = new EnchantedMazeFactory;
+    
+            // ... other possible subclasses
+    
+            } else {        // default
+                _instance = new MazeFactory;
+            }
+        }
+        return _instance;
+    }
+</pre><br><br>
+
+<br><font style="text-indent:10pt">
+
+　MazeFactory の新しいサブクラスを定義するときに、Instance も修正しなければならないことに注意してほしい。このアプリケーションでは問題にはならないであろうが、フレームワーク内で定義される <a href="01.html" target="down">Abstract Factory パターン</a>にとっては問題になるかもしれない。
+
+<br><font style="text-indent:10pt">
+
+　解決策としては、「実装」の節で述べたように登録機構方式を採用することが考えられる。ダイナミックリンクも同様に有効であろう。ダイナミックリンクは使われることのないすべてのサブクラスがロードされてしまうのを防ぐことができる。
+
+</font></font></font></font></font></font></font>
+
+
+
+
+<br><br><br>
+<a name="siyou">
+<img src="img/00/siyou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Smalltalk‐80［Par90］における Singleton パターンの例としては、コードの変更部分からなる集合 ChangeSet current がある。より技巧的な例として、クラスとメタクラスの関係をあげることもできる。メタクラスはクラスのクラスであり、各メタクラスには1つのインスタンスが存在する。メタクラスは名前を持たない（そのインスタンスで間接的に名付けられる以外には）が、その唯一のインスタンスを保持しており、他に新たなインスタンスを生成することは普通はない。
+
+<br><font style="text-indent:10pt">
+
+　InterViews ユーザインタフェースツールキット［LCI+92］では、Session クラスや WidgetKit クラスの唯一のインスタンスに他のオブジェクトからアクセスするために Singleton パターンを使っている。Session クラスでは、アプリケーションのメインイベントディスパッチループが定義され、ユーザ指定の表示設定に関するデータベースを格納したり、複数のディスプレイへの接続を管理している。WidgetKit クラスは、ウィジェットの look‐and‐feel 規格を定めるための AbstractFactory クラスである。WidgetKit::instance（）オペレーションでは、Session クラスで定義される環境変数に基づいて、WidgetKit のどのサブクラスをインスタンス化するのかを決定する。Session::instance（）オペレーションは、モノクロディスプレイとカラーディスプレイのどちらをサポートするのかを判定し、それに対応するインスタンスを生成する。
+
+</font></font>
+
+
+
+
+
+
+<br><br><br>
+<a name="kanren">
+<img src="img/00/kanren.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　<a href="01.html" target="down">Abstract Factory パターン</a>、<a href="02.html" target="down">Builder パターン</a>、<a href="05.html" target="down">Prototype パターン</a>: これらのパターンは Singleton パターンを使って実装することができる。
+
+</font>
+
+<br><br><br>
+
+
+</body>
+</html>

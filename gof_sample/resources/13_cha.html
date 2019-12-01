@@ -1,0 +1,539 @@
+<html>
+<head>
+<title>CHAIN OF RESPONSIBILITY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=x-sjis">
+</head>
+<body bgcolor=#ffffff text=#000000>
+
+<font size="3">
+
+<img src="img/title/cha.gif" hspace="10" vspace="10">
+
+<br><br><br>
+<a name="moku">
+<img src="img/00/moku.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　1つ以上のオブジェクトに要求を処理する機会を与えることにより、要求を送信するオブジェクトと受信するオブジェクトの結合を避ける。受信する複数のオブジェクトをチェーン状につなぎ、あるオブジェクトがその要求を処理するまで、そのチェーンに沿って要求を渡していく。
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="douki">
+<img src="img/00/douki.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　グラフィックユーザインタフェースにおいて、状況に応じて変化するヘルプ機能について考える。ユーザはマウスをクリックするだけで、インタフェースのどの部分からでもヘルプ情報を得ることができる。提供されるヘルプ情報は、インタフェースの中で選択された部分と、そのときの状況により変わってくる。たとえば、ダイアログボックス内のボタンウィジェットが持つヘルプ情報は、メインウィンドウ内のボタンウィジェットが持つヘルプ情報とは異なっているだろう。もしも、インタフェースのある部分について特別なヘルプ情報が存在しないのであれば、ヘルプシステムは、状況に応じてより一般的なヘルプメッセージ（選択された部分がダイアログボックスの一部ならば、ダイアログボックスについてのもの）を表示するようになっているべきである。
+
+<br><font style="text-indent:10pt">
+
+　したがって、ヘルプ情報をその一般性に従って、もっとも特殊なものからもっとも一般的なものへと組織化していくのは自然なことである。さらには、ヘルプ要求がいくつかのユーザインタフェースオブジェクトの1つにより処理されるのは明らかである（どのオブジェクトによって処理されるかは、そのときの状況と得られるヘルプ情報の特殊性により決まる）。
+
+<br><font style="text-indent:10pt">
+
+　ここでの問題は、ヘルプ要求を“出す”オブジェクト（たとえば、ボタン）が、最終的にヘルプ情報を“与える”オブジェクトのことを直接的には知らないということである。ここで必要なのは、ヘルプ要求を出すオブジェクトをヘルプ情報を与えるオブジェクトから引き離す方法である。Chain Of Responsibility パターンはそのような方法を定義している。
+
+<br><font style="text-indent:10pt">
+
+　このパターンのポイントは、複数のオブジェクトに要求を処理する機会を与えることにより、要求を送信するオブジェクトと受信するオブジェクトを引き離すことにある。要求は、どれか1つのオブジェクトによって処理されるまで、オブジェクトのチェーンに沿って渡されていく。
+ 
+<br><br><br><p align="center">
+<img src="img/pics/chain090.gif"></p>
+<br><br><br>
+
+チェーンの中で最初のオブジェクトがその要求を受信すると、それを処理するか、またはチェーンの中の次の候補にそれを転送する。以降も同様である。要求を出したオブジェクトは、どのオブジェクトがそれを処理したのかを明確に知ることはできない。このようなとき、要求は暗黙の受信オブジェクトを持つ、という。
+
+<br><font style="text-indent:10pt">
+
+　ユーザが“Print”と書かれたボタンウィジェット上でヘルプを求めてマウスをクリックしたとする。PrintButton オブジェクトは PrintDialog オブジェクトに含まれている。この PrintDialog オブジェクトはそれが所属している Application オブジェクトを知っている（上のオブジェクトダイアグラムを参照）。次のインタラクションダイアグラムは、ヘルプ要求がチェーンに沿って転送されていく様子を説明している。
+
+<br><br><br><p align="center">
+<img src="img/pics/chain091.gif"></p>
+<br><br><br>
+
+この場合には、aPrintButton や aPrintDialog が要求を処理することはない。要求は anApplication で止まり、ここで処理、または無視されることになる。要求を出すクライアントは、最終的にその要求を実現してくれるオブジェクトに対する参照を直接持つことはない。
+
+<br><font style="text-indent:10pt">
+
+　チェーンに沿って要求を転送し、受信するオブジェクトが暗黙のままであることを保証するために、チェーンの中にある各オブジェクトは、要求を処理したり後続のオブジェクト（successor）にアクセスするための共通のインタフェースを持っている。たとえばヘルプシステムは、HandleHelp オペレーションを備えた HelpHandler クラスを定義しなければならない。HelpHandler クラスは、候補オブジェクトのクラスにとって親クラスにもなり得るし、または Mixin クラスとして定義することもできる。したがって、ヘルプの要求を処理したいクラスは次のように HelpHandler を親クラスにすればよい。
+
+<br><br><br><p align="center">
+<img src="img/pics/chain092.gif"></p>
+<br><br><br>
+
+Button クラス、Dialog クラス、Application クラスは、ヘルプ要求を処理するために HelpHandler のオペレーションを使用する。HelpHandler のオペレーション HandleHelp は要求をデフォルトで successor に転送する。HelpHandler を継承するサブクラスは、適切な状況でヘルプ情報を与えることができるように、このオペレーションをオーバーライドすることができる。さもなければ、デフォルトの実装を使用してこの要求を転送する。
+
+</font></font></font></font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="teki">
+<img src="img/00/teki.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Chain Of Responsibility パターンは、次のような場合に使うことができる。
+
+<br><br>
+
+<ul><li>要求を処理するオブジェクトの候補が複数存在し、最終的にどのオブジェクトが担当するのかは、前もってわからない場合。担当オブジェクトは自動的に決められる。
+
+<br><br>
+
+<li>受け手を明確にせずに、複数あるオブジェクトの1つに対して要求を発行したい場合。
+
+<br><br>
+
+<li>要求を処理することができるオブジェクトの集合が動的に明確化される場合。
+</ul>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kouzou">
+<img src="img/00/kouzou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+<p align="center">
+<img src="img/pics/chain094.gif"></p>
+<br><br><br>
+
+<font style="text-indent:10pt">
+
+　典型的なオブジェクトの構造は次のようになっている。
+
+<br><br><br><p align="center">
+<img src="img/pics/chain089.gif"></p>
+
+</font></font>
+
+
+
+
+
+<br><br><br>
+<a name="kousei">
+<img src="img/00/kousei.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+<ul><li><b>Handlerクラス </b>（HelpHandlerクラス）
+<ul><li>要求を処理するためのインタフェースを定義する。
+<li>（オプション）successor へのリンクを実装する。</ul>
+
+<br><br>
+
+<li><b>ConcreteHandler クラス</b> （PrintButton クラス、PrintDialog クラス）
+<ul><li>要求の中で担当するものについて処理する。
+<li>successor にアクセスできる。
+<li>要求を処理できるならば処理する。さもなければ、その要求を successor に転送する。</ul>
+
+<br><br>
+
+<li><b>Client クラス</b>
+<ul><li>チェーンの中にある ConcreteHandler オブジェクトに要求を出す。</ul>
+</ul>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kyou">
+<img src="img/00/kyou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+<ul><li>Client オブジェクトが要求を出すと、ある ConcreteHandler オブジェクトがそれに対する処理を引き受けるまでは、その要求はチェーンに沿って転送されていく。</ul>
+
+</font>
+
+
+
+
+
+<br><br><br>
+<a name="kekka">
+<img src="img/00/kekka.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Chain Of Responsibility パターンには次のような利点と欠点がある。
+
+<br><br>
+
+<ol><li><b>結合度を低くする。</b>このパターンは、あるオブジェクトが、他のどのオブジェクトが要求を処理するのかを知っている必要をなくす。オブジェクトは要求が適切に処理されることのみを知っていればよい。受信するオブジェクトと送信するオブジェクトは互いに明示的に相手を認識しているわけではない。また、チェーンの中のオブジェクトはそのチェーンの構造について知っている必要はない。
+
+<br><font style="text-indent:10pt">
+
+　結果として、Chain Of Responsibility パターンはオブジェクト間の関係を簡単なものにすることができる。オブジェクトには、受け手の候補となるすべてのオブジェクトに対する参照を持たせる代わりに、チェーンの中で successor への参照のみを持たせればよい。
+
+<br><br>
+
+<li><b>オブジェクトへ責任を割り振る際に柔軟性を高める。</b>Chain Of Responsibility パターンにより、オブジェクト間に責任を分散する際の柔軟性が高められる。実行時に、チェーンの中に新たなオブジェクトを加えたり、さもなければオブジェクトを入れ替えたりすることで、要求の処理に関する責任の割り振りを変えることができる。また、それと併せて、サブクラスを新たに定義することにより、Handlerを静的に特殊化することもできる。
+
+<br><br>
+
+<li><b>受信されるかどうかは保証されない。</b>要求は、それを受信するオブジェクトを明示的に指定しているわけではないので、それが処理されるという保証はない。すなわち、処理されないままチェーンの終端で消滅してしまう、ということも起こり得る。チェーンが正しく形成されていないときにも同様のことが起こり得る。
+</ol>
+
+</font></font>
+
+
+
+
+
+<br><br><br>
+<a name="jissou">
+<img src="img/00/jissou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　Chain Of Responsibility パターンで考慮しなければならない実装上の問題を次にあげる。
+
+<br><br>
+
+<ol><li><b>successor のチェーンを実装する。</b>successor のチェーンを実装するために2つの実現可能な方法がある。
+<br><br>
+<ol type="a"><li>新しいリンクを定義する（通常は Handler クラス内で定義するが、ConcreteHandler クラスで定義してもよい）。
+<br><br>
+<li>既存のリンクを使用する。</ol>
+
+<br><br>
+
+<font style="text-indent:10pt">
+
+　これまでの例では新しいリンクを定義してきたが、successor のチェーンを形成するためには、既存のオブジェクトへの参照を使うこともできる。たとえば、部分―全体階層で、親オブジェクトへの参照を部分オブジェクトの successor として定義することができる。ウィジェットの構造はそのようなリンクをすでに持っているだろう。<a href="08.html" target="down">Composite パターン</a>では、親オブジェクトの参照についてより詳しく論じている。
+
+<br><font style="text-indent:10pt">
+
+　既存のリンクが、必要とするチェーンをサポートするならば、それを使うことで順調にチェーンは形成される。それにより、明示的にリンクを定義する必要はなくなり、メモリ空間を節約できる。しかし、もしリンクを形成している既存の構造が、アプリケーションが必要としている Chain Of Responsibility パターンとは異なっていれば、新たなリンクを別に定義しなければならない。
+
+<br><br>
+
+<li><b>successor を接続する。</b>もし、チェーンを定義するための既存の参照が存在しなければ、それらを新たに導入しなければならない。その場合、Handler クラスでは、要求に対するインタフェースを定義するだけではなく、通常は successor も保持することになる。それにより、Handler クラスは、要求を successor（もし存在すれば）に転送するオペレーション Handle Request の実装をデフォルトで与えることができるようになる。もし、サブクラス ConcreteHandler を要求には関与させないのであれば、デフォルトの実装が無条件に転送してくれるので、転送オペレーションをオーバーライドする必要はなくなる。
+
+<br><font style="text-indent:10pt">
+
+　successor へのリンクを保持する基底クラス HelpHandler を次にあげる。
+
+<br><br><pre>
+    class HelpHandler {
+    public:
+        HelpHandler(HelpHandler* s) : _successor(s) { }
+        virtual void HandleHelp();
+    private:
+        HelpHandler* _successor;
+    };
+    
+    void HelpHandler::HandleHelp () {
+        if (_successor) {
+            _successor->HandleHelp();
+        }
+    }
+</pre><br><br>
+
+
+
+<li><b>要求を表現する。</b>要求を表現するために別の選択が可能である。もっとも簡単な形式は、HandleHelp クラスの場合のように、要求をコーディングされたオペレーションの呼び出しとして実現する方法である。これは便利で簡単であるが、Handler クラスが定義している要求しか転送できないことになる。
+
+<br><font style="text-indent:10pt">
+
+　代替案としては、要求コード（たとえば、整数定数や文字列）をパラメータとして受け取る関数を1つ Handler クラスに定義して、これを使う方法がある。この方法では、要求の追加などが自由に行えるようになる。ただし、送信オブジェクトと受信オブジェクトの間で、要求がどのようにコード化されているのかということについて、合意がとれている必要がある。
+
+<br><font style="text-indent:10pt">
+
+　このアプローチにはより柔軟性があるが、コードに基づく要求をディスパッチするために条件文が必要になる。さらに、複数のパラメータを渡すのにタイプセーフな方法がないので、パラメータをパックしたり取り出したりということをしなければならない。これは明らかに、オペレーションを直接呼び出すよりも安全性において劣っている。
+
+<br><font style="text-indent:10pt">
+
+　パラメータ渡しの問題を解決するために、要求とそれに必要なパラメータを一体化したRequestオブジェクトを使うこともできる。Request クラスは要求を明示的に表し、新しい種類の要求はサブクラス化により定義することができる。サブクラスではそれぞれ異なるパラメータを定義することができる。Handler クラスは、これらのパラメータにアクセスするためには要求の種類（すなわち、どの Request サブクラスを使っているのか）を知らなければならない。
+
+<br><font style="text-indent:10pt">
+
+　要求を識別するために、Request クラスはそのクラスの識別子を返す関数を定義してもよい。または、受信オブジェクトは、もし実装言語がサポートしているならば、実行時の型情報を使ってもよい。
+
+<br><font style="text-indent:10pt">
+
+　要求を識別するために Request オブジェクトを使っているディスパッチ関数の概要を次に示す。基底クラス Request で定義されている GetKind オペレーションは、要求の種類を識別する。
+
+<br><br><pre>
+    void Handler::HandleRequest (Request* theRequest) {
+        switch (theRequest->GetKind()) {
+        case Help:
+            // cast argument to appropriate type
+            HandleHelp((HelpRequest*) theRequest);
+            break;
+    
+        case Print:
+            HandlePrint((PrintRequest*) theRequest);
+            // ...
+            break;
+    
+        default:
+            // ...
+            break;
+        }
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　サブクラスは HandleRequest オペレーションをオーバライドすることによりディスパッチを拡張することもできる。サブクラスは自らが関与すべき要求のみを扱う。他の要求は転送する。このようにして、サブクラスは効率的に HandleRequest オペレーションを（オーバーライドというよりは）拡張していく。たとえば、ExtendedHandler サブクラスが Handler 版の HandlerRequest オペレーションをどのようにして拡張するのかを次に示す。
+
+<br><br><pre>
+    class ExtendedHandler : public Handler {
+    public:
+        virtual void HandleRequest(Request* theRequest);
+        // ...
+    };
+    
+    void ExtendedHandler::HandleRequest (Request* theRequest) {
+        switch (theRequest->GetKind()) {
+        case Preview:
+            // handle the Preview request
+            break;
+    
+        default:
+            // let Handler handle other requests
+            Handler::HandleRequest(theRequest);
+        }
+    }
+</pre><br><br>
+
+<li><b>Smalltalk における自動転送。</b>要求を転送するために Smalltalk の doesNotUnderstand メカニズムを使うこともできる。対応するメソッドを持たないメッセージは doesNotUnderstand により処理されるが、これはs uccessor にメッセージを転送するようにオーバーライドすることができる。したがって、転送機能を実装する必要はなくなる。クラスは自分が関与すべき要求だけを処理し、それ以外はすべて doesNotUnderstand を使って転送する。</ol>
+
+</font></font></font></font></font></font></font></font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="sample">
+<img src="img/00/sample.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　次の例では、前に述べたオンラインヘルプシステムへの要求を Chain Of Responsibility パターンがいかに処理するかを説明する。ヘルプ要求は明示的なオペレーションである。ウィジェット間でヘルプ要求を伝えていくためには、既存のウィジェット階層での親オブジェクトへの参照を利用する。そして、Handler クラスの中では、ウィジェットでないものの間でヘルプ要求を伝えていくための参照を定義する。
+
+<br><font style="text-indent:10pt">
+
+　HelpHandler クラスは、ヘルプ要求を処理するためのインタフェースを定義する。また、ヘルプの内容（デフォルトで空にしておく）と、successor への参照を持つ。キーとなるオペレーションは HandleHelp で、それをサブクラスでオーバーライドする。HasHelp は関連するヘルプの内容が存在するかどうかをチェックする便利なオペレーションである。
+
+<br><br><pre>
+    typedef int Topic;
+    const Topic NO_HELP_TOPIC = -1;
+    
+    class HelpHandler {
+    public:
+        HelpHandler(HelpHandler* = 0, Topic = NO_HELP_TOPIC);
+        virtual bool HasHelp();
+        virtual void SetHandler(HelpHandler*, Topic);
+        virtual void HandleHelp();
+    private:
+        HelpHandler* _successor;
+        Topic _topic;
+    };
+    
+    HelpHandler::HelpHandler (
+        HelpHandler* h, Topic t
+    ) : _successor(h), _topic(t) { }
+    
+    bool HelpHandler::HasHelp () {
+        return _topic != NO_HELP_TOPIC;
+    }
+    
+    void HelpHandler::HandleHelp () {
+        if (_successor != 0) {
+            _successor->HandleHelp();
+        }
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　すべてのウィジェットは、抽象クラス Widget のサブクラスである。ユーザインタフェースのすべての要素が関連するヘルプを持つことができるように、Widget クラスを HelpHandler のサブクラスにする（同様に、Mixin クラスとして実装することもできる）。
+
+<br><br><pre>
+    class Widget : public HelpHandler {
+    protected:
+        Widget(Widget* parent, Topic t = NO_HELP_TOPIC);
+    private:
+        Widget* _parent;
+    };
+    
+    Widget::Widget (Widget* w, Topic t) : HelpHandler(w, t) {
+        _parent = w;
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　この例では、Button オブジェクトがチェーン上の最初のオブジェクトになる。Button クラスは Widget のサブクラスになる。Button クラスのコンストラクタは2つの引数を持つ（ボタンを取り巻くウィジェットとヘルプの内容）。
+
+<br><br><pre>
+    class Button : public Widget {
+    public:
+        Button(Widget* d, Topic t = NO_HELP_TOPIC);
+    
+        virtual void HandleHelp();
+        // Widget operations that Button overrides...
+    };
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　Button クラスの HandleHelp オペレーションは、最初に Button オブジェクトにヘルプの内容が存在しているかどうかを確認する。もし開発者が定義していなければ、要求は HelpHandler クラスの HandleHelp オペレーションを使って successor に転送される。もしヘルプの内容が存在すれば、Button オブジェクトはそれを表示し、チェーンの中でのヘルプの探索は終了する。
+
+<br><br><pre>
+    Button::Button (Widget* h, Topic t) : Widget(h, t) { }
+    
+    void Button::HandleHelp () {
+        if (HasHelp()) {
+            // offer help on the button
+        } else {
+            HelpHandler::HandleHelp();
+        }
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　Dialog クラスでも同様の機構を実装する。ただし、successor は Widget オブジェクトではなく、任意の HelpHandler オブジェクトである。この例では、successor は Application クラスのインスタンスになる。
+
+<br><br><pre>
+    class Dialog : public Widget {
+    public:
+        Dialog(HelpHandler* h, Topic t = NO_HELP_TOPIC);
+        virtual void HandleHelp();
+    
+        // Widget operations that Dialog overrides...
+        // ...
+    };
+    
+    Dialog::Dialog (HelpHandler* h,  Topic t) : Widget(0) {
+        SetHandler(h, t);
+    }
+    
+    void Dialog::HandleHelp () {
+        if (HasHelp()) {
+            // offer help on the dialog
+        } else {
+            HelpHandler::HandleHelp();
+        }
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　チェーンの最後には Application クラスのインスタンスがある。Application クラスはウィジェットではないので、HelpHandler クラスの直接のサブクラスになる。ヘルプ要求がこのレベルにまで伝えられると、Application オブジェクトはアプリケーションに関する一般的な情報を提供するか、または、別のヘルプの内容に関するリストを提供する。
+
+<br><br><pre>
+    class Application : public HelpHandler {
+    public:
+        Application(Topic t) : HelpHandler(0, t) { }
+    
+        virtual void HandleHelp();
+        // application-specific operations...
+    };
+    
+    void Application::HandleHelp () {
+        // show a list of help topics
+    }
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　次のコードはこれらのオブジェクトを生成し結び付ける。この例ではダイアログは印刷に関するものなので、Dialog オブジェクトと Button オブジェクトには印刷に関係したヘルプの内容が入れられている。
+
+<br><br><pre>
+    const Topic PRINT_TOPIC = 1;
+    const Topic PAPER_ORIENTATION_TOPIC = 2;
+    const Topic APPLICATION_TOPIC = 3;
+    
+    Application* application = new Application(APPLICATION_TOPIC);
+    Dialog* dialog = new Dialog(application, PRINT_TOPIC);
+    Button* button = new Button(dialog, PAPER_ORIENTATION_TOPIC);
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　チェーンの中にある任意のオブジェクトに対して HandleHelp オペレーションを呼び出すことにより、ヘルプ要求を出すことができる。Button オブジェクトを起点にしてヘルプ要求が出されれば、Button クラスの HandleHelp が呼び出される。
+
+<br><br><pre>
+    button->HandleHelp();
+</pre><br><br>
+
+<font style="text-indent:10pt">
+
+　この場合、Button オブジェクトは要求を即座に処理する。また、Dialog オブジェクトの successor として、任意の HelpHandler クラスのインスタンスを追加することもできる。さらに、successor を動的に変更することも可能である。これにより、Dialog オブジェクトがどこで使われていようが、その状況に合った適切な情報をユーザは得ることができるようになる。
+
+</font></font></font></font></font></font></font></font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="siyou">
+<img src="img/00/siyou.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　いくつかのクラスライブラリで、ユーザのイベントを処理するために Chain Of Responsibility パターンが使われている。それらは、Handler クラスのことを、それぞれ違った名前で読んでいるが、考え方は同じである。ユーザがマウスをクリックしたりキーを押したりすると、イベントが生成され、チェーンに沿って伝えられていくことになる。MacApp［App89］とET++［WGM88］ではそれを Event-Handler と呼び、Symantec の TCL ライブラリ［Sym93b］ではそれを Bureaucrat と呼び、NeXT の AppKit［Add94］では Responder と呼んでいる。
+
+<br><font style="text-indent:10pt">
+
+　図形エディタのための Unidraw フレームワークでは、Component オブジェクトと ComponentView オブジェクト［VL90］への要求をカプセル化する Command クラスを定義している。Component オブジェクトや ComponentView オブジェクトは、オペレーションを実行するために Command オブジェクトを解釈する。これは、実装のところで述べた“要求をオブジェクトとして”というアプローチに対応している。Component オブジェクトと ComponentView オブジェクトは階層的に構成されている場合もある。その場合には、Command オブジェクトの解釈を親オブジェクトに任せることもあるだろう。そして、その親オブジェクトは、またその親オブジェクトに、といったことを考慮して、Chain Of Responsibility パターンが形成されている。
+
+<br><font style="text-indent:10pt">
+
+　ET++では、グラフィック部分の更新を処理するために、Chain Of Responsibility パターンを使っている。グラフィックオブジェクトは、表示の一部を更新しなければならないときには、InvalidateRect オペレーションを呼び出す。グラフィックオブジェクトはそれが置かれている状況を十分には知らないので、自身で InvalidateRect オペレーションを処理することはできない。たとえば、グラフィックオブジェクトを、座標系を変換する Scrollers オブジェクトや Zoomers オブジェクトの中に取り込むことができる。それは、オブジェクトがスクロールされたりズーミングされて部分的にビューの外に出るかもしれないことを意味している。それゆえに InvalidateRect オペレーションの実装はデフォルトで、要求を、それを取り込んでいるコンテナオブジェクトに転送するようになっている。チェーンの最後のオブジェクトは Window オブジェクトである。Window オブジェクトが要求を受信するまでには、無効領域は必ず正しく変換されるようになっている。Window オブジェクトはウィンドウシステムのインタフェースに通知して更新を要求することにより、InvalidateRect オペレーションを処理する。
+
+</font></font></font>
+
+
+
+
+
+<br><br><br>
+<a name="kanren">
+<img src="img/00/kanren.gif" hspace="10">
+<br><br>
+
+<font style="margin-left:40px;text-indent:10pt">
+
+　<a href="08.html" target="down">Composite パターン</a>: Chain Of Responsibility パターンは、しばしば <a href="08.html" target="down">Composite パターン</a>とともに適用される。その場合、component の親オブジェクトを successor にすることができる。
+
+</font>
+
+<br><br><br>
+
+</body>
+</html>
